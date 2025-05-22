@@ -11,16 +11,8 @@ const techStacks = [
     technologies: ["Node.js", "Python", "Java", "C#", "Go", "PHP", "Ruby on Rails"]
   },
   {
-    category: "Mobile",
-    technologies: ["React Native", "Flutter", "Swift", "Kotlin", "Ionic"]
-  },
-  {
     category: "Database",
     technologies: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Firebase", "DynamoDB"]
-  },
-  {
-    category: "DevOps & Cloud",
-    technologies: ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes", "GitHub Actions", "Jenkins"]
   },
   {
     category: "AI & Automation",
