@@ -1,9 +1,6 @@
-
 import { Button } from "@/components/ui/button";
-
 export default function AboutSection() {
-  return (
-    <section id="about" className="section-padding bg-muted/30">
+  return <section id="about" className="section-padding bg-muted/30">
       <div className="container-custom">
         <div className="text-center mb-10">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">About Us</h2>
@@ -21,22 +18,25 @@ export default function AboutSection() {
             <p className="text-muted-foreground mb-4">
               Founded on the principles of technical excellence and unwavering client focus, Cynosuric Tech Labs has evolved into a global digital engineering partner helping businesses transform their digital presence.
             </p>
-            <p className="text-muted-foreground mb-6">
-              Our team of senior engineers brings decades of combined experience across industries, technologies, and methodologies. We follow an iterative delivery approach that ensures transparency, adaptability, and continuous improvement throughout the development lifecycle.
-            </p>
+            <p className="text-muted-foreground mb-6">Our team of engineers brings years of combined experience across industries, technologies, and methodologies. We follow an iterative delivery approach that ensures transparency, adaptability, and continuous improvement throughout the development lifecycle.</p>
             
             <div className="grid grid-cols-2 gap-4 mb-6">
-              {[
-                { label: 'Global Clients', value: '25+ Countries' },
-                { label: 'Team Experience', value: '6+ Years Avg.' },
-                { label: 'Delivery Model', value: 'Agile & Iterative' },
-                { label: 'Support', value: '24/7 Available' }
-              ].map((item, i) => (
-                <div key={i} className="bg-card p-4 rounded-lg">
+              {[{
+              label: 'Global Clients',
+              value: '25+ Countries'
+            }, {
+              label: 'Team Experience',
+              value: '6+ Years Avg.'
+            }, {
+              label: 'Delivery Model',
+              value: 'Agile & Iterative'
+            }, {
+              label: 'Support',
+              value: '24/7 Available'
+            }].map((item, i) => <div key={i} className="bg-card p-4 rounded-lg">
                   <p className="text-sm font-medium text-primary">{item.label}</p>
                   <p className="font-medium">{item.value}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
             
             <Button className="hover-scale">Learn More About Us</Button>
@@ -49,6 +49,5 @@ export default function AboutSection() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
