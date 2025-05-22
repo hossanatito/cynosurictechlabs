@@ -5,32 +5,38 @@ const services = [
   {
     title: "Web Development",
     description: "Modern, responsive web applications built with the latest technologies and frameworks.",
-    icon: "web-development"
+    icon: "web-development",
+    subheading: "React, Next.js, Vue"
   },
   {
     title: "Custom Software Development",
     description: "Tailored software solutions designed to address your specific business challenges.",
-    icon: "custom-software-development"
+    icon: "custom-software-development",
+    subheading: "Enterprise Solutions & Platforms"
   },
   {
     title: "UI/UX Design",
     description: "User-centered design that balances aesthetics with intuitive user experiences.",
-    icon: "ui-ux-design"
+    icon: "ui-ux-design",
+    subheading: "Wireframing, Prototypes, User Testing"
   },
   {
     title: "Mobile App Development",
     description: "Native and cross-platform mobile applications for iOS and Android devices.",
-    icon: "mobile-app-development"
+    icon: "mobile-app-development",
+    subheading: "React Native, Flutter, Swift"
   },
   {
     title: "E-Commerce Development",
     description: "Scalable and secure online stores with seamless payment processing and inventory management.",
-    icon: "e-commerce-development"
+    icon: "e-commerce-development",
+    subheading: "Shopify, WooCommerce, Custom Stores"
   },
   {
-    title: "DevOps & Cloud Engineering",
+    title: "Custom AI Automations",
     description: "Streamlining development operations with continuous integration/deployment and cloud infrastructure.",
-    icon: "devops-cloud-engineering"
+    icon: "devops-cloud-engineering",
+    subheading: "AI Models, ML Pipelines, GPT Integration"
   }
 ];
 
@@ -58,6 +64,7 @@ export default function ServicesSection() {
                                                            service.icon === "e-commerce-development" ? "🛒" : "☁️"}</span>
                 </div>
                 <CardTitle className="text-xl">{service.title}</CardTitle>
+                <p className="text-xs uppercase tracking-wider text-primary/80 mt-1">{service.subheading}</p>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-muted-foreground">
