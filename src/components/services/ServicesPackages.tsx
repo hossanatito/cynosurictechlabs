@@ -8,7 +8,6 @@ export default function ServicesPackages() {
   const packages = [
     {
       title: "Starter Package",
-      price: "$4,999",
       description: "Perfect for small businesses looking to establish their digital presence.",
       features: [
         "Custom Website Design",
@@ -21,7 +20,6 @@ export default function ServicesPackages() {
     },
     {
       title: "Business Growth",
-      price: "$12,999",
       description: "Comprehensive solution for established businesses looking to expand.",
       features: [
         "Advanced Website/App Design",
@@ -35,7 +33,6 @@ export default function ServicesPackages() {
     },
     {
       title: "Enterprise Solution",
-      price: "Custom",
       description: "Tailored for organizations with complex requirements and large-scale projects.",
       features: [
         "Custom Software Development",
@@ -57,6 +54,7 @@ export default function ServicesPackages() {
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Choose the right level of support and expertise for your project needs.
+            Contact us for custom pricing based on your specific requirements.
           </p>
         </div>
         
@@ -74,11 +72,7 @@ export default function ServicesPackages() {
               )}
               <CardHeader>
                 <CardTitle className="text-xl">{pkg.title}</CardTitle>
-                <div className="mt-2 mb-2">
-                  <span className="text-3xl font-bold">{pkg.price}</span>
-                  {pkg.price !== "Custom" && <span className="text-muted-foreground ml-2">starting from</span>}
-                </div>
-                <p className="text-muted-foreground text-sm">{pkg.description}</p>
+                <p className="text-muted-foreground text-sm mt-2">{pkg.description}</p>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
@@ -91,7 +85,9 @@ export default function ServicesPackages() {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full hover-scale">Get Started</Button>
+                <Button className="w-full hover-scale" asChild>
+                  <a href="/contact">Get a Quote</a>
+                </Button>
               </CardFooter>
             </Card>
           ))}

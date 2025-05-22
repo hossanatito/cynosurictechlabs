@@ -1,15 +1,16 @@
 
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 const navigation = {
   main: [
-    { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Tech Stack', href: '#tech-stack' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/', isSection: false },
+    { name: 'About', href: '/about', isSection: false },
+    { name: 'Services', href: '/services', isSection: false },
+    { name: 'Portfolio', href: '/#portfolio', isSection: true },
+    { name: 'Tech Stack', href: '/#tech-stack', isSection: true },
+    { name: 'Testimonials', href: '/#testimonials', isSection: true },
+    { name: 'Contact', href: '/contact', isSection: false },
   ],
 };
 
@@ -30,12 +31,21 @@ export default function Footer() {
             <ul className="space-y-2">
               {navigation.main.map((item) => (
                 <li key={item.name}>
-                  <a 
-                    href={item.href} 
-                    className="text-muted-foreground text-sm hover:text-primary transition-colors"
-                  >
-                    {item.name}
-                  </a>
+                  {item.isSection ? (
+                    <a
+                      href={item.href}
+                      className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -52,6 +62,9 @@ export default function Footer() {
             <p className="text-muted-foreground text-sm">
               <span className="text-foreground">Location:</span> Remote-First Company
             </p>
+            <Link to="/contact" className="inline-block mt-3 text-primary hover:underline text-sm">
+              Get in touch →
+            </Link>
           </div>
         </div>
         

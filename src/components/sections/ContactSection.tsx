@@ -6,6 +6,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -72,6 +74,12 @@ export default function ContactSection() {
                   <p className="font-medium mb-1">Working Hours</p>
                   <p className="text-muted-foreground">Monday - Friday: 9AM - 6PM</p>
                 </div>
+                <Button asChild className="w-full mt-4">
+                  <Link to="/contact" className="inline-flex items-center">
+                    Visit Our Contact Page
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </CardContent>
             </Card>
           </div>

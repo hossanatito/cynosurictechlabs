@@ -12,7 +12,7 @@ const navItems = [
   { name: "Portfolio", href: "/#portfolio", isSection: true },
   { name: "Tech Stack", href: "/#tech-stack", isSection: true },
   { name: "Testimonials", href: "/#testimonials", isSection: true },
-  { name: "Contact", href: "/#contact", isSection: true },
+  { name: "Contact", href: "/contact", isSection: false },
 ];
 
 export default function Navbar() {
@@ -49,7 +49,9 @@ export default function Navbar() {
               </li>
             ))}
             <li className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <Button size="sm" className="hover-scale">Get a Free Consultation</Button>
+              <Button size="sm" className="hover-scale" asChild>
+                <Link to="/contact">Get a Free Consultation</Link>
+              </Button>
             </li>
           </ul>
           
@@ -90,7 +92,9 @@ export default function Navbar() {
               </Link>
             )
           ))}
-          <Button className="mt-3 hover-scale" onClick={() => setIsMenuOpen(false)}>Get a Free Consultation</Button>
+          <Button className="mt-3 hover-scale" onClick={() => setIsMenuOpen(false)} asChild>
+            <Link to="/contact">Get a Free Consultation</Link>
+          </Button>
         </div>
       </div>
     </header>
