@@ -1,51 +1,51 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
-  Html, 
-  Css, 
-  Javascript, 
-  React as ReactIcon, 
-  Node, 
-  Php, 
-  Wordpress,
-  Mysql,
-  Postgresql,
-  N8N,
-  OpenAi,
-  HuggingFace
+  Code,
+  FileJson,
+  SquareCode,
+  Atom, 
+  Server, 
+  FileCode,
+  Boxes,
+  Database,
+  Table2,
+  Workflow,
+  BrainCircuit,
+  MessageSquareCode
 } from "lucide-react";
 
 const techStacks = [
   {
     category: "Frontend",
     technologies: [
-      { name: "HTML", icon: Html },
-      { name: "CSS", icon: Css },
-      { name: "JavaScript", icon: Javascript },
-      { name: "React", icon: ReactIcon }
+      { name: "HTML", icon: Code },
+      { name: "CSS", icon: FileJson },
+      { name: "JavaScript", icon: SquareCode },
+      { name: "React", icon: Atom }
     ]
   },
   {
     category: "Backend",
     technologies: [
-      { name: "Node.js", icon: Node },
-      { name: "PHP", icon: Php },
-      { name: "WordPress", icon: Wordpress }
+      { name: "Node.js", icon: Server },
+      { name: "PHP", icon: FileCode },
+      { name: "WordPress", icon: Boxes }
     ]
   },
   {
     category: "Database",
     technologies: [
-      { name: "MySQL", icon: Mysql },
-      { name: "PostgreSQL", icon: Postgresql }
+      { name: "MySQL", icon: Database },
+      { name: "PostgreSQL", icon: Table2 }
     ]
   },
   {
     category: "AI & Automation",
     technologies: [
-      { name: "n8n", icon: N8N },
-      { name: "OpenAI", icon: OpenAi },
-      { name: "Hugging Face", icon: HuggingFace }
+      { name: "n8n", icon: Workflow },
+      { name: "OpenAI", icon: BrainCircuit },
+      { name: "Hugging Face", icon: MessageSquareCode }
     ]
   }
 ];
