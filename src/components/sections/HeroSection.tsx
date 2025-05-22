@@ -46,7 +46,7 @@ export default function HeroSection() {
             {[
               { stat: '98%', label: 'Client Satisfaction' },
               { stat: '250+', label: 'Projects Delivered' },
-              { stat: '12+', label: 'Years Experience' },
+              { stat: '6+', label: 'Years Experience' },
               { stat: '35+', label: 'Team Members' }
             ].map((item, i) => (
               <div key={i} className="p-4 bg-card rounded-lg border border-white/10 hover:border-white/30 transition-all duration-300">
