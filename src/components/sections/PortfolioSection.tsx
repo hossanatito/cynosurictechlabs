@@ -1,78 +1,105 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 const portfolioItems = [
   {
-    title: "E-commerce Platform",
-    description: "A fully responsive e-commerce platform with advanced filtering, cart functionality, and secure payments.",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
-    results: "250% increase in online sales",
-    image: "portfolio1",
+    title: "WpScanrr",
+    description: "A powerful WordPress vulnerability scanner that helps you discover hidden WordPress contents and identify security issues in your installation.",
+    tech: ["React", "Tailwind CSS", "WordPress API", "Security"],
+    results: "Improved security for hundreds of WordPress sites",
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+    url: "https://wpscanrr.lovable.app/",
   },
   {
-    title: "Healthcare Management System",
-    description: "A comprehensive system for patient management, scheduling, and record keeping for a multi-location clinic.",
-    tech: ["Angular", "Java Spring", "PostgreSQL", "Docker"],
-    results: "65% reduction in administrative work",
-    image: "portfolio2",
-  },
-  {
-    title: "FinTech Mobile App",
-    description: "A secure, user-friendly mobile app for personal finance management and investment tracking.",
-    tech: ["React Native", "AWS", "Firebase", "Swift"],
-    results: "100,000+ downloads in first month",
-    image: "portfolio3",
-  },
-  {
-    title: "Property Rental Platform",
-    description: "A marketplace connecting property owners with potential renters, featuring virtual tours and integrated messaging.",
-    tech: ["Vue.js", "Python Django", "MySQL", "AWS"],
-    results: "35% decrease in vacancy periods",
-    image: "portfolio4",
+    title: "iNoty",
+    description: "Simplify Payment Webhook Testing - The easiest way to test and debug Instant Payment Notifications from Stripe, PayPal, and Paddle - all in one place.",
+    tech: ["React", "Tailwind CSS", "Webhook API", "Payment Integration"],
+    results: "Streamlined payment debugging for developers",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    url: "https://inoty.lovable.app/",
   },
 ];
+
+// Animation variants for staggered children
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5
+    }
+  }
+};
 
 export default function PortfolioSection() {
   return (
     <section id="portfolio" className="section-padding">
       <div className="container-custom">
-        <div className="text-center mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="text-center mb-12"
+        >
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Portfolio</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A showcase of our recent projects and the results we've achieved for our clients.
+            Check out our latest projects and the solutions we've built for our clients.
           </p>
-        </div>
+        </motion.div>
         
-        <div className="grid md:grid-cols-2 gap-6">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid md:grid-cols-2 gap-6"
+        >
           {portfolioItems.map((item, index) => (
-            <Card key={index} className="overflow-hidden border border-border hover:border-primary/50 transition-all duration-300">
-              <div className="h-52 bg-muted flex items-center justify-center">
-                <p className="text-primary">Project Image</p>
-              </div>
-              <CardHeader>
-                <CardTitle>{item.title}</CardTitle>
-                <CardDescription className="mt-1">
-                  {item.tech.join(" • ")}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{item.description}</p>
-                <div className="mt-4 py-2 px-4 bg-muted/50 rounded-md">
-                  <p className="text-sm font-medium">Results: <span className="text-primary">{item.results}</span></p>
+            <motion.div key={index} variants={itemVariants}>
+              <Card className="overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 h-full hover-lift hover-glow">
+                <div className="h-52 bg-muted overflow-hidden">
+                  <img 
+                    src={item.image} 
+                    alt={item.title} 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  />
                 </div>
-              </CardContent>
-              <CardFooter>
-                <Button variant="outline" size="sm" className="w-full">View Case Study</Button>
-              </CardFooter>
-            </Card>
+                <CardHeader>
+                  <CardTitle>{item.title}</CardTitle>
+                  <CardDescription className="mt-1">
+                    {item.tech.join(" • ")}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{item.description}</p>
+                  <div className="mt-4 py-2 px-4 bg-muted/50 rounded-md">
+                    <p className="text-sm font-medium">Results: <span className="text-primary">{item.results}</span></p>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="w-full">
+                    <Button variant="outline" size="sm" className="w-full">Visit Project</Button>
+                  </a>
+                </CardFooter>
+              </Card>
+            </motion.div>
           ))}
-        </div>
-        
-        <div className="mt-10 text-center">
-          <Button>View All Projects</Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
