@@ -28,7 +28,7 @@ export default function AboutSection() {
             <div className="grid grid-cols-2 gap-4 mb-6">
               {[
                 { label: 'Global Clients', value: '25+ Countries' },
-                { label: 'Team Experience', value: '12+ Years Avg.' },
+                { label: 'Team Experience', value: '6+ Years Avg.' },
                 { label: 'Delivery Model', value: 'Agile & Iterative' },
                 { label: 'Support', value: '24/7 Available' }
               ].map((item, i) => (
