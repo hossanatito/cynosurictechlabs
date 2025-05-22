@@ -35,7 +35,7 @@ export default function ContactInfo() {
             <Phone className="h-5 w-5 text-primary mr-3 mt-0.5" />
             <div>
               <h3 className="font-medium">Phone</h3>
-              <p className="text-muted-foreground">Available upon request</p>
+              <p className="text-muted-foreground">+1 772 249 1629</p>
             </div>
           </div>
           
@@ -43,8 +43,7 @@ export default function ContactInfo() {
             <MapPin className="h-5 w-5 text-primary mr-3 mt-0.5" />
             <div>
               <h3 className="font-medium">Location</h3>
-              <p className="text-muted-foreground">Remote-First Company</p>
-              <p className="text-muted-foreground">Serving clients worldwide</p>
+              <p className="text-muted-foreground">Nigeria, Africa</p>
             </div>
           </div>
           
