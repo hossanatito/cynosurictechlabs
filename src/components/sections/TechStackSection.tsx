@@ -1,22 +1,52 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { 
+  Html, 
+  Css, 
+  Javascript, 
+  React as ReactIcon, 
+  Node, 
+  Php, 
+  Wordpress,
+  Mysql,
+  Postgresql,
+  N8N,
+  OpenAi,
+  HuggingFace
+} from "lucide-react";
 
 const techStacks = [
   {
     category: "Frontend",
-    technologies: ["React", "Angular", "Vue.js", "Next.js", "TypeScript", "Tailwind CSS", "SASS"]
+    technologies: [
+      { name: "HTML", icon: Html },
+      { name: "CSS", icon: Css },
+      { name: "JavaScript", icon: Javascript },
+      { name: "React", icon: ReactIcon }
+    ]
   },
   {
     category: "Backend",
-    technologies: ["Node.js", "Python", "Java", "C#", "Go", "PHP", "Ruby on Rails"]
+    technologies: [
+      { name: "Node.js", icon: Node },
+      { name: "PHP", icon: Php },
+      { name: "WordPress", icon: Wordpress }
+    ]
   },
   {
     category: "Database",
-    technologies: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Firebase", "DynamoDB"]
+    technologies: [
+      { name: "MySQL", icon: Mysql },
+      { name: "PostgreSQL", icon: Postgresql }
+    ]
   },
   {
     category: "AI & Automation",
-    technologies: ["n8n", "Zapier", "Make.com", "OpenAI", "LangChain", "Vector DBs", "Hugging Face"]
+    technologies: [
+      { name: "n8n", icon: N8N },
+      { name: "OpenAI", icon: OpenAi },
+      { name: "Hugging Face", icon: HuggingFace }
+    ]
   }
 ];
 
@@ -32,21 +62,23 @@ export default function TechStackSection() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {techStacks.map((stack, index) => (
             <Card key={index} className="bg-card border border-border hover:border-primary/50 transition-all duration-300">
               <CardHeader>
                 <CardTitle className="text-lg">{stack.category}</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {stack.technologies.map((tech, techIndex) => (
-                    <span 
-                      key={techIndex} 
-                      className="py-1 px-3 bg-muted rounded-full text-sm">
-                      {tech}
-                    </span>
-                  ))}
+                <div className="space-y-4">
+                  {stack.technologies.map((tech, techIndex) => {
+                    const IconComponent = tech.icon;
+                    return (
+                      <div key={techIndex} className="flex items-center gap-3">
+                        <IconComponent className="w-5 h-5 text-primary" />
+                        <span className="text-sm">{tech.name}</span>
+                      </div>
+                    );
+                  })}
                 </div>
               </CardContent>
             </Card>
