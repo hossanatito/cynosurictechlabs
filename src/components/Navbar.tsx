@@ -22,8 +22,8 @@ export default function Navbar() {
     <header className="fixed w-full z-50 bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="container-custom py-4">
         <nav className="flex items-center justify-between">
-          <Link to="/" className="text-xl md:text-2xl font-bold text-primary flex items-center gap-2 transition-transform hover:scale-105 duration-300">
-            <CircuitBoard className="h-6 w-6" />
+          <Link to="/" className="text-lg md:text-xl font-bold text-primary flex items-center gap-2 transition-transform hover:scale-105 duration-300">
+            <CircuitBoard className="h-5 w-5" />
             Cynosuric Tech Labs
           </Link>
           
