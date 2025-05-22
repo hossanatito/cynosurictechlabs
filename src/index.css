@@ -78,6 +78,11 @@
     @apply bg-background text-foreground;
     font-size: 15px;
   }
+  
+  /* Smooth scrolling for the whole page */
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer utilities {
@@ -89,10 +94,32 @@
     @apply container mx-auto px-4 md:px-8;
   }
   
+  /* Animation utilities */
   .animate-fade-in {
     animation: fadeIn 0.5s ease-out;
   }
   
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 0.5s ease-out;
+  }
+  
+  .animate-zoom-in {
+    animation: zoomIn 0.5s ease-out;
+  }
+  
+  .animate-bounce-in {
+    animation: bounceIn 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  
+  /* Animation keyframes */
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -104,7 +131,90 @@
     }
   }
   
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Interactive utilities */
   .hover-scale {
     @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.15)];
+  }
+  
+  /* Link animations */
+  .animated-link {
+    @apply relative inline-block;
+  }
+  
+  .animated-link::after {
+    @apply content-[''] absolute w-full h-0.5 bg-primary left-0 bottom-0 scale-x-0 origin-bottom-right transition-transform duration-300;
+  }
+  
+  .animated-link:hover::after {
+    @apply scale-x-100 origin-bottom-left;
   }
 }
