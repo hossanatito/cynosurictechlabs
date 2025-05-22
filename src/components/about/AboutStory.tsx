@@ -4,7 +4,7 @@ import { Users, Calendar, MapPin, Trophy } from "lucide-react";
 
 export default function AboutStory() {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24 bg-gradient-to-tr from-accent/5 to-background">
       <div className="container-custom max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
@@ -21,28 +21,29 @@ export default function AboutStory() {
               while delivering exceptional technical performance.
             </p>
             <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 p-3 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors">
                 <Users className="text-primary h-5 w-5" />
                 <span>Global Team</span>
               </div>
-              <div className="flex items-center gap-3">
-                <Calendar className="text-primary h-5 w-5" />
+              <div className="flex items-center gap-3 p-3 rounded-lg bg-secondary/5 hover:bg-secondary/10 transition-colors">
+                <Calendar className="text-secondary h-5 w-5" />
                 <span>Founded 2020</span>
               </div>
-              <div className="flex items-center gap-3">
-                <MapPin className="text-primary h-5 w-5" />
+              <div className="flex items-center gap-3 p-3 rounded-lg bg-accent/5 hover:bg-accent/10 transition-colors">
+                <MapPin className="text-accent h-5 w-5" />
                 <span>Remote-First</span>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 p-3 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors">
                 <Trophy className="text-primary h-5 w-5" />
                 <span>Award-Winning</span>
               </div>
             </div>
           </div>
           
-          <div className="bg-muted rounded-lg p-6 hover-scale animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <div className="aspect-square bg-card rounded-md flex items-center justify-center border border-border">
-              <p className="text-primary font-medium">Company Image</p>
+          <div className="bg-gradient-to-br from-card/80 to-card rounded-lg p-6 hover-scale animate-fade-in shadow-lg border border-border/50" style={{ animationDelay: "0.4s" }}>
+            <div className="aspect-square bg-card/80 rounded-md flex items-center justify-center border border-border relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <p className="text-primary font-medium relative z-10">Company Image</p>
             </div>
           </div>
         </div>

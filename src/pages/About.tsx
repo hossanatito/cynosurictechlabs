@@ -4,10 +4,9 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import AboutHero from "@/components/about/AboutHero";
 import AboutStory from "@/components/about/AboutStory";
-import AboutTimeline from "@/components/about/AboutTimeline";
-import AboutTeam from "@/components/about/AboutTeam";
 import AboutValues from "@/components/about/AboutValues";
 import AboutCTA from "@/components/about/AboutCTA";
+import AboutMission from "@/components/about/AboutMission";
 
 export default function About() {
   return (
@@ -16,8 +15,7 @@ export default function About() {
       <main>
         <AboutHero />
         <AboutStory />
-        <AboutTimeline />
-        <AboutTeam />
+        <AboutMission />
         <AboutValues />
         <AboutCTA />
       </main>
