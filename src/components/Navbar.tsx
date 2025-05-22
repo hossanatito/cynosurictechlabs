@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Axis3D } from 'lucide-react';
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -21,7 +21,8 @@ export default function Navbar() {
     <header className="fixed w-full z-50 bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="container-custom py-4">
         <nav className="flex items-center justify-between">
-          <a href="#hero" className="text-xl md:text-2xl font-bold text-primary">
+          <a href="#hero" className="text-xl md:text-2xl font-bold text-primary flex items-center gap-2">
+            <Axis3D className="h-6 w-6" />
             Cynosuric Tech Labs
           </a>
           

@@ -5,67 +5,67 @@
 
 @layer base {
   :root {
-    /* Dark theme with electric blue accents */
-    --background: 220 30% 10%;
+    /* Dark theme with teal and purple accents */
+    --background: 230 25% 8%;
     --foreground: 210 20% 98%;
 
-    --card: 220 30% 13%;
+    --card: 230 25% 12%;
     --card-foreground: 210 20% 98%;
 
-    --popover: 220 30% 13%;
+    --popover: 230 25% 12%;
     --popover-foreground: 210 20% 98%;
 
-    --primary: 196 80% 60%;
-    --primary-foreground: 220 30% 10%;
+    --primary: 174 80% 45%;
+    --primary-foreground: 230 25% 8%;
 
-    --secondary: 260 60% 60%;
+    --secondary: 288 70% 60%;
     --secondary-foreground: 210 20% 98%;
 
-    --muted: 220 30% 16%;
+    --muted: 230 25% 15%;
     --muted-foreground: 210 20% 80%;
 
-    --accent: 196 80% 60%;
+    --accent: 174 80% 45%;
     --accent-foreground: 210 20% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 20% 98%;
 
-    --border: 220 30% 20%;
-    --input: 220 30% 20%;
-    --ring: 196 80% 60%;
+    --border: 230 25% 18%;
+    --input: 230 25% 18%;
+    --ring: 174 80% 45%;
 
     --radius: 0.5rem;
   }
 
   .dark {
     /* Keep dark theme values since our base is already dark */
-    --background: 220 30% 10%;
+    --background: 230 25% 8%;
     --foreground: 210 20% 98%;
 
-    --card: 220 30% 13%;
+    --card: 230 25% 12%;
     --card-foreground: 210 20% 98%;
 
-    --popover: 220 30% 13%;
+    --popover: 230 25% 12%;
     --popover-foreground: 210 20% 98%;
 
-    --primary: 196 80% 60%;
-    --primary-foreground: 220 30% 10%;
+    --primary: 174 80% 45%;
+    --primary-foreground: 230 25% 8%;
 
-    --secondary: 260 60% 60%;
+    --secondary: 288 70% 60%;
     --secondary-foreground: 210 20% 98%;
 
-    --muted: 220 30% 16%;
+    --muted: 230 25% 15%;
     --muted-foreground: 210 20% 80%;
 
-    --accent: 196 80% 60%;
+    --accent: 174 80% 45%;
     --accent-foreground: 210 20% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 20% 98%;
 
-    --border: 220 30% 20%;
-    --input: 220 30% 20%;
-    --ring: 196 80% 60%;
+    --border: 230 25% 18%;
+    --input: 230 25% 18%;
+    --ring: 174 80% 45%;
   }
 
   /* Add Space Grotesk font family */
