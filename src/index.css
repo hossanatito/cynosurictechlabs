@@ -5,67 +5,67 @@
 
 @layer base {
   :root {
-    /* Dark theme with teal and purple accents */
-    --background: 230 25% 8%;
-    --foreground: 210 20% 98%;
+    /* Black and white tech theme */
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
 
-    --card: 230 25% 12%;
-    --card-foreground: 210 20% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 230 25% 12%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 174 80% 45%;
-    --primary-foreground: 230 25% 8%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 7%;
 
-    --secondary: 288 70% 60%;
-    --secondary-foreground: 210 20% 98%;
+    --secondary: 0 0% 75%;
+    --secondary-foreground: 0 0% 7%;
 
-    --muted: 230 25% 15%;
-    --muted-foreground: 210 20% 80%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 80%;
 
-    --accent: 174 80% 45%;
-    --accent-foreground: 210 20% 98%;
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 7%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 230 25% 18%;
-    --input: 230 25% 18%;
-    --ring: 174 80% 45%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 80%;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    /* Keep dark theme values since our base is already dark */
-    --background: 230 25% 8%;
-    --foreground: 210 20% 98%;
+    /* Keep black and white theme values since our base is already dark */
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
 
-    --card: 230 25% 12%;
-    --card-foreground: 210 20% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 230 25% 12%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 174 80% 45%;
-    --primary-foreground: 230 25% 8%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 7%;
 
-    --secondary: 288 70% 60%;
-    --secondary-foreground: 210 20% 98%;
+    --secondary: 0 0% 75%;
+    --secondary-foreground: 0 0% 7%;
 
-    --muted: 230 25% 15%;
-    --muted-foreground: 210 20% 80%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 80%;
 
-    --accent: 174 80% 45%;
-    --accent-foreground: 210 20% 98%;
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 7%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 230 25% 18%;
-    --input: 230 25% 18%;
-    --ring: 174 80% 45%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 80%;
   }
 
   /* Add Space Grotesk font family */
