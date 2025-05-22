@@ -1,73 +1,63 @@
-# Welcome to your Lovable project
 
-## Project info
+# Cynosuric Tech Labs
 
-**URL**: https://lovable.dev/projects/23e993a0-5ce0-40bc-835e-bda1c4b2a8ef
+## Modern Web & Software Development Agency
 
-## How can I edit this code?
+A professional website for a fictional tech agency specializing in web development, custom software solutions, UI/UX design, mobile app development, e-commerce, and AI automation.
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Responsive Design**: Fully responsive UI that works on all devices
+- **Modern UI**: Clean, professional interface with smooth animations
+- **Contact Forms**: Integrated with FormSubmit for email delivery
+- **Portfolio Showcase**: Highlights of past client work
+- **Services Showcase**: Detailed information about offered services
+- **Testimonials**: Client feedback and success stories
+- **Team Section**: Introduction to company leadership
+- **About Section**: Company story, values, and mission
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/23e993a0-5ce0-40bc-835e-bda1c4b2a8ef) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Tech Stack
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **React**: Frontend library for building user interfaces
+- **TypeScript**: Type-safe JavaScript
+- **Vite**: Fast build tool and development server
+- **Tailwind CSS**: Utility-first CSS framework
+- **shadcn/ui**: High-quality UI components
+- **React Router**: For navigation between pages
+- **FormSubmit**: Free form submission service
 
-## How can I deploy this project?
+## Development
 
-Simply open [Lovable](https://lovable.dev/projects/23e993a0-5ce0-40bc-835e-bda1c4b2a8ef) and click on Share -> Publish.
+To run this project locally:
 
-## Can I connect a custom domain to my Lovable project?
+```sh
+# Clone the repository
+git clone <YOUR_GIT_URL>
 
-Yes, you can!
+# Navigate to the project directory
+cd <YOUR_PROJECT_NAME>
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+# Install dependencies
+npm install
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+# Start the development server
+npm run dev
+```
+
+## Contact Form Setup
+
+The contact forms are configured to use FormSubmit service:
+
+1. When you first submit the form, you'll receive a confirmation email from FormSubmit
+2. Click the confirmation link in that email to activate your form endpoint
+3. All subsequent form submissions will be sent to support@cynosurictechlabs.net
+
+## Deployment
+
+This project can be deployed through [Lovable](https://lovable.dev/projects/23e993a0-5ce0-40bc-835e-bda1c4b2a8ef) by clicking on Share -> Publish.
+
+## License
+
+This project is for demonstration purposes only.
