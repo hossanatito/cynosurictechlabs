@@ -1,4 +1,6 @@
+
 import { Button } from "@/components/ui/button";
+
 export default function AboutSection() {
   return <section id="about" className="section-padding bg-muted/30">
       <div className="container-custom">
@@ -42,9 +44,22 @@ export default function AboutSection() {
             <Button className="hover-scale">Learn More About Us</Button>
           </div>
           
-          <div className="order-1 md:order-2 bg-card rounded-lg p-6 border border-border">
-            <div className="aspect-video bg-muted rounded-md flex items-center justify-center">
-              <p className="text-primary font-medium">Company Video</p>
+          <div className="order-1 md:order-2 bg-gradient-to-br from-card/80 to-card rounded-lg p-8 border border-border hover-glow hover-scale transition-all">
+            <div className="flex flex-col items-center justify-center space-y-4">
+              <div className="w-24 h-24 relative mb-4">
+                <div className="absolute inset-0 bg-primary/10 rounded-full animate-pulse"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" className="h-16 w-16 text-primary" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold tracking-tight">Cynosuric Tech Labs</h3>
+              <p className="text-muted-foreground text-sm">Est. 2020</p>
+              <div className="h-0.5 w-16 bg-primary/50 rounded-full"></div>
+              <p className="text-xs text-center text-muted-foreground">Bridging technology and elegant user experiences</p>
             </div>
           </div>
         </div>
