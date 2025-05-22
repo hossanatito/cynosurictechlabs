@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Users, Calendar, MapPin, Trophy } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export default function AboutStory() {
   return (
@@ -41,10 +42,14 @@ export default function AboutStory() {
           </div>
           
           <div className="bg-gradient-to-br from-card/80 to-card rounded-lg p-6 hover-scale animate-fade-in shadow-lg border border-border/50" style={{ animationDelay: "0.4s" }}>
-            <div className="aspect-square bg-card/80 rounded-md flex items-center justify-center border border-border relative overflow-hidden group">
+            <AspectRatio ratio={1/1} className="overflow-hidden rounded-md">
+              <img 
+                src="https://images.unsplash.com/photo-1486718448742-163732cd1544?auto=format&fit=crop&q=80&w=800&ixlib=rb-4.0.3" 
+                alt="Abstract architectural design" 
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+              />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <p className="text-primary font-medium relative z-10">Company Image</p>
-            </div>
+            </AspectRatio>
           </div>
         </div>
       </div>
