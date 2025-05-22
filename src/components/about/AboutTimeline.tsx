@@ -42,25 +42,34 @@ export default function AboutTimeline() {
         </div>
         
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-border"></div>
+          {/* Timeline line - Hidden on mobile, visible on larger screens */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-border"></div>
           
           {/* Timeline items */}
           {timelineItems.map((item, index) => (
             <div 
               key={index} 
-              className={`relative flex items-center mb-12 animate-fade-in`} 
+              className="relative mb-12 animate-fade-in" 
               style={{ animationDelay: `${0.2 * (index + 1)}s` }}
             >
-              <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'hidden'}`}>
-                <div className="mb-1 font-bold text-xl">{item.year}</div>
-                <h3 className="text-lg font-semibold">{item.title}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
+              {/* Desktop layout - alternating sides */}
+              <div className="hidden md:flex items-center">
+                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'order-2 pl-8'}`}>
+                  <div className="mb-1 font-bold text-xl">{item.year}</div>
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                  <p className="text-muted-foreground">{item.description}</p>
+                </div>
+                
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary z-10"></div>
+                
+                {index % 2 === 1 && (
+                  <div className="w-1/2 order-1"></div>
+                )}
               </div>
               
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary z-10"></div>
-              
-              <div className={`w-1/2 ${index % 2 === 1 ? 'pl-8' : 'hidden'}`}>
+              {/* Mobile layout - all items stacked vertically */}
+              <div className="md:hidden flex flex-col relative pl-8 border-l border-border">
+                <div className="absolute left-0 top-0 w-3 h-3 -ml-1.5 rounded-full bg-primary"></div>
                 <div className="mb-1 font-bold text-xl">{item.year}</div>
                 <h3 className="text-lg font-semibold">{item.title}</h3>
                 <p className="text-muted-foreground">{item.description}</p>
