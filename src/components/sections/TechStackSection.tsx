@@ -21,6 +21,10 @@ const techStacks = [
   {
     category: "DevOps & Cloud",
     technologies: ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes", "GitHub Actions", "Jenkins"]
+  },
+  {
+    category: "AI & Automation",
+    technologies: ["n8n", "Zapier", "Make.com", "OpenAI", "LangChain", "Vector DBs", "Hugging Face"]
   }
 ];
 

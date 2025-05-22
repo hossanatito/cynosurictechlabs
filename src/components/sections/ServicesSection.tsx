@@ -1,5 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Brain, BrainCircuit, Code, Database, Laptop, PaintBucket, ShoppingCart, Smartphone } from "lucide-react";
 
 const services = [
   {
@@ -34,9 +35,9 @@ const services = [
   },
   {
     title: "Custom AI Automations",
-    description: "Streamlining development operations with continuous integration/deployment and cloud infrastructure.",
-    icon: "devops-cloud-engineering",
-    subheading: "AI Models, ML Pipelines, GPT Integration"
+    description: "Leverage AI to automate workflows and processes with no-code solutions that save time and reduce errors.",
+    icon: "ai-automation",
+    subheading: "n8n, Zapier, GPT Integration"
   }
 ];
 
@@ -57,11 +58,19 @@ export default function ServicesSection() {
             <Card key={index} className="border border-border bg-card hover:border-primary/50 transition-all duration-300">
               <CardHeader>
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <span className="text-primary text-2xl">{service.icon === "web-development" ? "🌐" : 
-                                                           service.icon === "custom-software-development" ? "💻" : 
-                                                           service.icon === "ui-ux-design" ? "🎨" : 
-                                                           service.icon === "mobile-app-development" ? "📱" : 
-                                                           service.icon === "e-commerce-development" ? "🛒" : "☁️"}</span>
+                  {service.icon === "web-development" ? (
+                    <Code className="h-6 w-6 text-primary" />
+                  ) : service.icon === "custom-software-development" ? (
+                    <Laptop className="h-6 w-6 text-primary" />
+                  ) : service.icon === "ui-ux-design" ? (
+                    <PaintBucket className="h-6 w-6 text-primary" />
+                  ) : service.icon === "mobile-app-development" ? (
+                    <Smartphone className="h-6 w-6 text-primary" />
+                  ) : service.icon === "e-commerce-development" ? (
+                    <ShoppingCart className="h-6 w-6 text-primary" />
+                  ) : (
+                    <BrainCircuit className="h-6 w-6 text-primary" />
+                  )}
                 </div>
                 <CardTitle className="text-xl">{service.title}</CardTitle>
                 <p className="text-xs uppercase tracking-wider text-primary/80 mt-1">{service.subheading}</p>
