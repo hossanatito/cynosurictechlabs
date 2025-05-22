@@ -9,7 +9,7 @@ const portfolioItems = [
     description: "A powerful WordPress vulnerability scanner that helps you discover hidden WordPress contents and identify security issues in your installation.",
     tech: ["React", "Tailwind CSS", "WordPress API", "Security"],
     results: "Improved security for hundreds of WordPress sites",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+    image: "https://placehold.co/600x400/3b82f6/ffffff?text=WpScanrr",
     url: "https://wpscanrr.lovable.app/",
   },
   {
@@ -17,7 +17,7 @@ const portfolioItems = [
     description: "Simplify Payment Webhook Testing - The easiest way to test and debug Instant Payment Notifications from Stripe, PayPal, and Paddle - all in one place.",
     tech: ["React", "Tailwind CSS", "Webhook API", "Payment Integration"],
     results: "Streamlined payment debugging for developers",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    image: "https://placehold.co/600x400/6366f1/ffffff?text=iNoty",
     url: "https://inoty.lovable.app/",
   },
 ];
