@@ -12,7 +12,7 @@ export default function About() {
       <main>
         {/* Hero Section */}
         <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-muted/30">
-          <div className="container-custom">
+          <div className="container-custom max-w-5xl mx-auto">
             <div className="max-w-3xl mx-auto text-center animate-fade-in">
               <h1 className="text-3xl md:text-5xl font-bold mb-6">About Cynosuric Tech Labs</h1>
               <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
@@ -26,7 +26,7 @@ export default function About() {
 
         {/* Story Section */}
         <section className="py-16 md:py-24">
-          <div className="container-custom">
+          <div className="container-custom max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
                 <h2 className="text-2xl md:text-3xl font-bold mb-6">Our Story</h2>
@@ -72,7 +72,7 @@ export default function About() {
 
         {/* Timeline Section */}
         <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container-custom">
+          <div className="container-custom max-w-5xl mx-auto">
             <div className="text-center mb-16 animate-fade-in">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Journey</h2>
               <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
@@ -139,7 +139,7 @@ export default function About() {
 
         {/* Team Section */}
         <section className="py-16 md:py-24">
-          <div className="container-custom">
+          <div className="container-custom max-w-5xl mx-auto">
             <div className="text-center mb-16 animate-fade-in">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Team</h2>
               <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
@@ -198,7 +198,7 @@ export default function About() {
 
         {/* Values Section */}
         <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container-custom">
+          <div className="container-custom max-w-5xl mx-auto">
             <div className="text-center mb-16 animate-fade-in">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Core Values</h2>
               <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
@@ -249,7 +249,7 @@ export default function About() {
 
         {/* CTA Section */}
         <section className="py-16 md:py-24 bg-card">
-          <div className="container-custom text-center animate-fade-in">
+          <div className="container-custom max-w-5xl mx-auto text-center animate-fade-in">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Ready to Work With Us?</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
               Let's discuss how our expertise can help transform your digital presence and drive your business forward.

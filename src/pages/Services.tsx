@@ -13,7 +13,7 @@ export default function Services() {
       <main>
         {/* Hero Section */}
         <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-muted/30">
-          <div className="container-custom">
+          <div className="container-custom max-w-5xl mx-auto">
             <div className="max-w-3xl mx-auto text-center animate-fade-in">
               <h1 className="text-3xl md:text-5xl font-bold mb-6">Our Services</h1>
               <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
@@ -27,7 +27,7 @@ export default function Services() {
 
         {/* Main Services Section */}
         <section className="py-16 md:py-24">
-          <div className="container-custom">
+          <div className="container-custom max-w-5xl mx-auto">
             <Tabs defaultValue="web" className="w-full animate-fade-in">
               <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mb-8">
                 <TabsTrigger value="web" className="text-sm">Web Development</TabsTrigger>
@@ -248,7 +248,7 @@ export default function Services() {
 
         {/* Service Packages */}
         <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container-custom">
+          <div className="container-custom max-w-5xl mx-auto">
             <div className="text-center mb-16 animate-fade-in">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Service Packages</h2>
               <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
@@ -340,7 +340,7 @@ export default function Services() {
 
         {/* Process Section */}
         <section className="py-16 md:py-24">
-          <div className="container-custom">
+          <div className="container-custom max-w-5xl mx-auto">
             <div className="text-center mb-16 animate-fade-in">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Development Process</h2>
               <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
@@ -412,7 +412,7 @@ export default function Services() {
 
         {/* FAQ Section */}
         <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container-custom">
+          <div className="container-custom max-w-5xl mx-auto">
             <div className="text-center mb-16 animate-fade-in">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Frequently Asked Questions</h2>
               <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
@@ -466,7 +466,7 @@ export default function Services() {
 
         {/* CTA Section */}
         <section className="py-16 md:py-24 bg-card">
-          <div className="container-custom text-center animate-fade-in">
+          <div className="container-custom max-w-5xl mx-auto text-center animate-fade-in">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Ready to Start Your Project?</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
               Contact us today for a free consultation and let's discuss how we can help bring your vision to life.
