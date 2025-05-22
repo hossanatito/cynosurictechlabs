@@ -34,7 +34,7 @@ To run this project locally:
 
 ```sh
 # Clone the repository
-git clone <YOUR_GIT_URL>
+git clone https://github.com/hossanatito/cynosurictechlabs
 
 # Navigate to the project directory
 cd <YOUR_PROJECT_NAME>
@@ -54,10 +54,4 @@ The contact forms are configured to use FormSubmit service:
 2. Click the confirmation link in that email to activate your form endpoint
 3. All subsequent form submissions will be sent to support@cynosurictechlabs.net
 
-## Deployment
-
-This project can be deployed through [Lovable](https://lovable.dev/projects/23e993a0-5ce0-40bc-835e-bda1c4b2a8ef) by clicking on Share -> Publish.
-
-## License
-
-This project is for demonstration purposes only.
+Thanks
