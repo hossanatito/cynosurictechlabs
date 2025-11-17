@@ -5,22 +5,6 @@ import { motion } from "framer-motion";
 
 const portfolioItems = [
   {
-    title: "WpScanrr",
-    description: "A powerful WordPress vulnerability scanner that helps you discover hidden WordPress contents and identify security issues in your installation.",
-    tech: ["React", "Tailwind CSS", "WordPress API", "Security"],
-    results: "Improved security for hundreds of WordPress sites",
-    image: "https://placehold.co/600x400/3b82f6/ffffff?text=WpScanrr",
-    url: "https://wpscanrr.lovable.app/",
-  },
-  {
-    title: "iNoty",
-    description: "Simplify Payment Webhook Testing - The easiest way to test and debug Instant Payment Notifications from Stripe, PayPal, and Paddle - all in one place.",
-    tech: ["React", "Tailwind CSS", "Webhook API", "Payment Integration"],
-    results: "Streamlined payment debugging for developers",
-    image: "https://placehold.co/600x400/6366f1/ffffff?text=iNoty",
-    url: "https://inoty.lovable.app/",
-  },
-  {
     title: "Stelar",
     description: "An AI-powered storytelling platform that brings imagination to life. Create personalized, illustrated storybooks for children with the help of artificial intelligence.",
     tech: ["React", "AI/ML", "Tailwind CSS", "Creative Tools"],
@@ -35,6 +19,22 @@ const portfolioItems = [
     results: "Helping users save money on software deals",
     image: "https://placehold.co/600x400/f59e0b/ffffff?text=SumoCheck",
     url: "https://sumocheck.appsdyno.com/",
+  },
+  {
+    title: "WpScanrr",
+    description: "A powerful WordPress vulnerability scanner that helps you discover hidden WordPress contents and identify security issues in your installation.",
+    tech: ["React", "Tailwind CSS", "WordPress API", "Security"],
+    results: "Improved security for hundreds of WordPress sites",
+    image: "https://placehold.co/600x400/3b82f6/ffffff?text=WpScanrr",
+    url: "https://wpscanrr.lovable.app/",
+  },
+  {
+    title: "iNoty",
+    description: "Simplify Payment Webhook Testing - The easiest way to test and debug Instant Payment Notifications from Stripe, PayPal, and Paddle - all in one place.",
+    tech: ["React", "Tailwind CSS", "Webhook API", "Payment Integration"],
+    results: "Streamlined payment debugging for developers",
+    image: "https://placehold.co/600x400/6366f1/ffffff?text=iNoty",
+    url: "https://inoty.lovable.app/",
   },
   {
     title: "SearchPad",
