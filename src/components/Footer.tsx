@@ -16,32 +16,32 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-card mt-16">
+    <footer className="bg-card mt-16 border-t border-border/50">
       <div className="container-custom pt-12 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary">Cynosuric Tech Labs</h3>
-            <p className="text-muted-foreground text-sm max-w-xs">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
+          <div className="sm:col-span-2 md:col-span-1">
+            <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4 text-primary">Cynosuric Tech Labs</h3>
+            <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
               We craft elegant digital experiences with scalable, secure, and performance-driven solutions.
             </p>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Navigation</h3>
+            <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Navigation</h3>
             <ul className="space-y-2">
               {navigation.main.map((item) => (
                 <li key={item.name}>
                   {item.isSection ? (
                     <a
                       href={item.href}
-                      className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                      className="text-muted-foreground text-sm hover:text-primary transition-colors inline-block relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
                     >
                       {item.name}
                     </a>
                   ) : (
                     <Link
                       to={item.href}
-                      className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                      className="text-muted-foreground text-sm hover:text-primary transition-colors inline-block relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
                     >
                       {item.name}
                     </Link>
@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
+            <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Contact</h3>
             <p className="text-muted-foreground text-sm mb-2">
               <span className="text-foreground">Email:</span>{" "}
               <a href="mailto:support@cynosurictechlabs.net" className="hover:text-primary transition-colors">

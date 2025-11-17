@@ -43,21 +43,21 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="section-padding">
+    <section id="services" className="py-12 md:py-20 lg:py-24">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Services</h2>
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Our Services</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             We provide comprehensive technical solutions to help businesses thrive in the digital landscape.
           </p>
         </div>
         
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {services.map((service, index) => (
-            <Card key={index} className="border border-border bg-card hover:border-primary/50 transition-all duration-300">
+            <Card key={index} className="h-full border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-2 transition-all duration-300 group">
               <CardHeader>
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                   {service.icon === "web-development" ? (
                     <Code className="h-6 w-6 text-primary" />
                   ) : service.icon === "custom-software-development" ? (
@@ -72,11 +72,11 @@ export default function ServicesSection() {
                     <BrainCircuit className="h-6 w-6 text-primary" />
                   )}
                 </div>
-                <CardTitle className="text-xl">{service.title}</CardTitle>
+                <CardTitle className="text-lg md:text-xl">{service.title}</CardTitle>
                 <p className="text-xs uppercase tracking-wider text-primary/80 mt-1">{service.subheading}</p>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-muted-foreground">
+                <CardDescription className="text-muted-foreground text-sm leading-relaxed">
                   {service.description}
                 </CardDescription>
               </CardContent>
