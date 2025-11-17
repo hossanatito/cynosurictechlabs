@@ -3,15 +3,13 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Menu, X, CircuitBoard } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from "@/assets/logo.png";
 
 const navItems = [
   { name: "Home", href: "/", isSection: false },
   { name: "About", href: "/about", isSection: false },
   { name: "Services", href: "/services", isSection: false },
-  { name: "Portfolio", href: "/#portfolio", isSection: true },
-  { name: "Tech Stack", href: "/#tech-stack", isSection: true },
-  { name: "Testimonials", href: "/#testimonials", isSection: true },
   { name: "Contact", href: "/contact", isSection: false },
 ];
 
@@ -23,7 +21,7 @@ export default function Navbar() {
       <div className="container-custom py-4">
         <nav className="flex items-center justify-between">
           <Link to="/" className="text-lg md:text-xl font-bold text-primary flex items-center gap-2 transition-transform hover:scale-105 duration-300">
-            <CircuitBoard className="h-5 w-5" />
+            <img src={logo} alt="Cynosuric Tech Labs Logo" className="h-8 w-8 object-contain bg-white rounded-md p-0.5" />
             Cynosuric Tech Labs
           </Link>
           
