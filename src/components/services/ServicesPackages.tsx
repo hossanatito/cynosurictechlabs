@@ -13,7 +13,6 @@ export default function ServicesPackages() {
       title: "Starter Package",
       icon: Zap,
       gradient: "from-primary/20 to-primary/5",
-      starting: "$2,999",
       description: "Perfect for small businesses looking to establish their digital presence.",
       features: [
         "Custom Website Design",
@@ -28,7 +27,6 @@ export default function ServicesPackages() {
       title: "Professional Package",
       icon: Rocket,
       gradient: "from-primary/30 to-primary/10",
-      starting: "$7,999",
       description: "Comprehensive solution for established businesses looking to expand.",
       features: [
         "Advanced Website/App Design",
@@ -44,7 +42,6 @@ export default function ServicesPackages() {
       title: "Enterprise Package",
       icon: Crown,
       gradient: "from-primary/25 to-primary/8",
-      starting: "Custom",
       description: "Tailored for organizations with complex requirements and large-scale projects.",
       features: [
         "Custom Software Development",
@@ -118,9 +115,6 @@ export default function ServicesPackages() {
                     <Icon className="h-7 w-7 text-primary" />
                   </div>
                   <CardTitle className="text-xl mb-2">{pkg.title}</CardTitle>
-                  <div className="text-muted-foreground text-sm mb-4">
-                    Starting from <span className="text-xl font-bold text-primary">{pkg.starting}</span>
-                  </div>
                   <CardDescription className="text-base">{pkg.description}</CardDescription>
                 </CardHeader>
 
