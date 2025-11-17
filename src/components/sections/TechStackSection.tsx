@@ -13,7 +13,9 @@ import {
   Table2,
   Workflow,
   BrainCircuit,
-  MessageSquareCode
+  MessageSquareCode,
+  Sparkles,
+  Zap
 } from "lucide-react";
 
 const techStacks = [
@@ -50,7 +52,9 @@ const techStacks = [
     technologies: [
       { name: "n8n", icon: Workflow },
       { name: "OpenAI", icon: BrainCircuit },
-      { name: "Hugging Face", icon: MessageSquareCode }
+      { name: "Gemini", icon: Sparkles },
+      { name: "Hugging Face", icon: MessageSquareCode },
+      { name: "Zapier", icon: Zap }
     ]
   }
 ];
