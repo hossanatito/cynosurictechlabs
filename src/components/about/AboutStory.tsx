@@ -45,8 +45,11 @@ export default function AboutStory() {
             <AspectRatio ratio={1/1} className="overflow-hidden rounded-md">
               <img 
                 src="https://images.unsplash.com/photo-1486718448742-163732cd1544?auto=format&fit=crop&q=80&w=800&ixlib=rb-4.0.3" 
-                alt="Abstract architectural design" 
+                alt="Modern office team collaboration - Cynosuric Tech Labs company culture and work environment" 
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                loading="lazy"
+                width="800"
+                height="800"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </AspectRatio>

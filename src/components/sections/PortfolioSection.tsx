@@ -99,9 +99,11 @@ export default function PortfolioSection() {
                 <div className="relative aspect-video overflow-hidden group">
                   <img
                     src={item.image}
-                    alt={item.title}
+                    alt={`${item.title} - ${item.description.slice(0, 100)} - Portfolio project built with ${item.tech.slice(0, 3).join(', ')}`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
+                    width="600"
+                    height="400"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
                 </div>

@@ -16,18 +16,18 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-card mt-16 border-t border-border/50">
+    <footer className="bg-card mt-16 border-t border-border/50" role="contentinfo">
       <div className="container-custom pt-12 pb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
           <div className="sm:col-span-2 md:col-span-1">
             <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4 text-primary">Cynosuric Tech Labs</h3>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
-              We craft elegant digital experiences with scalable, secure, and performance-driven solutions.
+              We craft elegant digital experiences with scalable, secure, and performance-driven solutions that transform businesses.
             </p>
           </div>
           
-          <div>
-            <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Navigation</h3>
+          <nav aria-label="Footer navigation">
+            <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {navigation.main.map((item) => (
                 <li key={item.name}>
@@ -49,28 +49,28 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
           
-          <div>
-            <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Contact</h3>
+          <address className="not-italic">
+            <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Contact Us</h3>
             <p className="text-muted-foreground text-sm mb-2">
-              <span className="text-foreground">Email:</span>{" "}
+              <span className="text-foreground font-medium">Email:</span>{" "}
               <a href="mailto:support@cynosurictechlabs.net" className="hover:text-primary transition-colors">
                 support@cynosurictechlabs.net
               </a>
             </p>
-            <p className="text-muted-foreground text-sm">
-              <span className="text-foreground">Location:</span> Remote-First Company
+            <p className="text-muted-foreground text-sm mb-3">
+              <span className="text-foreground font-medium">Location:</span> Remote-First Company
             </p>
-            <Link to="/contact" className="inline-block mt-3 text-primary hover:underline text-sm">
-              Get in touch →
+            <Link to="/contact" className="inline-block text-primary hover:underline text-sm font-medium">
+              Get a Free Consultation →
             </Link>
-          </div>
+          </address>
         </div>
         
         <div className="mt-12 pt-6 border-t border-border">
           <p className="text-center text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Cynosuric Tech Labs. All rights reserved.
+            &copy; {new Date().getFullYear()} Cynosuric Tech Labs. All rights reserved. | 6+ Years of Excellence | 250+ Projects Delivered
           </p>
         </div>
       </div>
