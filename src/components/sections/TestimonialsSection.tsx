@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Star, Award, ThumbsUp } from "lucide-react";
+import { Star, Award, ThumbsUp, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const testimonials = [
@@ -79,14 +79,38 @@ const testimonials = [
   },
 ];
 
+const iconGradients: Record<string, string> = {
+  "bg-blue-500": "from-blue-500 to-blue-600 shadow-blue-500/50",
+  "bg-purple-500": "from-purple-500 to-purple-600 shadow-purple-500/50",
+  "bg-green-500": "from-green-500 to-green-600 shadow-green-500/50",
+  "bg-amber-500": "from-amber-500 to-amber-600 shadow-amber-500/50",
+  "bg-rose-500": "from-rose-500 to-rose-600 shadow-rose-500/50",
+  "bg-cyan-500": "from-cyan-500 to-cyan-600 shadow-cyan-500/50",
+  "bg-indigo-500": "from-indigo-500 to-indigo-600 shadow-indigo-500/50",
+  "bg-emerald-500": "from-emerald-500 to-emerald-600 shadow-emerald-500/50",
+};
+
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-12 md:py-20 lg:py-24 bg-gradient-to-b from-background to-muted/30">
-      <div className="container-custom">
-        <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">What Our Clients Say</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+    <section id="testimonials" className="relative py-12 md:py-20 lg:py-24 bg-gradient-to-b from-background via-muted/20 to-background overflow-hidden">
+      {/* Dot grid background */}
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary) / 0.15) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}
+      />
+      
+      {/* Gradient orbs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+      
+      <div className="container-custom relative z-10">
+        <div className="text-center mb-8 md:mb-12 lg:mb-16">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 tracking-tight">What Our Clients Say</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mx-auto mb-6 rounded-full"></div>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
             Don't just take our word for it. Here's what our clients have to say about working with us.
           </p>
         </div>
@@ -97,19 +121,42 @@ export default function TestimonialsSection() {
               const IconComponent = testimonial.icon;
               return (
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                  <Card className="border-border/50 h-full hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 bg-card/50 backdrop-blur-sm">
-                    <CardHeader>
-                      <div className={cn("w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-3 shadow-lg", testimonial.color)}>
-                        <IconComponent className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                  <Card className={cn(
+                    "group relative overflow-hidden h-full rounded-2xl",
+                    "bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-lg",
+                    "border-2 border-transparent hover:border-primary/30",
+                    "hover:shadow-2xl hover:shadow-primary/10 hover:scale-[1.02]",
+                    "transition-all duration-500"
+                  )}>
+                    <CardHeader className="pb-4">
+                      <div className={cn(
+                        "relative w-14 h-14 md:w-16 md:h-16 rounded-full",
+                        "flex items-center justify-center mb-4",
+                        "bg-gradient-to-br shadow-2xl",
+                        "group-hover:scale-110 transition-transform duration-300",
+                        iconGradients[testimonial.color]
+                      )}>
+                        <IconComponent className="w-6 h-6 md:w-7 md:h-7 text-white" />
                       </div>
-                      <CardDescription className="text-foreground leading-relaxed italic text-sm md:text-base">
-                        "{testimonial.quote}"
+                      <CardDescription className={cn(
+                        "relative text-foreground/90 leading-relaxed",
+                        "text-base md:text-lg pl-6",
+                        "before:content-['\\201C'] before:text-6xl before:text-primary/20",
+                        "before:absolute before:-left-2 before:-top-6",
+                        "before:font-serif"
+                      )}>
+                        {testimonial.quote}
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <p className="font-medium text-sm md:text-base">{testimonial.name}</p>
-                      <p className="text-xs md:text-sm text-muted-foreground">{testimonial.position}</p>
-                      <p className="text-xs md:text-sm text-primary font-medium mt-2">{testimonial.result}</p>
+                      <p className="font-semibold text-sm md:text-base">{testimonial.name}</p>
+                      <p className="text-xs md:text-sm text-muted-foreground mt-0.5">{testimonial.position}</p>
+                      <div className="inline-flex items-center gap-2 mt-3 px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20">
+                        <TrendingUp className="w-3 h-3 text-primary" />
+                        <span className="text-xs md:text-sm text-primary font-semibold">
+                          {testimonial.result}
+                        </span>
+                      </div>
                     </CardContent>
                   </Card>
                 </CarouselItem>
@@ -117,8 +164,8 @@ export default function TestimonialsSection() {
             })}
           </CarouselContent>
           <div className="hidden md:flex">
-            <CarouselPrevious className="-left-12" />
-            <CarouselNext className="-right-12" />
+            <CarouselPrevious className="-left-12 bg-card/80 backdrop-blur-md border-primary/20 hover:bg-card hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10" />
+            <CarouselNext className="-right-12 bg-card/80 backdrop-blur-md border-primary/20 hover:bg-card hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10" />
           </div>
         </Carousel>
       </div>
