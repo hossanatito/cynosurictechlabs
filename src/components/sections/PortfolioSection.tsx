@@ -94,32 +94,36 @@ export default function PortfolioSection() {
           className="grid md:grid-cols-2 gap-6"
         >
           {portfolioItems.map((item, index) => (
-            <motion.div key={index} variants={itemVariants}>
-              <Card className="overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 h-full hover-lift hover-glow">
-                <div className="h-52 bg-muted overflow-hidden">
-                  <img 
-                    src={item.image} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            <motion.div key={index} variants={itemVariants} className="h-full">
+              <Card className="h-full border-border/50 overflow-hidden hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 bg-card/50 backdrop-blur-sm flex flex-col">
+                <div className="relative aspect-video overflow-hidden group">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
                 </div>
-                <CardHeader>
-                  <CardTitle>{item.title}</CardTitle>
-                  <CardDescription className="mt-1">
-                    {item.tech.join(" • ")}
+                <CardHeader className="flex-grow">
+                  <CardTitle className="text-lg md:text-xl mb-2">{item.title}</CardTitle>
+                  <CardDescription className="text-muted-foreground text-sm leading-relaxed">
+                    {item.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{item.description}</p>
-                  <div className="mt-4 py-2 px-4 bg-muted/50 rounded-md">
-                    <p className="text-sm font-medium">Results: <span className="text-primary">{item.results}</span></p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {item.tech.map((tech, idx) => (
+                      <span key={idx} className="px-2.5 py-1 text-xs rounded-full border border-primary/20 bg-primary/5 text-primary">
+                        {tech}
+                      </span>
+                    ))}
                   </div>
+                  <p className="text-sm text-primary mb-4 font-medium">{item.results}</p>
+                  <Button className="w-full md:w-auto hover:-translate-y-0.5 hover:shadow-lg transition-all" variant="outline" asChild>
+                    <a href={item.url} target="_blank" rel="noopener noreferrer">Visit Project</a>
+                  </Button>
                 </CardContent>
-                <CardFooter>
-                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="w-full">
-                    <Button variant="outline" size="sm" className="w-full">Visit Project</Button>
-                  </a>
-                </CardFooter>
               </Card>
             </motion.div>
           ))}
