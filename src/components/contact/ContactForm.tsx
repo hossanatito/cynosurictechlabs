@@ -78,14 +78,14 @@ export default function ContactForm() {
   };
 
   return (
-    <Card className="shadow-md border-primary/10 hover:border-primary/30 transition-all duration-300">
-      <CardHeader className="space-y-1">
-        <CardTitle className="text-2xl">Send Us a Message</CardTitle>
+    <Card className="shadow-lg border-primary/10 hover:border-primary/30 hover:shadow-xl transition-all duration-300">
+      <CardHeader className="space-y-1 p-4 md:p-6">
+        <CardTitle className="text-xl md:text-2xl">Send Us a Message</CardTitle>
         <CardDescription>Fill out the form below and we'll get back to you as soon as possible.</CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="p-4 md:p-6">
         {formSubmitted ? (
-          <div className="text-center py-8">
+          <div className="text-center py-6 md:py-8">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-4">
               <Send className="h-8 w-8" />
             </div>
@@ -115,7 +115,7 @@ export default function ContactForm() {
               </Alert>
             )}
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
               <div className="space-y-2">
                 <Label htmlFor="name">Full Name</Label>
                 <Input 
@@ -125,7 +125,7 @@ export default function ContactForm() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="focus-visible:ring-primary"
+                  className="focus-visible:ring-primary focus-visible:ring-2 min-h-[44px] text-base"
                 />
               </div>
               <div className="space-y-2">
@@ -138,11 +138,11 @@ export default function ContactForm() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="focus-visible:ring-primary"
+                  className="focus-visible:ring-primary focus-visible:ring-2 min-h-[44px] text-base"
                 />
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone Number (Optional)</Label>
                 <Input 
@@ -152,7 +152,7 @@ export default function ContactForm() {
                   placeholder="+1 (555) 123-4567"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="focus-visible:ring-primary"
+                  className="focus-visible:ring-primary focus-visible:ring-2 min-h-[44px] text-base"
                 />
               </div>
               <div className="space-y-2">
@@ -164,7 +164,7 @@ export default function ContactForm() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="focus-visible:ring-primary"
+                  className="focus-visible:ring-primary focus-visible:ring-2 min-h-[44px] text-base"
                 />
               </div>
             </div>
@@ -178,12 +178,12 @@ export default function ContactForm() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="focus-visible:ring-primary"
+                className="focus-visible:ring-primary focus-visible:ring-2 text-base resize-none"
               />
             </div>
             <Button 
               type="submit" 
-              className="w-full hover-scale group" 
+              className="w-full hover:-translate-y-0.5 hover:shadow-lg transition-all group min-h-[48px] text-base" 
               disabled={isSubmitting}
             >
               {isSubmitting ? (

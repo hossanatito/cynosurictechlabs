@@ -2,6 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Star, Award, ThumbsUp } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const testimonials = [
   {
@@ -80,10 +81,10 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="section-padding bg-gradient-to-b from-background to-muted/30">
+    <section id="testimonials" className="py-12 md:py-20 lg:py-24 bg-gradient-to-b from-background to-muted/30">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">What Our Clients Say</h2>
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">What Our Clients Say</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mx-auto mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Don't just take our word for it. Here's what our clients have to say about working with us.
@@ -91,33 +92,24 @@ export default function TestimonialsSection() {
         </div>
         
         <Carousel className="w-full max-w-6xl mx-auto">
-          <CarouselContent>
+          <CarouselContent className="-ml-2 md:-ml-4">
             {testimonials.map((testimonial, index) => {
               const IconComponent = testimonial.icon;
               return (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 p-1">
-                  <Card className="border border-border h-full flex flex-col hover:shadow-md transition-all duration-300 hover:border-primary/40">
-                    <CardHeader className="pb-2">
-                      <div className="flex justify-between items-center mb-2">
-                        <div className="flex items-center">
-                          {[...Array(5)].map((_, i) => (
-                            <span key={i} className="text-primary text-lg">★</span>
-                          ))}
-                        </div>
-                        <div className={`${testimonial.color} p-2 rounded-full`}>
-                          <IconComponent className="h-4 w-4 text-white" />
-                        </div>
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                  <Card className="border-border/50 h-full hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 bg-card/50 backdrop-blur-sm">
+                    <CardHeader>
+                      <div className={cn("w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-3 shadow-lg", testimonial.color)}>
+                        <IconComponent className="w-5 h-5 md:w-6 md:h-6 text-white" />
                       </div>
+                      <CardDescription className="text-foreground leading-relaxed italic text-sm md:text-base">
+                        "{testimonial.quote}"
+                      </CardDescription>
                     </CardHeader>
-                    <CardContent className="flex-grow">
-                      <p className="italic mb-6">"{testimonial.quote}"</p>
-                      <div>
-                        <p className="font-medium">{testimonial.name}</p>
-                        <CardDescription>{testimonial.position}</CardDescription>
-                        <div className={`mt-4 py-2 px-3 ${testimonial.color}/10 border-l-4 ${testimonial.color} rounded-md inline-block text-sm`}>
-                          <span className="font-medium">Result:</span> {testimonial.result}
-                        </div>
-                      </div>
+                    <CardContent>
+                      <p className="font-medium text-sm md:text-base">{testimonial.name}</p>
+                      <p className="text-xs md:text-sm text-muted-foreground">{testimonial.position}</p>
+                      <p className="text-xs md:text-sm text-primary font-medium mt-2">{testimonial.result}</p>
                     </CardContent>
                   </Card>
                 </CarouselItem>

@@ -2,10 +2,10 @@
 import { Button } from "@/components/ui/button";
 
 export default function AboutSection() {
-  return <section id="about" className="section-padding bg-muted/30">
+  return <section id="about" className="py-12 md:py-20 lg:py-24 bg-muted/30">
       <div className="container-custom">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">About Us</h2>
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">About Us</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             We're passionate about crafting innovative digital solutions that drive real business results.
@@ -14,15 +14,15 @@ export default function AboutSection() {
         
         <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div className="order-2 md:order-1">
-            <h3 className="text-xl font-semibold mb-4">
+            <h3 className="text-lg md:text-xl font-semibold mb-4">
               Innovation. Speed. Craftsmanship.
             </h3>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-muted-foreground mb-4 text-sm md:text-base leading-relaxed">
               Founded on the principles of technical excellence and unwavering client focus, Cynosuric Tech Labs has evolved into a global digital engineering partner helping businesses transform their digital presence.
             </p>
-            <p className="text-muted-foreground mb-6">Our team of engineers brings years of combined experience across industries, technologies, and methodologies. We follow an iterative delivery approach that ensures transparency, adaptability, and continuous improvement throughout the development lifecycle.</p>
+            <p className="text-muted-foreground mb-6 text-sm md:text-base leading-relaxed">Our team of engineers brings years of combined experience across industries, technologies, and methodologies. We follow an iterative delivery approach that ensures transparency, adaptability, and continuous improvement throughout the development lifecycle.</p>
             
-            <div className="grid grid-cols-2 gap-4 mb-6">
+            <div className="grid grid-cols-2 gap-3 md:gap-4 mb-6">
               {[{
               label: 'Global Clients',
               value: '25+ Countries'
@@ -35,16 +35,16 @@ export default function AboutSection() {
             }, {
               label: 'Support',
               value: '24/7 Available'
-            }].map((item, i) => <div key={i} className="bg-card p-4 rounded-lg">
-                  <p className="text-sm font-medium text-primary">{item.label}</p>
-                  <p className="font-medium">{item.value}</p>
+            }].map((item, i) => <div key={i} className="bg-card/50 backdrop-blur-sm p-3 md:p-4 rounded-lg border border-border/30 hover:border-primary/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <p className="text-xs md:text-sm font-medium text-primary">{item.label}</p>
+                  <p className="text-sm md:text-base font-medium mt-1">{item.value}</p>
                 </div>)}
             </div>
             
-            <Button className="hover-scale">Learn More About Us</Button>
+            <Button className="hover:-translate-y-0.5 hover:shadow-lg transition-all">Learn More About Us</Button>
           </div>
           
-          <div className="order-1 md:order-2 bg-gradient-to-br from-card/80 to-card rounded-lg p-8 border border-border hover-glow hover-scale transition-all">
+          <div className="order-1 md:order-2 bg-gradient-to-br from-card/80 to-card rounded-xl p-6 md:p-8 border border-border/50 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-500">
             <div className="flex flex-col items-center justify-center space-y-4">
               <div className="w-24 h-24 relative mb-4">
                 <div className="absolute inset-0 bg-primary/10 rounded-full animate-pulse"></div>
@@ -56,10 +56,10 @@ export default function AboutSection() {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-xl font-bold tracking-tight">Cynosuric Tech Labs</h3>
-              <p className="text-muted-foreground text-sm">Est. 2020</p>
+              <h3 className="text-lg md:text-xl font-bold tracking-tight">Cynosuric Tech Labs</h3>
+              <p className="text-muted-foreground text-xs md:text-sm">Est. 2020</p>
               <div className="h-0.5 w-16 bg-primary/50 rounded-full"></div>
-              <p className="text-xs text-center text-muted-foreground">Bridging technology and elegant user experiences</p>
+              <p className="text-xs text-center text-muted-foreground leading-relaxed">Bridging technology and elegant user experiences</p>
             </div>
           </div>
         </div>

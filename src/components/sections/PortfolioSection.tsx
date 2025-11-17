@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
 const portfolioItems = [
@@ -70,16 +70,16 @@ const itemVariants = {
 
 export default function PortfolioSection() {
   return (
-    <section id="portfolio" className="section-padding">
+    <section id="portfolio" className="py-12 md:py-20 lg:py-24">
       <div className="container-custom">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Portfolio</h2>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Our Portfolio</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Check out our latest projects and the solutions we've built for our clients.
