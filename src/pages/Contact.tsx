@@ -3,7 +3,6 @@ import React from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ContactHero from "@/components/contact/ContactHero";
-import ContactForm from "@/components/contact/ContactForm";
 import ContactInfo from "@/components/contact/ContactInfo";
 
 export default function Contact() {
@@ -12,9 +11,8 @@ export default function Contact() {
       <Navbar />
       <main>
         <ContactHero />
-        <div className="container-custom py-16">
-          <div className="grid md:grid-cols-2 gap-12">
-            <ContactForm />
+        <div className="container-custom py-12 md:py-20">
+          <div className="max-w-2xl mx-auto">
             <ContactInfo />
           </div>
         </div>
