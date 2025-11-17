@@ -66,9 +66,9 @@ export default function HeroSection() {
               className="hover-scale"
               asChild
             >
-              <Link to="#portfolio">
+              <a href="#portfolio">
                 View Our Work
-              </Link>
+              </a>
             </Button>
           </div>
           
