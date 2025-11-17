@@ -20,6 +20,30 @@ const portfolioItems = [
     image: "https://placehold.co/600x400/6366f1/ffffff?text=iNoty",
     url: "https://inoty.lovable.app/",
   },
+  {
+    title: "Stelar",
+    description: "An AI-powered storytelling platform that brings imagination to life. Create personalized, illustrated storybooks for children with the help of artificial intelligence.",
+    tech: ["React", "AI/ML", "Tailwind CSS", "Creative Tools"],
+    results: "Empowering parents and educators to create engaging stories",
+    image: "https://placehold.co/600x400/8b5cf6/ffffff?text=Stelar",
+    url: "https://stelar.appsdyno.com",
+  },
+  {
+    title: "Sumo Check",
+    description: "Never miss a great deal again! Track and monitor AppSumo deals, get notified about expiring offers, and make informed purchasing decisions with comprehensive deal analytics.",
+    tech: ["React", "Web Scraping", "Real-time Alerts", "Data Analytics"],
+    results: "Helping users save money on software deals",
+    image: "https://placehold.co/600x400/f59e0b/ffffff?text=SumoCheck",
+    url: "https://sumocheck.appsdyno.com/",
+  },
+  {
+    title: "SearchPad",
+    description: "A customizable marketplace platform that connects buyers and sellers. Built with flexibility in mind, allowing businesses to create their own branded marketplace experience.",
+    tech: ["React", "E-commerce", "Payment Integration", "Search Engine"],
+    results: "Enabling businesses to launch their own marketplaces",
+    image: "https://placehold.co/600x400/10b981/ffffff?text=SearchPad",
+    url: "https://searchpad.appsdyno.com/",
+  },
 ];
 
 // Animation variants for staggered children
