@@ -1,84 +1,65 @@
+import { motion, useReducedMotion } from "framer-motion";
 
-import React from "react";
-import { 
-  MapPin, 
-  Mail, 
-  Phone, 
-  Clock, 
-  Instagram, 
-  Twitter, 
-  Linkedin, 
-  Facebook 
-} from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+const channels = [
+  { label: "Email", value: "support@cynosurictechlabs.net", href: "mailto:support@cynosurictechlabs.net" },
+  { label: "Response time", value: "Within 1 business day" },
+  { label: "Working hours", value: "Mon–Fri · 9:00–18:00 IST" },
+  { label: "Remote", value: "Working with teams worldwide" },
+];
 
 export default function ContactInfo() {
+  const reduce = useReducedMotion();
   return (
-    <div className="space-y-6">
-      <Card className="shadow-md border-primary/10 hover:border-primary/30 transition-all duration-300">
-        <CardHeader>
-          <CardTitle>Contact Information</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="flex items-start">
-            <Mail className="h-5 w-5 text-primary mr-3 mt-0.5" />
-            <div>
-              <h3 className="font-medium">Email</h3>
-              <a href="mailto:support@cynosurictechlabs.net" className="text-primary hover:underline">
-                support@cynosurictechlabs.net
-              </a>
-            </div>
-          </div>
-          
-          <div className="flex items-start">
-            <Phone className="h-5 w-5 text-primary mr-3 mt-0.5" />
-            <div>
-              <h3 className="font-medium">Phone</h3>
-              <p className="text-muted-foreground">+1 772 249 1629</p>
-            </div>
-          </div>
-          
-          <div className="flex items-start">
-            <MapPin className="h-5 w-5 text-primary mr-3 mt-0.5" />
-            <div>
-              <h3 className="font-medium">Location</h3>
-              <p className="text-muted-foreground">Nigeria, Africa</p>
-            </div>
-          </div>
-          
-          <div className="flex items-start">
-            <Clock className="h-5 w-5 text-primary mr-3 mt-0.5" />
-            <div>
-              <h3 className="font-medium">Business Hours</h3>
-              <p className="text-muted-foreground">Monday - Friday: 9:00 AM - 6:00 PM</p>
-              <p className="text-muted-foreground">Weekend: By appointment</p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-      
-      <Card className="shadow-md border-primary/10 hover:border-primary/30 transition-all duration-300">
-        <CardHeader>
-          <CardTitle>Connect With Us</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="flex space-x-2">
-            <Button variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:border-primary/30">
-              <Linkedin className="h-4 w-4" />
-            </Button>
-            <Button variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:border-primary/30">
-              <Twitter className="h-4 w-4" />
-            </Button>
-            <Button variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:border-primary/30">
-              <Instagram className="h-4 w-4" />
-            </Button>
-            <Button variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:border-primary/30">
-              <Facebook className="h-4 w-4" />
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+    <section className="py-16 md:py-24 border-t border-border">
+      <div className="mx-auto w-full max-w-5xl px-6">
+        <motion.div
+          initial={reduce ? false : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-8">
+            Write to us
+          </p>
+          <a
+            href="mailto:support@cynosurictechlabs.net"
+            className="block text-3xl md:text-5xl lg:text-6xl tracking-[-0.03em] font-medium leading-[1.1] underline underline-offset-[8px] decoration-border hover:decoration-foreground transition-colors break-all md:break-normal"
+          >
+            support@cynosurictechlabs.net
+          </a>
+        </motion.div>
+
+        <div className="mt-20 md:mt-24">
+          {channels.map((c, i) => (
+            <motion.div
+              key={c.label}
+              initial={reduce ? false : { opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: i * 0.06 }}
+              className="grid md:grid-cols-12 gap-4 py-5 border-t border-border last:border-b"
+            >
+              <div className="md:col-span-4">
+                <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  {c.label}
+                </p>
+              </div>
+              <div className="md:col-span-8">
+                {c.href ? (
+                  <a
+                    href={c.href}
+                    className="text-base text-foreground hover:opacity-70 transition-opacity"
+                  >
+                    {c.value}
+                  </a>
+                ) : (
+                  <p className="text-base text-foreground">{c.value}</p>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

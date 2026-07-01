@@ -1,4 +1,3 @@
-import React from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import AboutHero from "@/components/about/AboutHero";
@@ -7,7 +6,6 @@ import AboutValues from "@/components/about/AboutValues";
 import AboutCTA from "@/components/about/AboutCTA";
 import AboutMission from "@/components/about/AboutMission";
 import SEOHead from "@/components/SEO/SEOHead";
-import Breadcrumb from "@/components/Breadcrumb";
 import { organizationSchema, webPageSchema, breadcrumbSchema } from "@/data/structuredData";
 
 export default function About() {
@@ -16,11 +14,11 @@ export default function About() {
     webPageSchema(
       "About Us - Innovation & Excellence Since 2018",
       "Meet the team behind 250+ successful projects. Learn about our mission, values, and commitment to delivering future-ready digital solutions.",
-      typeof window !== 'undefined' ? window.location.href : ""
+      typeof window !== "undefined" ? window.location.href : ""
     ),
     breadcrumbSchema([
-      { name: "About", url: typeof window !== 'undefined' ? `${window.location.origin}/about` : "/about" }
-    ])
+      { name: "About", url: typeof window !== "undefined" ? `${window.location.origin}/about` : "/about" },
+    ]),
   ];
 
   return (
@@ -32,9 +30,6 @@ export default function About() {
         structuredData={structuredData}
       />
       <Navbar />
-      <div className="container-custom">
-        <Breadcrumb items={[{ name: "About", url: "/about" }]} />
-      </div>
       <main>
         <AboutHero />
         <AboutStory />
