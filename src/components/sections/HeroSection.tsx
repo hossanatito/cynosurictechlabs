@@ -1,94 +1,66 @@
-
-import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export default function HeroSection() {
+  const reduce = useReducedMotion();
+  const fade = (delay = 0) => ({
+    initial: reduce ? false : { opacity: 0, y: 16 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] as const },
+  });
+
   return (
-    <section id="hero" className="min-h-[90vh] flex items-center pt-20 pb-8 md:pt-24 md:pb-16 relative overflow-hidden">
-      {/* Animated Grid Background */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: '40px 40px'
-        }}></div>
-      </div>
-      
-      {/* Enhanced Background Layers */}
-      <div className="absolute inset-0">
-        {/* Gradient overlays from corners */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-      </div>
-      
-      {/* Floating Geometric Shapes */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-32 h-32 border border-white/10 rounded-lg rotate-12 animate-pulse"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-24 h-24 border border-white/10 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
-        <div className="absolute top-2/3 right-1/3 w-20 h-20 border border-white/10 rotate-45" style={{ animation: 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite' }}></div>
-      </div>
-      
-      <div className="container-custom relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-block mb-4 px-4 py-1 rounded-full bg-white/5 backdrop-blur-sm text-white text-sm font-medium border border-white/20 shadow-lg shadow-primary/10 animate-fade-in">
-            Innovation • Precision • Excellence
-          </div>
-          
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <span className="text-white">
-              Engineered for the
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
-              Digital Future
-            </span>
-          </h1>
-          
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            We craft elegant digital experiences with scalable, secure, and performance-driven solutions that transform businesses.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <Button 
-              size="lg" 
-              className="hover-scale group border border-white/20"
-              asChild
+    <section className="relative min-h-[100dvh] flex items-end pt-24 pb-20 md:pb-32">
+      <div className="mx-auto w-full max-w-6xl px-6">
+        <div className="grid grid-cols-12 gap-6 md:gap-10">
+          <div className="col-span-12 md:col-span-9">
+            <motion.p
+              {...fade(0)}
+              className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-8"
             >
-              <Link to="/contact">
-                Get a Free Consultation
-                <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="hover-scale"
-              asChild
+              Cynosuric Tech Labs / Est. 2019
+            </motion.p>
+
+            <motion.h1
+              {...fade(0.08)}
+              className="text-[13vw] leading-[0.95] tracking-[-0.04em] font-medium md:text-[7.5rem] lg:text-[8.5rem]"
             >
-              <a href="#portfolio">
-                View Our Work
-              </a>
-            </Button>
+              We build<br />
+              software that<br />
+              <span className="italic font-normal pr-1">earns</span> its place.
+            </motion.h1>
           </div>
-          
-          <div className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {[
-              { stat: '98%', label: 'Client Satisfaction' },
-              { stat: '250+', label: 'Projects Delivered' },
-              { stat: '6+', label: 'Years Experience' },
-              { stat: '35+', label: 'Team Members' }
-            ].map((item, i) => (
-              <div 
-                key={i} 
-                className="p-4 bg-white/5 backdrop-blur-lg rounded-lg border border-white/10 hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 animate-fade-in group"
-                style={{ animationDelay: `${0.4 + i * 0.1}s` }}
+
+          <div className="col-span-12 md:col-span-3" />
+
+          <motion.div
+            {...fade(0.2)}
+            className="col-span-12 md:col-start-6 md:col-span-7 mt-10 md:mt-16"
+          >
+            <p className="text-base md:text-lg text-muted-foreground max-w-[52ch] leading-relaxed">
+              We partner with founders and teams to ship web, product, and AI systems that people actually use.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-full bg-[hsl(var(--accent))] text-[hsl(var(--accent-foreground))] px-6 py-3 text-sm font-medium transition-transform active:scale-[0.98]"
               >
-                <p className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:scale-110 transition-transform">{item.stat}</p>
-                <p className="text-sm text-muted-foreground">{item.label}</p>
-              </div>
-            ))}
-          </div>
+                Start a project
+                <span aria-hidden>→</span>
+              </Link>
+              <a
+                href="#work"
+                className="text-sm font-medium text-foreground underline underline-offset-4 decoration-border hover:decoration-foreground transition-colors"
+              >
+                See selected work
+              </a>
+            </div>
+
+            <p className="mt-8 text-xs text-muted-foreground">
+              Trusted by teams across fintech, health, and SaaS.
+            </p>
+          </motion.div>
         </div>
       </div>
     </section>
