@@ -7,52 +7,51 @@ interface SEOHeadProps {
   canonicalUrl?: string;
   ogImage?: string;
   ogType?: string;
-  structuredData?: object;
+  structuredData?: object | object[];
 }
+
+const SITE_URL = "https://cynosurictechlabs.lovable.app";
 
 export default function SEOHead({
   title,
   description,
   keywords,
   canonicalUrl,
-  ogImage = "https://lovable.dev/opengraph-image-p98pqg.png",
+  ogImage,
   ogType = "website",
-  structuredData
+  structuredData,
 }: SEOHeadProps) {
   const fullTitle = title.includes('Cynosuric') ? title : `${title} | Cynosuric Tech Labs`;
-  const siteUrl = canonicalUrl || window.location.href;
+  const path = typeof window !== 'undefined' ? window.location.pathname : '/';
+  const siteUrl = canonicalUrl || `${SITE_URL}${path}`;
+  const schemas = Array.isArray(structuredData) ? structuredData : structuredData ? [structuredData] : [];
 
   return (
     <Helmet>
-      {/* Basic Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       <meta name="author" content="Cynosuric Tech Labs" />
       <link rel="canonical" href={siteUrl} />
 
-      {/* Open Graph */}
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={siteUrl} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={ogImage} />
       <meta property="og:site_name" content="Cynosuric Tech Labs" />
+      {ogImage && <meta property="og:image" content={ogImage} />}
 
-      {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={siteUrl} />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:site" content="@lovable_dev" />
+      {ogImage && <meta name="twitter:image" content={ogImage} />}
 
-      {/* Structured Data */}
-      {structuredData && (
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
+      {schemas.map((schema, i) => (
+        <script key={i} type="application/ld+json">
+          {JSON.stringify(schema)}
         </script>
-      )}
+      ))}
     </Helmet>
   );
 }
