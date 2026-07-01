@@ -36,7 +36,10 @@ export default function HeroSection() {
           className="text-[10vw] leading-[1.05] tracking-[-0.035em] font-medium md:text-[5.25rem] lg:text-[6rem]"
         >
           We build<br />
-          <span className="relative inline-grid align-baseline overflow-hidden [&>*]:[grid-area:1/1]">
+          <span
+            className="relative inline-grid align-baseline [&>*]:[grid-area:1/1] [&>*]:leading-[inherit] [&>*]:tracking-[inherit] [&>*]:font-[inherit]"
+            style={{ clipPath: "inset(-0.15em 0 -0.15em 0)" }}
+          >
             {/* Invisible sizer: reserves width of the widest word so layout never shifts */}
             <span aria-hidden className="invisible whitespace-pre">
               {ROTATING_WORDS.reduce((a, b) => (b.length > a.length ? b : a))}
@@ -44,9 +47,9 @@ export default function HeroSection() {
             <AnimatePresence mode="wait" initial={false}>
               <motion.span
                 key={word}
-                initial={reduce ? { opacity: 0 } : { opacity: 0, y: "0.4em" }}
+                initial={reduce ? { opacity: 0 } : { opacity: 0, y: "0.5em" }}
                 animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
-                exit={reduce ? { opacity: 0 } : { opacity: 0, y: "-0.4em" }}
+                exit={reduce ? { opacity: 0 } : { opacity: 0, y: "-0.5em" }}
                 transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                 className="text-left whitespace-pre"
               >
