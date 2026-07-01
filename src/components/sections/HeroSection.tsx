@@ -1,5 +1,8 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
+
+const ROTATING_WORDS = ["software", "websites", "automations"] as const;
 
 export default function HeroSection() {
   const reduce = useReducedMotion();
@@ -8,6 +11,15 @@ export default function HeroSection() {
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] as const },
   });
+
+  const [wordIndex, setWordIndex] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => {
+      setWordIndex((i) => (i + 1) % ROTATING_WORDS.length);
+    }, 3000);
+    return () => clearInterval(id);
+  }, []);
+  const word = ROTATING_WORDS[wordIndex];
 
   return (
     <section className="relative min-h-[90dvh] flex items-center pt-32 pb-24 md:pt-40 md:pb-28">
@@ -24,7 +36,21 @@ export default function HeroSection() {
           className="text-[10vw] leading-[1.05] tracking-[-0.035em] font-medium md:text-[5.25rem] lg:text-[6rem]"
         >
           We build<br />
-          software that<br />
+          <span className="relative inline-block align-baseline" style={{ minWidth: "11ch" }}>
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.span
+                key={word}
+                initial={reduce ? { opacity: 0 } : { opacity: 0, y: "0.35em" }}
+                animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
+                exit={reduce ? { opacity: 0 } : { opacity: 0, y: "-0.35em" }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                className="inline-block"
+              >
+                {word}
+              </motion.span>
+            </AnimatePresence>
+          </span>{" "}
+          that<br />
           <span className="italic font-normal pr-1">earns</span> its place.
         </motion.h1>
 
