@@ -18,19 +18,17 @@ export default function TrustStrip() {
 
   return (
     <section className="border-y border-border">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <div className="mb-12 md:mb-16">
-          <div className="text-xs font-mono uppercase tracking-[0.22em] text-muted-foreground mb-4">
-            Tooling
-          </div>
-          <h2 className="text-3xl md:text-5xl tracking-[-0.03em] font-medium leading-[1.05]">
-            Tools we build with.
-          </h2>
+      <div className="mx-auto max-w-6xl px-6 pt-20 md:pt-28 pb-8 md:pb-10">
+        <div className="text-xs font-mono uppercase tracking-[0.22em] text-muted-foreground mb-4">
+          Tooling
         </div>
+        <h2 className="text-3xl md:text-5xl tracking-[-0.03em] font-medium leading-[1.05]">
+          Tools we build with.
+        </h2>
       </div>
 
       <div
-        className="relative overflow-hidden py-6"
+        className="relative overflow-hidden pb-20 md:pb-28 pt-2"
         style={{
           maskImage:
             "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
