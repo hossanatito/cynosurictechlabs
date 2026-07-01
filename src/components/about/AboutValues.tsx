@@ -1,61 +1,50 @@
+import { motion, useReducedMotion } from "framer-motion";
 
-import React from "react";
-
-const coreValues = [
+const values = [
   {
-    title: "Technical Excellence",
-    description: "We maintain the highest standards in our code, design, and delivery.",
-    colorClass: "border-l-primary"
+    title: "Craft",
+    description:
+      "Every detail is considered. We ship work we'd be proud to put our name on, at every scale.",
   },
   {
-    title: "User-Centered",
-    description: "Every decision we make prioritizes the end user's experience and needs.",
-    colorClass: "border-l-secondary"
+    title: "Clarity",
+    description:
+      "Straight talk on scope, tradeoffs, and timelines. No jargon, no theater, no surprises at invoice time.",
   },
   {
-    title: "Continuous Innovation",
-    description: "We constantly explore new technologies and methodologies to stay ahead.",
-    colorClass: "border-l-accent"
+    title: "Longevity",
+    description:
+      "We build systems meant to last — clean code, honest architecture, and documentation that survives us.",
   },
-  {
-    title: "Transparency",
-    description: "Open communication and visibility into our processes and progress.",
-    colorClass: "border-l-primary"
-  },
-  {
-    title: "Collaborative Spirit",
-    description: "We believe the best solutions emerge from diverse perspectives working together.",
-    colorClass: "border-l-secondary"
-  },
-  {
-    title: "Result-Oriented",
-    description: "Focused on delivering tangible business outcomes, not just features.",
-    colorClass: "border-l-accent"
-  }
 ];
 
 export default function AboutValues() {
+  const reduce = useReducedMotion();
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-muted/30 to-card/50">
-      <div className="container-custom max-w-5xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Core Values</h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            The principles that guide our work and relationships.
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {coreValues.map((value, index) => (
-            <div 
-              key={index}
-              className={`bg-card p-6 rounded-lg border border-border border-l-[4px] ${value.colorClass} hover-lift hover:shadow-lg transition-all duration-300 animate-fade-in`}
-              style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+    <section className="py-24 md:py-32 border-t border-border">
+      <div className="mx-auto w-full max-w-5xl px-6">
+        <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-12">
+          What we value
+        </p>
+        <div className="grid md:grid-cols-3 gap-10 md:gap-12">
+          {values.map((v, i) => (
+            <motion.div
+              key={v.title}
+              initial={reduce ? false : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-              <p className="text-muted-foreground">{value.description}</p>
-            </div>
+              <p className="font-mono text-xs text-muted-foreground mb-4">
+                0{i + 1}
+              </p>
+              <h3 className="text-xl md:text-2xl font-medium tracking-[-0.02em] mb-3">
+                {v.title}
+              </h3>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                {v.description}
+              </p>
+            </motion.div>
           ))}
         </div>
       </div>

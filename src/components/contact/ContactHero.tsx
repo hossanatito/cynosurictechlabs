@@ -1,24 +1,34 @@
-
-import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function ContactHero() {
+  const reduce = useReducedMotion();
+  const fade = (delay = 0) => ({
+    initial: reduce ? false : { opacity: 0, y: 16 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] as const },
+  });
+
   return (
-    <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-b from-primary/5 to-background relative overflow-hidden">
-      {/* Subtle background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-primary/5 blur-3xl"></div>
-        <div className="absolute -bottom-32 -left-32 w-64 h-64 rounded-full bg-accent/5 blur-3xl"></div>
-      </div>
-      
-      <div className="container-custom max-w-5xl mx-auto relative z-10">
-        <div className="max-w-3xl mx-auto text-center animate-fade-in">
-          <h1 className="text-3xl md:text-5xl font-bold mb-6">Get in Touch</h1>
-          <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
-          <p className="text-lg text-muted-foreground mb-8">
-            Have questions about our services or ready to start your next project? 
-            We're here to help turn your vision into reality.
-          </p>
-        </div>
+    <section className="relative pt-32 pb-16 md:pt-40 md:pb-24">
+      <div className="mx-auto w-full max-w-5xl px-6">
+        <motion.p
+          {...fade(0)}
+          className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-6"
+        >
+          Contact / Say hello
+        </motion.p>
+        <motion.h1
+          {...fade(0.08)}
+          className="text-[10vw] leading-[1.05] tracking-[-0.035em] font-medium md:text-[5.5rem] lg:text-[7rem]"
+        >
+          Let's <span className="italic font-normal">talk</span>.
+        </motion.h1>
+        <motion.p
+          {...fade(0.2)}
+          className="mt-8 md:mt-10 text-base md:text-lg text-muted-foreground max-w-[52ch] leading-relaxed"
+        >
+          Tell us about the project. We reply to every inquiry within one business day.
+        </motion.p>
       </div>
     </section>
   );

@@ -1,228 +1,121 @@
+import { motion, useReducedMotion } from "framer-motion";
 
-import React from "react";
-import { ArrowRight, Check, Code, CreditCard, Laptop, PaintBucket, Smartphone, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+const services = [
+  {
+    name: "Web Development",
+    description:
+      "Modern, responsive web applications optimized for performance, UX, and search visibility.",
+    capabilities: [
+      "React & Next.js",
+      "Progressive Web Apps",
+      "WordPress & CMS",
+      "API integration",
+      "Performance tuning",
+    ],
+  },
+  {
+    name: "Custom Software",
+    description:
+      "Bespoke internal tools and platforms tailored to how your team actually works.",
+    capabilities: [
+      "SaaS platforms",
+      "CRM & ERP systems",
+      "Business process automation",
+      "Legacy modernization",
+      "Database design",
+    ],
+  },
+  {
+    name: "UI/UX Design",
+    description:
+      "User-centered design that balances aesthetics with functionality end to end.",
+    capabilities: [
+      "User research",
+      "Wireframing & prototyping",
+      "Interface design",
+      "Design systems",
+      "Accessibility",
+    ],
+  },
+  {
+    name: "Mobile Apps",
+    description:
+      "High-performance native and cross-platform apps for iOS and Android.",
+    capabilities: [
+      "iOS & Android native",
+      "React Native",
+      "Flutter",
+      "App Store optimization",
+      "Maintenance",
+    ],
+  },
+  {
+    name: "E-Commerce",
+    description:
+      "Scalable storefronts with clean checkout, honest analytics, and real conversion focus.",
+    capabilities: [
+      "Shopify",
+      "WooCommerce",
+      "Custom platforms",
+      "Payment gateways",
+      "E-commerce SEO",
+    ],
+  },
+  {
+    name: "AI & Automation",
+    description:
+      "Practical AI features and workflow automation grounded in your actual business.",
+    capabilities: [
+      "OpenAI & Gemini integrations",
+      "Zapier & n8n workflows",
+      "Custom agents",
+      "Data pipelines",
+      "Chat interfaces",
+    ],
+  },
+];
 
-export default function ServicesTabs() {
+export default function ServicesList() {
+  const reduce = useReducedMotion();
   return (
-    <section className="py-16 md:py-24">
-      <div className="container-custom max-w-5xl mx-auto">
-        <Tabs defaultValue="web" className="w-full animate-fade-in">
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mb-8">
-            <TabsTrigger value="web" className="text-sm">Web Development</TabsTrigger>
-            <TabsTrigger value="software" className="text-sm">Custom Software</TabsTrigger>
-            <TabsTrigger value="design" className="text-sm">UI/UX Design</TabsTrigger>
-            <TabsTrigger value="mobile" className="text-sm">Mobile Apps</TabsTrigger>
-            <TabsTrigger value="ecommerce" className="text-sm">E-Commerce</TabsTrigger>
-            <TabsTrigger value="ai" className="text-sm">AI Automation</TabsTrigger>
-          </TabsList>
-          
-          {/* Web Development */}
-          <TabsContent value="web" className="animate-fade-in">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">Web Development</h2>
-                <div className="w-16 h-1 bg-primary mb-6"></div>
-                <p className="text-muted-foreground mb-6">
-                  We build modern, responsive web applications optimized for performance, user experience, 
-                  and search engine visibility. Our development process focuses on creating scalable solutions
-                  that grow with your business.
+    <section className="py-24 md:py-32 border-t border-border">
+      <div className="mx-auto w-full max-w-5xl px-6">
+        <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-12">
+          Practices
+        </p>
+        <div>
+          {services.map((s, i) => (
+            <motion.div
+              key={s.name}
+              initial={reduce ? false : { opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: (i % 3) * 0.06, ease: [0.16, 1, 0.3, 1] }}
+              className="grid md:grid-cols-12 gap-6 md:gap-10 py-10 md:py-12 border-t border-border first:border-t-0"
+            >
+              <div className="md:col-span-4">
+                <p className="font-mono text-xs text-muted-foreground mb-3">
+                  {String(i + 1).padStart(2, "0")}
                 </p>
-                
-                <div className="space-y-3 mb-6">
-                  {["React & Next.js Development", "Progressive Web Apps (PWAs)", "WordPress Development", 
-                    "Custom API Integration", "Performance Optimization", "Responsive Designs"].map((item, i) => (
-                    <div key={i} className="flex items-start">
-                      <Check className="text-primary shrink-0 mr-2 h-5 w-5" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                <Button className="hover-scale">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <h3 className="text-2xl md:text-3xl font-medium tracking-[-0.02em]">
+                  {s.name}
+                </h3>
               </div>
-              
-              <div className="bg-muted rounded-lg p-6 hover-scale">
-                <div className="aspect-video bg-card rounded-md flex items-center justify-center border border-border">
-                  <Code className="h-12 w-12 text-primary/70" />
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-          
-          {/* Custom Software */}
-          <TabsContent value="software" className="animate-fade-in">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">Custom Software Development</h2>
-                <div className="w-16 h-1 bg-primary mb-6"></div>
-                <p className="text-muted-foreground mb-6">
-                  We design and develop bespoke software solutions tailored to your specific business requirements. 
-                  From enterprise platforms to specialized tools, we create robust applications that solve your unique challenges.
+              <div className="md:col-span-8">
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-[52ch] mb-6">
+                  {s.description}
                 </p>
-                
-                <div className="space-y-3 mb-6">
-                  {["Enterprise Applications", "SaaS Solutions", "CRM & ERP Systems", 
-                    "Business Process Automation", "Legacy System Modernization", "Database Design & Development"].map((item, i) => (
-                    <div key={i} className="flex items-start">
-                      <Check className="text-primary shrink-0 mr-2 h-5 w-5" />
-                      <span>{item}</span>
-                    </div>
+                <ul className="flex flex-wrap gap-x-6 gap-y-2">
+                  {s.capabilities.map((c) => (
+                    <li key={c} className="text-sm text-foreground/80">
+                      {c}
+                    </li>
                   ))}
-                </div>
-                
-                <Button className="hover-scale">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                </ul>
               </div>
-              
-              <div className="bg-muted rounded-lg p-6 hover-scale">
-                <div className="aspect-video bg-card rounded-md flex items-center justify-center border border-border">
-                  <Laptop className="h-12 w-12 text-primary/70" />
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-          
-          {/* UI/UX Design */}
-          <TabsContent value="design" className="animate-fade-in">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">UI/UX Design</h2>
-                <div className="w-16 h-1 bg-primary mb-6"></div>
-                <p className="text-muted-foreground mb-6">
-                  Our user-centered design approach creates intuitive, engaging interfaces that balance aesthetics with functionality.
-                  We focus on understanding your users' needs to deliver exceptional digital experiences.
-                </p>
-                
-                <div className="space-y-3 mb-6">
-                  {["User Research & Testing", "Wireframing & Prototyping", "Interface Design", 
-                    "Design Systems Creation", "Usability Audits", "Accessibility Compliance"].map((item, i) => (
-                    <div key={i} className="flex items-start">
-                      <Check className="text-primary shrink-0 mr-2 h-5 w-5" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                <Button className="hover-scale">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-              
-              <div className="bg-muted rounded-lg p-6 hover-scale">
-                <div className="aspect-video bg-card rounded-md flex items-center justify-center border border-border">
-                  <PaintBucket className="h-12 w-12 text-primary/70" />
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-          
-          {/* Mobile Apps */}
-          <TabsContent value="mobile" className="animate-fade-in">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">Mobile App Development</h2>
-                <div className="w-16 h-1 bg-primary mb-6"></div>
-                <p className="text-muted-foreground mb-6">
-                  We develop high-performance native and cross-platform mobile applications for iOS and Android.
-                  Our mobile solutions combine elegant design with robust functionality to engage your users.
-                </p>
-                
-                <div className="space-y-3 mb-6">
-                  {["iOS App Development", "Android App Development", "React Native", 
-                    "Flutter Development", "App Store Optimization", "Mobile App Maintenance"].map((item, i) => (
-                    <div key={i} className="flex items-start">
-                      <Check className="text-primary shrink-0 mr-2 h-5 w-5" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                <Button className="hover-scale">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-              
-              <div className="bg-muted rounded-lg p-6 hover-scale">
-                <div className="aspect-video bg-card rounded-md flex items-center justify-center border border-border">
-                  <Smartphone className="h-12 w-12 text-primary/70" />
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-          
-          {/* E-Commerce */}
-          <TabsContent value="ecommerce" className="animate-fade-in">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">E-Commerce Development</h2>
-                <div className="w-16 h-1 bg-primary mb-6"></div>
-                <p className="text-muted-foreground mb-6">
-                  We build scalable, secure online stores with seamless payment processing and inventory management.
-                  Our e-commerce solutions focus on conversion optimization and exceptional shopping experiences.
-                </p>
-                
-                <div className="space-y-3 mb-6">
-                  {["Shopify Development", "WooCommerce Solutions", "Custom E-commerce Platforms", 
-                    "Payment Gateway Integration", "Inventory Management", "E-commerce SEO"].map((item, i) => (
-                    <div key={i} className="flex items-start">
-                      <Check className="text-primary shrink-0 mr-2 h-5 w-5" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                <Button className="hover-scale">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-              
-              <div className="bg-muted rounded-lg p-6 hover-scale">
-                <div className="aspect-video bg-card rounded-md flex items-center justify-center border border-border">
-                  <CreditCard className="h-12 w-12 text-primary/70" />
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-          
-          {/* AI Automation */}
-          <TabsContent value="ai" className="animate-fade-in">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">AI & Automation Solutions</h2>
-                <div className="w-16 h-1 bg-primary mb-6"></div>
-                <p className="text-muted-foreground mb-6">
-                  We leverage artificial intelligence and no-code automation tools to streamline your workflows,
-                  reduce manual effort, and unlock new capabilities for your business.
-                </p>
-                
-                <div className="space-y-3 mb-6">
-                  {["n8n Workflow Automation", "OpenAI Integration", "Hugging Face Models Implementation", 
-                    "Custom AI Solutions", "Process Automation", "Intelligent Data Analysis"].map((item, i) => (
-                    <div key={i} className="flex items-start">
-                      <Check className="text-primary shrink-0 mr-2 h-5 w-5" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                <Button className="hover-scale">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-              
-              <div className="bg-muted rounded-lg p-6 hover-scale">
-                <div className="aspect-video bg-card rounded-md flex items-center justify-center border border-border">
-                  <Zap className="h-12 w-12 text-primary/70" />
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-        </Tabs>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

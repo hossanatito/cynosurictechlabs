@@ -1,154 +1,89 @@
-import React, { useState } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Clock, DollarSign, HeadphonesIcon, MessageSquare, Settings, GraduationCap, Search } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { Plus, Minus } from "lucide-react";
+
+const faqs = [
+  {
+    q: "How long does a typical project take?",
+    a: "It depends on scope. A focused website is typically 4–6 weeks; larger applications run 3–6 months. We give you a real timeline after discovery.",
+  },
+  {
+    q: "What is your pricing structure?",
+    a: "Either fixed-price or time-and-materials, depending on how well-defined the work is. Every quote is transparent and itemized.",
+  },
+  {
+    q: "Do you provide ongoing support?",
+    a: "Yes — we offer maintenance and support arrangements so the product stays healthy after launch.",
+  },
+  {
+    q: "How do you handle project communication?",
+    a: "You get a single point of contact, weekly demos, and a shared workspace. No black boxes, no status theater.",
+  },
+  {
+    q: "Can you work with our existing systems?",
+    a: "Yes. Most of our work integrates with something — CRMs, ERPs, data warehouses, legacy code. We're comfortable in existing systems.",
+  },
+  {
+    q: "Do you provide training for our team?",
+    a: "We hand over documentation and run training sessions so your team owns the product after we ship.",
+  },
+];
 
 export default function ServicesFAQ() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const faqs = [
-    {
-      question: "How long does a typical project take?",
-      answer: "Project timelines vary based on complexity. A simple website might take 4-6 weeks, while complex applications can take 3-6 months. We'll provide a detailed timeline during the discovery phase.",
-      icon: Clock,
-      gradient: "from-primary/20 to-primary/5"
-    },
-    {
-      question: "What is your pricing structure?",
-      answer: "We offer both fixed-price and time-and-materials pricing models depending on the project requirements. We provide transparent quotes after a thorough consultation.",
-      icon: DollarSign,
-      gradient: "from-primary/25 to-primary/8"
-    },
-    {
-      question: "Do you provide ongoing support?",
-      answer: "Yes, we offer various maintenance and support packages to ensure your digital products continue to perform optimally after launch.",
-      icon: HeadphonesIcon,
-      gradient: "from-primary/20 to-primary/5"
-    },
-    {
-      question: "How do you handle project communication?",
-      answer: "We use project management tools like Jira or Asana and conduct regular video meetings. You'll have a dedicated project manager as your main point of contact.",
-      icon: MessageSquare,
-      gradient: "from-primary/30 to-primary/10"
-    },
-    {
-      question: "Can you work with our existing systems?",
-      answer: "Absolutely. We specialize in integration with existing systems and can extend or enhance your current digital infrastructure.",
-      icon: Settings,
-      gradient: "from-primary/20 to-primary/5"
-    },
-    {
-      question: "Do you provide training for our team?",
-      answer: "Yes, we provide comprehensive training sessions to ensure your team can effectively use and manage the solutions we build.",
-      icon: GraduationCap,
-      gradient: "from-primary/25 to-primary/8"
-    }
-  ];
-
-  // Filter FAQs based on search
-  const filteredFaqs = faqs.filter(faq => 
-    faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    faq.answer.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const [open, setOpen] = useState<number | null>(0);
+  const reduce = useReducedMotion();
 
   return (
-    <section className="py-16 md:py-24 bg-muted/30 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary) / 0.3) 1px, transparent 1px)`,
-          backgroundSize: '32px 32px'
-        }} />
-      </div>
-
-      <div className="container-custom max-w-4xl mx-auto relative z-10">
-        <div className="text-center mb-12 animate-fade-in">
-          <Badge variant="outline" className="mb-4 border-primary/20">
-            Got Questions?
-          </Badge>
-          <h2 className="text-2xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-            Frequently Asked Questions
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-6"></div>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-            Common questions about our services and processes.
+    <section className="py-24 md:py-32 border-t border-border">
+      <div className="mx-auto w-full max-w-5xl px-6">
+        <div className="mb-14 max-w-2xl">
+          <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-6">
+            FAQ
           </p>
-
-          {/* Search Input */}
-          <div className="max-w-md mx-auto relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input 
-              placeholder="Search questions..." 
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 bg-card/50 backdrop-blur-sm border-border/50 focus:border-primary/30"
-            />
-          </div>
+          <h2 className="text-3xl md:text-5xl leading-[1.05] tracking-[-0.035em] font-medium">
+            Common questions.
+          </h2>
         </div>
-        
-        {/* Accordion FAQ */}
-        <Accordion type="single" collapsible className="space-y-4">
-          {filteredFaqs.map((faq, index) => {
-            const Icon = faq.icon;
+        <div>
+          {faqs.map((faq, i) => {
+            const isOpen = open === i;
             return (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`}
-                className={cn(
-                  "bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg px-6 overflow-hidden",
-                  "hover:border-primary/30 transition-all duration-300",
-                  "data-[state=open]:border-primary/50 data-[state=open]:shadow-lg data-[state=open]:shadow-primary/10",
-                  "animate-fade-in"
-                )}
-                style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+              <motion.div
+                key={faq.q}
+                initial={reduce ? false : { opacity: 0, y: 8 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.4, delay: i * 0.04 }}
+                className="border-t border-border last:border-b"
               >
-                <AccordionTrigger className="hover:no-underline py-5 group">
-                  <div className="flex items-start gap-3 text-left">
-                    <div className={cn(
-                      "p-2 rounded-lg bg-gradient-to-br shrink-0 mt-0.5",
-                      faq.gradient,
-                      "border border-primary/20 group-hover:scale-110 transition-transform duration-300"
-                    )}>
-                      <Icon className="h-4 w-4 text-primary" />
-                    </div>
-                    <span className="font-semibold text-base group-hover:text-primary transition-colors">
-                      {faq.question}
-                    </span>
+                <button
+                  type="button"
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  className="w-full flex items-center justify-between gap-6 py-6 text-left group"
+                  aria-expanded={isOpen}
+                >
+                  <span className="text-base md:text-lg font-medium text-foreground group-hover:opacity-70 transition-opacity">
+                    {faq.q}
+                  </span>
+                  {isOpen ? (
+                    <Minus className="h-4 w-4 shrink-0" strokeWidth={1.5} />
+                  ) : (
+                    <Plus className="h-4 w-4 shrink-0" strokeWidth={1.5} />
+                  )}
+                </button>
+                <div
+                  className="grid transition-all duration-300 ease-out"
+                  style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+                >
+                  <div className="overflow-hidden">
+                    <p className="pb-6 pr-10 text-sm md:text-base text-muted-foreground leading-relaxed max-w-[60ch]">
+                      {faq.a}
+                    </p>
                   </div>
-                </AccordionTrigger>
-                <AccordionContent className="pb-5 pt-2">
-                  <div className="ml-11 text-muted-foreground leading-relaxed border-l-2 border-primary/20 pl-4">
-                    {faq.answer}
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
+                </div>
+              </motion.div>
             );
           })}
-        </Accordion>
-
-        {/* No Results */}
-        {filteredFaqs.length === 0 && (
-          <div className="text-center py-12 text-muted-foreground">
-            <p>No questions found matching "{searchQuery}"</p>
-          </div>
-        )}
-
-        {/* Still have questions CTA */}
-        <div className="mt-12 text-center animate-fade-in" style={{ animationDelay: '0.8s' }}>
-          <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-8 hover:border-primary/30 transition-all duration-300">
-            <h3 className="text-xl font-bold mb-2">Still have questions?</h3>
-            <p className="text-muted-foreground mb-4">
-              We're here to help. Reach out to our team for personalized assistance.
-            </p>
-            <a 
-              href="mailto:contact@cynosuric.com" 
-              className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
-            >
-              contact@cynosuric.com
-              <MessageSquare className="h-4 w-4" />
-            </a>
-          </div>
         </div>
       </div>
     </section>
