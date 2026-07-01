@@ -1,14 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/sections/HeroSection";
-import AboutSection from "@/components/sections/AboutSection";
+import TrustStrip from "@/components/sections/TrustStrip";
 import ServicesSection from "@/components/sections/ServicesSection";
-import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
+import ApproachSection from "@/components/sections/ApproachSection";
 import PortfolioSection from "@/components/sections/PortfolioSection";
-import TechStackSection from "@/components/sections/TechStackSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import CTASection from "@/components/sections/CTASection";
-import ContactSection from "@/components/sections/ContactSection";
 import SEOHead from "@/components/SEO/SEOHead";
 import { organizationSchema, webPageSchema } from "@/data/structuredData";
 
@@ -17,7 +14,7 @@ const Index = () => {
     organizationSchema,
     webPageSchema(
       "Cynosuric Tech Labs | Future-Ready Web & Software Solutions",
-      "Expert web development, custom software, and AI integration services. Transform your business with scalable, secure solutions. 6+ years experience, 250+ projects delivered.",
+      "Expert web development, custom software, and AI integration services. Transform your business with scalable, secure solutions.",
       typeof window !== 'undefined' ? window.location.href : ""
     )
   ];
@@ -26,21 +23,18 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Cynosuric Tech Labs | Future-Ready Web & Software Solutions"
-        description="Expert web development, custom software, and AI integration services. Transform your business with scalable, secure solutions. 6+ years experience, 250+ projects delivered."
-        keywords="web development company, custom software development, AI integration services, React development agency, enterprise software solutions, tech consulting services"
+        description="We partner with founders and teams to ship web, product, and AI systems people actually use. 6+ years, 250+ projects delivered."
+        keywords="web development company, custom software development, AI integration services, React development agency"
         structuredData={structuredData}
       />
       <Navbar />
       <main>
         <HeroSection />
-        <AboutSection />
+        <TrustStrip />
         <ServicesSection />
-        <WhyChooseUsSection />
+        <ApproachSection />
         <PortfolioSection />
-        <TechStackSection />
-        <TestimonialsSection />
         <CTASection />
-        <ContactSection />
       </main>
       <Footer />
     </div>
