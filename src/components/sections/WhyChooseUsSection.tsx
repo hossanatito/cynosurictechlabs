@@ -1,55 +1,62 @@
-
-import { Card, CardContent } from "@/components/ui/card";
+import { motion, useReducedMotion } from "framer-motion";
 
 const reasons = [
   {
-    title: "Results-driven",
-    description: "We focus on delivering tangible business outcomes, not just code."
+    title: "Senior hands only",
+    body: "No juniors billed as seniors. Every engineer on your project has shipped production systems for years.",
   },
   {
-    title: "Agile Methodology",
-    description: "Flexible, iterative approach that adapts to changing requirements."
+    title: "Scope you can trust",
+    body: "Fixed weekly cadence. If something changes, we say so — before the invoice, not after.",
   },
   {
-    title: "Senior Engineers Only",
-    description: "Every team member has 5+ years of professional experience."
+    title: "You own everything",
+    body: "Your code, your accounts, your keys. No lock-in, no retainer required to keep the lights on.",
   },
   {
-    title: "Security-first Approach",
-    description: "Best practices in security integrated throughout the development lifecycle."
+    title: "Built to last",
+    body: "Boring tech where it helps, modern tech where it matters. The stuff we build is still running years later.",
   },
-  {
-    title: "After-launch Support",
-    description: "Comprehensive maintenance and support packages after project completion."
-  }
 ];
 
 export default function WhyChooseUsSection() {
+  const reduce = useReducedMotion();
+
   return (
-    <section id="why-choose-us" className="py-12 md:py-20 lg:py-24 bg-muted/30">
-      <div className="container-custom">
-        <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Why Choose Us</h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            What makes Cynosuric Tech Labs different from other development agencies?
+    <section id="why-choose-us" className="py-24 md:py-40 border-t border-border">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid grid-cols-12 gap-8 mb-16 md:mb-24">
+          <h2 className="col-span-12 md:col-span-8 text-4xl md:text-6xl tracking-[-0.03em] font-medium leading-[1]">
+            Why teams stay.
+          </h2>
+          <p className="col-span-12 md:col-span-4 md:pt-3 text-muted-foreground max-w-[38ch]">
+            Four reasons clients keep sending the next project our way.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
-          {reasons.map((reason, index) => (
-            <Card 
-              key={index}
-              className="h-full border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-2 transition-all duration-300 text-center group"
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-14">
+          {reasons.map((r, i) => (
+            <motion.div
+              key={r.title}
+              initial={reduce ? false : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+              className="group relative pt-6"
             >
-              <CardContent className="pt-6 px-4">
-                <div className="mx-auto mb-4 h-12 w-12 md:h-14 md:w-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                  <span className="text-xl md:text-2xl font-semibold">{index + 1}</span>
-                </div>
-                <h3 className="text-base md:text-lg font-medium mb-2">{reason.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{reason.description}</p>
-              </CardContent>
-            </Card>
+              <span
+                aria-hidden
+                className="absolute left-0 top-0 h-px w-10 bg-foreground/30 transition-all duration-500 ease-out group-hover:w-24 group-hover:bg-foreground/70"
+              />
+              <div className="flex items-baseline gap-3 mb-4">
+                <span className="text-sm font-mono text-muted-foreground tracking-wider">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="h-px flex-1 bg-foreground/10" />
+              </div>
+              <h3 className="text-2xl tracking-[-0.02em] font-medium mb-3">{r.title}</h3>
+              <p className="text-muted-foreground leading-relaxed max-w-[46ch]">{r.body}</p>
+            </motion.div>
           ))}
         </div>
       </div>
