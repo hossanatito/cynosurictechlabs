@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -8,8 +9,17 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           <div className="col-span-2">
-            <div className="text-lg font-semibold tracking-tight">Cynosuric Tech Labs</div>
-            <p className="mt-3 text-sm text-muted-foreground max-w-[38ch]">
+            <div className="flex items-center gap-3">
+              <img
+                src={logo}
+                alt="Cynosuric logo"
+                width={28}
+                height={28}
+                className="h-7 w-7 rounded-full object-cover"
+              />
+              <div className="text-lg font-semibold tracking-tight">Cynosuric Tech Labs</div>
+            </div>
+            <p className="mt-4 text-sm text-muted-foreground max-w-[38ch]">
               A small team building web, product, and AI software worth keeping.
             </p>
           </div>
