@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
+import HeroBackground from "@/components/ui/HeroBackground";
 
 export default function AboutHero() {
   const reduce = useReducedMotion();
@@ -9,8 +10,10 @@ export default function AboutHero() {
   });
 
   return (
-    <section className="relative pt-32 pb-16 md:pt-40 md:pb-24">
-      <div className="mx-auto w-full max-w-5xl px-6">
+    <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-white overflow-hidden">
+      <HeroBackground violetAt="0% 20%" blueAt="100% 0%" />
+      <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
+
         <motion.p
           {...fade(0)}
           className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-6"
