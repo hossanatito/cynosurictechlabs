@@ -1,135 +1,67 @@
+import { motion, useReducedMotion } from "framer-motion";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { motion } from "framer-motion";
-
-const portfolioItems = [
+const featured = [
   {
     title: "Stelar",
-    description: "An AI-powered storytelling platform that brings imagination to life. Create personalized, illustrated storybooks for children with the help of artificial intelligence.",
-    tech: ["React", "AI/ML", "Tailwind CSS", "Creative Tools"],
-    results: "Empowering parents and educators to create engaging stories",
-    image: "https://placehold.co/600x400/8b5cf6/ffffff?text=Stelar",
+    context: "AI storytelling platform for illustrated children's books.",
+    image: "https://picsum.photos/seed/stelar-editorial-mono/1200/900",
     url: "https://stelar.appsdyno.com",
   },
   {
     title: "Sumo Check",
-    description: "Never miss a great deal again! Track and monitor AppSumo deals, get notified about expiring offers, and make informed purchasing decisions with comprehensive deal analytics.",
-    tech: ["React", "Web Scraping", "Real-time Alerts", "Data Analytics"],
-    results: "Helping users save money on software deals",
-    image: "https://placehold.co/600x400/f59e0b/ffffff?text=SumoCheck",
+    context: "Deal-tracking dashboard with real-time alerts for AppSumo.",
+    image: "https://picsum.photos/seed/sumocheck-analytics/900/1100",
     url: "https://sumocheck.appsdyno.com/",
-  },
-  {
-    title: "WpScanrr",
-    description: "A powerful WordPress vulnerability scanner that helps you discover hidden WordPress contents and identify security issues in your installation.",
-    tech: ["React", "Tailwind CSS", "WordPress API", "Security"],
-    results: "Improved security for hundreds of WordPress sites",
-    image: "https://placehold.co/600x400/3b82f6/ffffff?text=WpScanrr",
-    url: "https://wpscanrr.lovable.app/",
-  },
-  {
-    title: "iNoty",
-    description: "Simplify Payment Webhook Testing - The easiest way to test and debug Instant Payment Notifications from Stripe, PayPal, and Paddle - all in one place.",
-    tech: ["React", "Tailwind CSS", "Webhook API", "Payment Integration"],
-    results: "Streamlined payment debugging for developers",
-    image: "https://placehold.co/600x400/6366f1/ffffff?text=iNoty",
-    url: "https://inoty.lovable.app/",
-  },
-  {
-    title: "SearchPad",
-    description: "A customizable marketplace platform that connects buyers and sellers. Built with flexibility in mind, allowing businesses to create their own branded marketplace experience.",
-    tech: ["React", "E-commerce", "Payment Integration", "Search Engine"],
-    results: "Enabling businesses to launch their own marketplaces",
-    image: "https://placehold.co/600x400/10b981/ffffff?text=SearchPad",
-    url: "https://searchpad.appsdyno.com/",
   },
 ];
 
-// Animation variants for staggered children
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5
-    }
-  }
-};
-
 export default function PortfolioSection() {
+  const reduce = useReducedMotion();
+
   return (
-    <section id="portfolio" className="py-12 md:py-20 lg:py-24">
-      <div className="container-custom">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-8 md:mb-12"
-        >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Our Portfolio</h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Check out our latest projects and the solutions we've built for our clients.
-          </p>
-        </motion.div>
-        
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-2 gap-6"
-        >
-          {portfolioItems.map((item, index) => (
-            <motion.div key={index} variants={itemVariants} className="h-full">
-              <Card className="h-full border-border/50 overflow-hidden hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 bg-card/50 backdrop-blur-sm flex flex-col">
-                <div className="relative aspect-video overflow-hidden group">
-                  <img
-                    src={item.image}
-                    alt={`${item.title} - ${item.description.slice(0, 100)} - Portfolio project built with ${item.tech.slice(0, 3).join(', ')}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                    width="600"
-                    height="400"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
-                </div>
-                <CardHeader className="flex-grow">
-                  <CardTitle className="text-lg md:text-xl mb-2">{item.title}</CardTitle>
-                  <CardDescription className="text-muted-foreground text-sm leading-relaxed">
-                    {item.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {item.tech.map((tech, idx) => (
-                      <span key={idx} className="px-2.5 py-1 text-xs rounded-full border border-primary/20 bg-primary/5 text-primary">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <p className="text-sm text-primary mb-4 font-medium">{item.results}</p>
-                  <Button className="w-full md:w-auto hover:-translate-y-0.5 hover:shadow-lg transition-all" variant="outline" asChild>
-                    <a href={item.url} target="_blank" rel="noopener noreferrer">Visit Project</a>
-                  </Button>
-                </CardContent>
-              </Card>
-            </motion.div>
+    <section id="work" className="py-24 md:py-40">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="flex items-end justify-between mb-16 md:mb-24 gap-8">
+          <h2 className="text-4xl md:text-6xl tracking-[-0.03em] font-medium leading-[1] max-w-[16ch]">
+            Selected work.
+          </h2>
+          <a
+            href="https://cynosurictechlabs.lovable.app"
+            className="hidden md:inline text-sm text-muted-foreground hover:text-foreground underline underline-offset-4 decoration-border whitespace-nowrap"
+          >
+            All projects →
+          </a>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
+          {featured.map((p, i) => (
+            <motion.a
+              key={p.title}
+              href={p.url}
+              target="_blank"
+              rel="noreferrer"
+              initial={reduce ? false : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className={i === 0 ? "md:col-span-7 group block" : "md:col-span-5 md:mt-24 group block"}
+            >
+              <div className="overflow-hidden rounded-xl bg-secondary">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className={`w-full ${i === 0 ? "aspect-[4/3]" : "aspect-[3/4]"} object-cover grayscale group-hover:grayscale-0 transition-all duration-700`}
+                  loading="lazy"
+                />
+              </div>
+              <div className="mt-6 flex items-baseline justify-between gap-4">
+                <h3 className="text-xl md:text-2xl tracking-[-0.02em] font-medium">{p.title}</h3>
+                <span className="text-sm text-muted-foreground">View case →</span>
+              </div>
+              <p className="mt-2 text-muted-foreground max-w-[42ch]">{p.context}</p>
+            </motion.a>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
