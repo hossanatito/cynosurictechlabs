@@ -25,7 +25,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-dvh bg-background">
       <SEOHead
         title="Cynosuric Tech Labs | Future-Ready Web & Software Solutions"
         description="We partner with founders and teams to ship web, product, and AI systems people actually use. 6+ years, 250+ projects delivered."

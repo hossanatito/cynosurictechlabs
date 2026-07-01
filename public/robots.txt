@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cynosurictechlabs.com/sitemap.xml
-
-# Crawl-delay for all bots
-Crawl-delay: 1
+Sitemap: https://cynosurictechlabs.lovable.app/sitemap.xml

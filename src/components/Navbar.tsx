@@ -34,7 +34,7 @@ export default function Navbar() {
           )}
         >
           <Link to="/" className="flex items-center gap-2 mr-4" aria-label="Cynosuric home">
-            <img src={logo} alt="Cynosuric logo" className="h-7 w-7 rounded-full object-cover" />
+            <img src={logo} alt="Cynosuric logo" width={28} height={28} decoding="async" fetchPriority="high" className="h-7 w-7 rounded-full object-cover" />
             <span className="text-sm font-semibold tracking-tight">Cynosuric</span>
           </Link>
 
