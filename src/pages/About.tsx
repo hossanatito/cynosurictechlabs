@@ -22,7 +22,7 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-dvh bg-background">
       <SEOHead
         title="About Us - Innovation & Excellence Since 2018"
         description="Meet the team behind 250+ successful projects. Learn about our mission, values, and commitment to delivering future-ready digital solutions."

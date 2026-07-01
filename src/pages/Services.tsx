@@ -25,7 +25,7 @@ export default function Services() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-dvh bg-background">
       <SEOHead
         title="Web & Software Development Services"
         description="Comprehensive tech services: custom web development, mobile apps, AI integration, cloud solutions. Starter to Enterprise packages. Get a free consultation."
