@@ -1,29 +1,39 @@
-
-import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function CTASection() {
+  const reduce = useReducedMotion();
+
   return (
-    <section className="py-12 md:py-20 lg:py-24 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 right-20 w-60 h-60 rounded-full bg-primary/20 blur-3xl"></div>
-        <div className="absolute bottom-0 left-20 w-60 h-60 rounded-full bg-primary/10 blur-3xl"></div>
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: '40px 40px'
-        }}></div>
-      </div>
-      
-      <div className="container-custom text-center relative z-10 px-4">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Ready to Build Something Amazing?</h2>
-        <p className="text-muted-foreground text-sm md:text-base mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
-          Let's discuss your project and see how our expertise can transform your digital presence.
-        </p>
-        <Button size="lg" className="hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 group border border-primary/20 min-h-[48px] md:min-h-[56px] text-base">
-          Schedule a Free Discovery Call
-          <ChevronRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-        </Button>
+    <section className="py-32 md:py-48 border-t border-border">
+      <div className="mx-auto max-w-6xl px-6 text-center">
+        <motion.h2
+          initial={reduce ? false : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="text-5xl md:text-8xl tracking-[-0.04em] font-medium leading-[0.95] max-w-[18ch] mx-auto"
+        >
+          Have something<br />worth building?
+        </motion.h2>
+
+        <motion.div
+          initial={reduce ? false : { opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="mt-12"
+        >
+          <a
+            href="mailto:hello@cynosurictechlabs.com"
+            className="inline-flex items-center gap-3 text-lg md:text-xl font-medium border-b-2 border-foreground pb-1 hover:opacity-70 transition-opacity"
+          >
+            hello@cynosurictechlabs.com
+            <span aria-hidden>→</span>
+          </a>
+          <p className="mt-6 text-sm text-muted-foreground">
+            Typical reply within one business day.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
