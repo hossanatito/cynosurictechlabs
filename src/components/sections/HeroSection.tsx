@@ -22,8 +22,22 @@ export default function HeroSection() {
   const word = ROTATING_WORDS[wordIndex];
 
   return (
-    <section className="relative min-h-[90dvh] flex items-center pt-32 pb-24 md:pt-40 md:pb-28">
-      <div className="mx-auto w-full max-w-5xl px-6">
+    <section className="relative min-h-[90dvh] flex items-center pt-32 pb-24 md:pt-40 md:pb-28 bg-white overflow-hidden">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(229,231,235,0.8) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(229,231,235,0.8) 1px, transparent 1px),
+            radial-gradient(circle 500px at 0% 20%, rgba(139,92,246,0.3), transparent),
+            radial-gradient(circle 500px at 100% 0%, rgba(59,130,246,0.3), transparent)
+          `,
+          backgroundSize: "48px 48px, 48px 48px, 100% 100%, 100% 100%",
+        }}
+      />
+      <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
+
         <motion.p
           {...fade(0)}
           className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-6"
