@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from "@/lib/utils";
 import { Menu, X } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -32,9 +33,11 @@ export default function Navbar() {
             scrolled && "bg-background/85"
           )}
         >
-          <Link to="/" className="text-sm font-semibold tracking-tight mr-4">
-            Cynosuric
+          <Link to="/" className="flex items-center gap-2 mr-4" aria-label="Cynosuric home">
+            <img src={logo} alt="Cynosuric logo" className="h-7 w-7 rounded-full object-cover" />
+            <span className="text-sm font-semibold tracking-tight">Cynosuric</span>
           </Link>
+
 
           <ul className="hidden md:flex items-center">
             {navItems.map((item) => {
