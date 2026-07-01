@@ -1,101 +1,108 @@
-
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from "@/components/ui/button";
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { cn } from "@/lib/utils";
 import { Menu, X } from 'lucide-react';
-import logo from "@/assets/logo.png";
 
 const navItems = [
-  { name: "Home", href: "/", isSection: false },
-  { name: "About", href: "/about", isSection: false },
-  { name: "Services", href: "/services", isSection: false },
-  { name: "Contact", href: "/contact", isSection: false },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+  const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <header className="fixed w-full z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
-      <div className="container-custom py-3 md:py-4">
-        <nav className="flex items-center justify-between">
-          <Link to="/" className="text-base md:text-lg font-bold text-primary flex items-center gap-2 transition-transform hover:scale-105 duration-300">
-            <img src={logo} alt="Cynosuric Tech Labs Logo" className="h-6 md:h-8 w-6 md:w-8 object-contain bg-white rounded-md p-0.5" />
-            <span className="hidden sm:inline">Cynosuric Tech Labs</span>
-            <span className="sm:hidden">Cynosuric</span>
+    <>
+      <header className="fixed top-4 md:top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+        <nav
+          className={cn(
+            "pointer-events-auto flex items-center gap-1 rounded-full border border-border bg-background/70 backdrop-blur-xl transition-all duration-300",
+            "pl-5 pr-2 py-2 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.08)]",
+            scrolled && "bg-background/85"
+          )}
+        >
+          <Link to="/" className="text-sm font-semibold tracking-tight mr-4">
+            Cynosuric
           </Link>
-          
-          {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <li key={item.name} className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                {item.isSection ? (
-                  <a 
-                    href={item.href}
-                    className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {item.name}
-                  </a>
-                ) : (
-                  <Link 
+
+          <ul className="hidden md:flex items-center">
+            {navItems.map((item) => {
+              const active = pathname === item.href;
+              return (
+                <li key={item.name}>
+                  <Link
                     to={item.href}
-                    className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                    className={cn(
+                      "px-3.5 py-1.5 text-sm rounded-full transition-colors",
+                      active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                    )}
                   >
                     {item.name}
                   </Link>
-                )}
-              </li>
-            ))}
-            <li className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <Button size="sm" className="hover-scale min-h-[44px]" asChild>
-                <Link to="/contact">Free Consultation</Link>
-              </Button>
-            </li>
+                </li>
+              );
+            })}
           </ul>
-          
-          {/* Mobile Navigation Toggle */}
-          <Button 
-            variant="ghost" 
-            size="icon"
-            className="md:hidden"
+
+          <Link
+            to="/contact"
+            className="hidden md:inline-flex ml-2 items-center gap-1.5 rounded-full bg-foreground text-background px-4 py-1.5 text-sm font-medium transition-transform active:scale-[0.98]"
+          >
+            Start a project
+            <span aria-hidden>→</span>
+          </Link>
+
+          <button
+            aria-label="Toggle menu"
+            className="md:hidden p-2 rounded-full hover:bg-secondary transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </Button>
+            {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
+          </button>
         </nav>
-        
-        {/* Mobile Navigation Menu */}
-        <div className={cn(
-          "flex flex-col md:hidden absolute left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-border shadow-xl transition-all duration-300 ease-in-out px-4 pb-4",
-          isMenuOpen ? "top-[60px] opacity-100" : "-top-[400px] opacity-0 pointer-events-none"
-        )}>
-          {navItems.map((item, idx) => (
-            item.isSection ? (
-              <a 
-                key={item.name}
-                href={item.href}
-                className="py-4 text-base text-muted-foreground hover:text-primary transition-colors border-b border-border/30 min-h-[44px] flex items-center"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            ) : (
-              <Link 
-                key={item.name}
+      </header>
+
+      {/* Mobile sheet */}
+      <div
+        className={cn(
+          "fixed inset-x-4 top-20 z-40 md:hidden rounded-2xl border border-border bg-background/95 backdrop-blur-xl p-3 shadow-lg transition-all duration-200",
+          isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
+        )}
+      >
+        <ul className="flex flex-col">
+          {navItems.map((item) => (
+            <li key={item.name}>
+              <Link
                 to={item.href}
-                className="py-4 text-base text-muted-foreground hover:text-primary transition-colors border-b border-border/30 min-h-[44px] flex items-center"
                 onClick={() => setIsMenuOpen(false)}
+                className="block px-4 py-3 text-base rounded-lg text-foreground hover:bg-secondary transition-colors"
               >
                 {item.name}
               </Link>
-            )
+            </li>
           ))}
-          <Button className="mt-4 w-full min-h-[48px] text-base" onClick={() => setIsMenuOpen(false)} asChild>
-            <Link to="/contact">Free Consultation</Link>
-          </Button>
-        </div>
+          <li className="mt-2">
+            <Link
+              to="/contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="block text-center rounded-full bg-foreground text-background px-4 py-3 text-sm font-medium"
+            >
+              Start a project
+            </Link>
+          </li>
+        </ul>
       </div>
-    </header>
+    </>
   );
 }

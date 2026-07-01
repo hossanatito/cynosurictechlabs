@@ -1,88 +1,85 @@
-
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, BrainCircuit, Code, Database, Laptop, PaintBucket, ShoppingCart, Smartphone } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const services = [
   {
+    n: "01",
     title: "Web Development",
-    description: "Modern, responsive web applications built with the latest technologies and frameworks.",
-    icon: "web-development",
-    subheading: "React, Next.js, Vue"
+    body: "Marketing sites, dashboards, and web apps built to load fast and last.",
+    tags: ["React", "Next.js", "Tailwind"],
   },
   {
-    title: "Custom Software Development",
-    description: "Tailored software solutions designed to address your specific business challenges.",
-    icon: "custom-software-development",
-    subheading: "Enterprise Solutions & Platforms"
+    n: "02",
+    title: "Custom Software",
+    body: "Internal tools, APIs, and platforms shaped around how your team actually works.",
+    tags: ["Node", "Python", "Postgres"],
   },
   {
-    title: "UI/UX Design",
-    description: "User-centered design that balances aesthetics with intuitive user experiences.",
-    icon: "ui-ux-design",
-    subheading: "Wireframing, Prototypes, User Testing"
+    n: "03",
+    title: "AI Integration",
+    body: "Practical AI features that ship: assistants, retrieval, workflows, and evals.",
+    tags: ["OpenAI", "Gemini", "Zapier"],
   },
   {
-    title: "Mobile App Development",
-    description: "Native and cross-platform mobile applications for iOS and Android devices.",
-    icon: "mobile-app-development",
-    subheading: "React Native, Flutter, Swift"
+    n: "04",
+    title: "Product Design",
+    body: "Interfaces designed with restraint. Fewer decisions for users, faster paths to value.",
+    tags: ["UX", "UI", "Systems"],
   },
-  {
-    title: "E-Commerce Development",
-    description: "Scalable and secure online stores with seamless payment processing and inventory management.",
-    icon: "e-commerce-development",
-    subheading: "Shopify, WooCommerce, Custom Stores"
-  },
-  {
-    title: "Custom AI Automations",
-    description: "Leverage AI to automate workflows and processes with no-code solutions that save time and reduce errors.",
-    icon: "ai-automation",
-    subheading: "n8n, Zapier, GPT Integration"
-  }
 ];
 
 export default function ServicesSection() {
+  const reduce = useReducedMotion();
+
   return (
-    <section id="services" className="py-12 md:py-20 lg:py-24">
-      <div className="container-custom">
-        <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Our Services</h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            We provide comprehensive technical solutions to help businesses thrive in the digital landscape.
+    <section id="services" className="py-24 md:py-40">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid grid-cols-12 gap-8 mb-16 md:mb-24">
+          <h2 className="col-span-12 md:col-span-8 text-4xl md:text-6xl tracking-[-0.03em] font-medium leading-[1]">
+            What we do.
+          </h2>
+          <p className="col-span-12 md:col-span-4 md:pt-3 text-muted-foreground max-w-[38ch]">
+            Four practices. One team. Every engagement scoped to a clear outcome.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {services.map((service, index) => (
-            <Card key={index} className="h-full border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-2 transition-all duration-300 group">
-              <CardHeader>
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                  {service.icon === "web-development" ? (
-                    <Code className="h-6 w-6 text-primary" />
-                  ) : service.icon === "custom-software-development" ? (
-                    <Laptop className="h-6 w-6 text-primary" />
-                  ) : service.icon === "ui-ux-design" ? (
-                    <PaintBucket className="h-6 w-6 text-primary" />
-                  ) : service.icon === "mobile-app-development" ? (
-                    <Smartphone className="h-6 w-6 text-primary" />
-                  ) : service.icon === "e-commerce-development" ? (
-                    <ShoppingCart className="h-6 w-6 text-primary" />
-                  ) : (
-                    <BrainCircuit className="h-6 w-6 text-primary" />
-                  )}
+
+        <ul className="border-t border-border">
+          {services.map((s, i) => (
+            <motion.li
+              key={s.n}
+              initial={reduce ? false : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
+              className="border-b border-border group"
+            >
+              <Link
+                to="/services"
+                className="grid grid-cols-12 gap-6 py-8 md:py-10 items-start transition-colors hover:bg-secondary/40 -mx-4 px-4 rounded-lg"
+              >
+                <div className="col-span-2 md:col-span-1 text-sm text-muted-foreground pt-2 font-mono">
+                  {s.n}
                 </div>
-                <CardTitle className="text-lg md:text-xl">{service.title}</CardTitle>
-                <p className="text-xs uppercase tracking-wider text-primary/80 mt-1">{service.subheading}</p>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-muted-foreground text-sm leading-relaxed">
-                  {service.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
+                <div className="col-span-10 md:col-span-6">
+                  <h3 className="text-2xl md:text-3xl tracking-[-0.02em] font-medium">
+                    {s.title}
+                  </h3>
+                  <p className="mt-3 text-muted-foreground max-w-[52ch]">{s.body}</p>
+                </div>
+                <div className="col-span-12 md:col-span-5 flex md:justify-end gap-2 flex-wrap md:pt-3">
+                  {s.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="text-xs text-muted-foreground border border-border rounded-full px-3 py-1"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </Link>
+            </motion.li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

@@ -5,85 +5,74 @@
 
 @layer base {
   :root {
-    /* Black and white tech theme */
-    --background: 0 0% 7%;
-    --foreground: 0 0% 98%;
+    /* Minimalist mono + cobalt accent */
+    --background: 40 20% 98%;
+    --foreground: 0 0% 4%;
 
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 7%;
+    --primary: 0 0% 4%;
+    --primary-foreground: 40 20% 98%;
 
-    --secondary: 0 0% 75%;
-    --secondary-foreground: 0 0% 7%;
+    --secondary: 30 8% 94%;
+    --secondary-foreground: 0 0% 4%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 80%;
+    --muted: 30 8% 94%;
+    --muted-foreground: 240 4% 46%;
 
-    --accent: 0 0% 90%;
-    --accent-foreground: 0 0% 7%;
+    --accent: 230 100% 57%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 0% 80%;
+    --border: 30 8% 90%;
+    --input: 30 8% 90%;
+    --ring: 230 100% 57%;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    /* Keep black and white theme values since our base is already dark */
-    --background: 0 0% 7%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 7%;
-
-    --secondary: 0 0% 75%;
-    --secondary-foreground: 0 0% 7%;
-
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 80%;
-
-    --accent: 0 0% 90%;
-    --accent-foreground: 0 0% 7%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 0% 80%;
+    --background: 0 0% 4%;
+    --foreground: 40 20% 98%;
+    --card: 0 0% 7%;
+    --card-foreground: 40 20% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 40 20% 98%;
+    --primary: 40 20% 98%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 40 20% 98%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 230 100% 62%;
+    --accent-foreground: 0 0% 100%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 230 100% 62%;
   }
 
-  /* Add Host Grotesk font family */
   * {
     @apply border-border;
     font-family: 'Host Grotesk', sans-serif;
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-size: 15px;
+    @apply bg-background text-foreground antialiased;
+    font-size: 16px;
+    font-feature-settings: "ss01", "cv11";
   }
-  
-  /* Smooth scrolling for the whole page */
+
   html {
     scroll-behavior: smooth;
   }
 }
+
 
 @layer utilities {
   .section-padding {
