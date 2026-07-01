@@ -23,7 +23,7 @@ export default function HeroSection() {
 
             <motion.h1
               {...fade(0.08)}
-              className="text-[13vw] leading-[0.95] tracking-[-0.04em] font-medium md:text-[7.5rem] lg:text-[8.5rem]"
+              className="text-[10vw] leading-[1] tracking-[-0.035em] font-medium md:text-[5.25rem] lg:text-[6rem]"
             >
               We build<br />
               software that<br />
