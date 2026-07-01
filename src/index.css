@@ -68,10 +68,10 @@
     --ring: 0 0% 80%;
   }
 
-  /* Add Space Grotesk font family */
+  /* Add Host Grotesk font family */
   * {
     @apply border-border;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Host Grotesk', sans-serif;
   }
 
   body {
