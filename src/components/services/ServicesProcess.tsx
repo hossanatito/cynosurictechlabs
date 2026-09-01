@@ -42,10 +42,10 @@ const steps = [
 export default function ServicesProcess() {
   const reduce = useReducedMotion();
   return (
-    <section className="py-24 md:py-32 border-t border-border">
+    <section className="py-24 md:py-32 bg-black text-white">
       <div className="mx-auto w-full max-w-5xl px-6">
         <div className="mb-14 max-w-2xl">
-          <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-6">
+          <p className="text-xs uppercase tracking-[0.22em] text-white/50 mb-6">
             Process
           </p>
           <h2 className="text-3xl md:text-5xl leading-[1.05] tracking-[-0.035em] font-medium">
@@ -60,10 +60,10 @@ export default function ServicesProcess() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.06, ease: [0.16, 1, 0.3, 1] }}
-              className="grid md:grid-cols-12 gap-6 md:gap-10 py-8 md:py-10 border-t border-border first:border-t-0"
+              className="grid md:grid-cols-12 gap-6 md:gap-10 py-8 md:py-10 border-t border-white/10 first:border-t-0"
             >
               <div className="md:col-span-2">
-                <p className="font-mono text-xs text-muted-foreground">
+                <p className="font-mono text-xs text-white/50">
                   {String(i + 1).padStart(2, "0")}
                 </p>
               </div>
@@ -71,12 +71,12 @@ export default function ServicesProcess() {
                 <h3 className="text-xl md:text-2xl font-medium tracking-[-0.02em] mb-2">
                   {step.title}
                 </h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-[48ch]">
+                <p className="text-sm md:text-base text-white/70 leading-relaxed max-w-[48ch]">
                   {step.description}
                 </p>
               </div>
               <div className="md:col-span-4 md:text-right">
-                <p className="font-mono text-xs text-muted-foreground">
+                <p className="font-mono text-xs text-white/50">
                   {step.timeframe}
                 </p>
               </div>
