@@ -1,16 +1,18 @@
 import { motion, useReducedMotion } from "framer-motion";
+import stelarPreview from "@/assets/stelar-preview.png.asset.json";
+import sumocheckPreview from "@/assets/sumocheck-preview.png.asset.json";
 
 const featured = [
   {
     title: "Stelar",
     context: "AI storytelling platform for illustrated children's books.",
-    image: "https://picsum.photos/seed/stelar-editorial-mono/1200/900",
+    image: stelarPreview.url,
     url: "https://usestelar.com/",
   },
   {
     title: "Sumo Check",
     context: "Deal-tracking dashboard with real-time alerts for AppSumo.",
-    image: "https://picsum.photos/seed/sumocheck-analytics/900/1100",
+    image: sumocheckPreview.url,
     url: "https://sumocheck.appsdyno.com/",
   },
 ];
