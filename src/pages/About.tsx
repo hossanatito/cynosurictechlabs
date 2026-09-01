@@ -36,6 +36,7 @@ export default function About() {
         <AboutStory />
         <AboutMission />
         <AboutValues />
+        <AboutTeam />
         <AboutCTA />
       </main>
       <Footer />
