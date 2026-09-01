@@ -23,13 +23,13 @@ export default function WhyChooseUsSection() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="why-choose-us" className="py-24 md:py-40 border-t border-border">
+    <section id="why-choose-us" className="py-24 md:py-40 bg-black text-white border-t border-white/10">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-12 gap-8 mb-16 md:mb-24">
           <h2 className="col-span-12 md:col-span-8 text-4xl md:text-6xl tracking-[-0.03em] font-medium leading-[1]">
             Why teams stay.
           </h2>
-          <p className="col-span-12 md:col-span-4 md:pt-3 text-muted-foreground max-w-[38ch]">
+          <p className="col-span-12 md:col-span-4 md:pt-3 text-white/60 max-w-[38ch]">
             Four reasons clients keep sending the next project our way.
           </p>
         </div>
@@ -46,16 +46,16 @@ export default function WhyChooseUsSection() {
             >
               <span
                 aria-hidden
-                className="absolute left-0 top-0 h-px w-10 bg-foreground/30 transition-all duration-500 ease-out group-hover:w-24 group-hover:bg-foreground/70"
+                className="absolute left-0 top-0 h-px w-10 bg-white/30 transition-all duration-500 ease-out group-hover:w-24 group-hover:bg-white/70"
               />
               <div className="flex items-baseline gap-3 mb-4">
-                <span className="text-sm font-mono text-muted-foreground tracking-wider">
+                <span className="text-sm font-mono text-white/50 tracking-wider">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="h-px flex-1 bg-foreground/10" />
+                <span className="h-px flex-1 bg-white/10" />
               </div>
               <h3 className="text-2xl tracking-[-0.02em] font-medium mb-3">{r.title}</h3>
-              <p className="text-muted-foreground leading-relaxed max-w-[46ch]">{r.body}</p>
+              <p className="text-white/60 leading-relaxed max-w-[46ch]">{r.body}</p>
             </motion.div>
           ))}
         </div>
