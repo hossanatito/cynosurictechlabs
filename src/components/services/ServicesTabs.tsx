@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
+import { Link } from "@/lib/router-compat";
 
 const services = [
   {
@@ -63,6 +64,7 @@ const services = [
   },
   {
     name: "AI & Automation",
+    href: "/services/ai-integration",
     description:
       "Practical AI features and workflow automation grounded in your actual business.",
     capabilities: [
@@ -119,6 +121,15 @@ export default function ServicesList() {
                     </li>
                   ))}
                 </ul>
+                {s.href && (
+                  <Link
+                    to={s.href}
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline"
+                  >
+                    Explore AI integration services
+                    <span aria-hidden>→</span>
+                  </Link>
+                )}
               </div>
             </motion.div>
           ))}
