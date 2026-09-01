@@ -23,9 +23,9 @@ export default function AboutValues() {
   return (
     <section className="py-24 md:py-32 border-t border-border">
       <div className="mx-auto w-full max-w-5xl px-6">
-        <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-12">
+        <h2 className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-12">
           What we value
-        </p>
+        </h2>
         <div className="grid md:grid-cols-3 gap-10 md:gap-12">
           {values.map((v, i) => (
             <motion.div

@@ -14,12 +14,6 @@ export const organizationSchema = {
     "addressLocality": "Remote-First Company",
     "addressCountry": "Worldwide"
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "ratingCount": "250",
-    "bestRating": "5"
-  },
   "sameAs": []
 };
 
@@ -87,52 +81,18 @@ export const serviceSchema = {
   }
 };
 
-export const faqSchema = {
+export const faqPageSchema = (items: Array<{ q: string; a: string }>) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How long does it take to build a custom website?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Project timelines vary based on complexity. A basic website takes 2-4 weeks, while complex web applications can take 8-16 weeks. We provide detailed timelines during our initial consultation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you provide ongoing support after launch?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, all our packages include post-launch support. We offer maintenance plans, updates, and technical support to ensure your application runs smoothly."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What technologies do you use?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We use modern technologies including React, TypeScript, Node.js, Python, and cloud platforms like AWS and Azure. We select the best tech stack based on your project requirements."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can you work with our existing systems?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Absolutely. We specialize in integrating new solutions with existing systems and can work with various APIs, databases, and legacy systems."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is your project process?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Our process includes Discovery & Planning, Design & Prototyping, Development & Testing, and Launch & Support. We maintain transparent communication throughout each phase."
-      }
+  "mainEntity": items.map((item) => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
     }
-  ]
-};
+  }))
+});
 
 export const breadcrumbSchema = (items: Array<{ name: string; url: string }>) => ({
   "@context": "https://schema.org",

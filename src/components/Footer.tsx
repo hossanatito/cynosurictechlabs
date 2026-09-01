@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <img
                 src={logo}
-                alt="Cynosuric logo"
+                alt="Cynosuric Tech Labs"
                 width={28}
                 height={28}
                 className="h-7 w-7 rounded-full object-cover"

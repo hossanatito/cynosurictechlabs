@@ -6,7 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const faqs = [
+export const faqs = [
   {
     q: "How long does a typical project take?",
     a: "A focused marketing site takes 2–4 weeks. A product or internal platform usually runs 8–16 weeks, shipped in weekly increments so you see progress instead of promises.",

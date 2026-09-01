@@ -5,7 +5,7 @@ export default function AboutMission() {
   return (
     <section className="py-24 md:py-32 border-t border-border">
       <div className="mx-auto w-full max-w-5xl px-6">
-        <motion.p
+        <motion.h2
           initial={reduce ? false : { opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -13,7 +13,7 @@ export default function AboutMission() {
           className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-8"
         >
           Mission
-        </motion.p>
+        </motion.h2>
         <motion.blockquote
           initial={reduce ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

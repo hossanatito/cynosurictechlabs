@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 
-const faqs = [
+export const faqs = [
   {
     q: "How long does a typical project take?",
     a: "It depends on scope. A focused website is typically 4–6 weeks; larger applications run 3–6 months. We give you a real timeline after discovery.",

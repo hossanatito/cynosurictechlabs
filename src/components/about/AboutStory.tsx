@@ -14,9 +14,9 @@ export default function AboutStory() {
       <div className="mx-auto w-full max-w-5xl px-6">
         <div className="grid md:grid-cols-12 gap-10">
           <motion.div {...fade(0)} className="md:col-span-4">
-            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+            <h2 className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
               Our story
-            </p>
+            </h2>
           </motion.div>
           <motion.div {...fade(0.1)} className="md:col-span-8 space-y-6">
             <p className="text-lg md:text-xl text-foreground leading-relaxed max-w-[60ch]">
