@@ -15,7 +15,7 @@ const title = "Web & Software Development Services";
 const description =
   "Comprehensive tech services: custom web development, mobile apps, AI integration, cloud solutions. Starter to Enterprise packages. Get a free consultation.";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/services/")({
   head: () =>
     seoHead({
       title,
