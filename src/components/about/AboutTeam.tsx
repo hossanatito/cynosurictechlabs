@@ -8,14 +8,14 @@ const team = [
     role: "Founder",
     image: titoAvatar.url,
     alt: "Portrait illustration of Tito, founder of Cynosuric Tech Labs",
-    quote: "I don't always test my code, but when I do, I do it in production.",
+    quote: "I turn 'that sounds impossible' into 'let's ship it Monday.'",
   },
   {
     name: "Mma",
     role: "Dev Team",
     image: mmaAvatar.url,
     alt: "Portrait illustration of Mma, developer at Cynosuric Tech Labs",
-    quote: "It works on my machine — and that's where the demo lives.",
+    quote: "I read the docs so your users never have to read an error message.",
   },
 ];
 
