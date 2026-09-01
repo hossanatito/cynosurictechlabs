@@ -1,0 +1,14 @@
+# Cynosuric Tech Labs
+
+> A remote-first studio building web, software, and AI systems for founders and teams. Est. 2022, 250+ projects delivered.
+
+Cynosuric Tech Labs partners with founders and product teams to design and ship
+websites, custom software, and AI-powered automations. Contact:
+support@cynosurictechlabs.net
+
+## Pages
+
+- [Home](/): Overview of our work, approach, tech stack, and selected projects.
+- [About](/about): Our story, team, mission, and values.
+- [Services](/services): Web development, custom software, mobile, AI integration, and how we work.
+- [Contact](/contact): Email us to start a project or ask a question.
