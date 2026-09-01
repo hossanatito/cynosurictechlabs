@@ -6,13 +6,13 @@ const featured = [
   {
     title: "Stelar",
     context: "AI storytelling platform for illustrated children's books.",
-    image: stelarPreview.url,
+    image: stelarPreview,
     url: "https://usestelar.com/",
   },
   {
     title: "Sumo Check",
     context: "Deal-tracking dashboard with real-time alerts for AppSumo.",
-    image: sumocheckPreview.url,
+    image: sumocheckPreview,
     url: "https://sumocheck.appsdyno.com/",
   },
 ];
