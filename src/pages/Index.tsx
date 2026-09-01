@@ -11,7 +11,8 @@ import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import SEOHead from "@/components/SEO/SEOHead";
-import { organizationSchema, webPageSchema, faqSchema } from "@/data/structuredData";
+import { organizationSchema, webPageSchema, faqPageSchema } from "@/data/structuredData";
+import { faqs } from "@/components/sections/FAQSection";
 
 const Index = () => {
   const structuredData = [
@@ -21,7 +22,7 @@ const Index = () => {
       "Expert web development, custom software, and AI integration services. Transform your business with scalable, secure solutions.",
       "https://cynosurictechlabs.com"
     ),
-    faqSchema,
+    faqPageSchema(faqs),
   ];
 
   return (

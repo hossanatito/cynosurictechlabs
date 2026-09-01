@@ -7,7 +7,8 @@ import ServicesProcess from "@/components/services/ServicesProcess";
 import ServicesFAQ from "@/components/services/ServicesFAQ";
 import ServicesCTA from "@/components/services/ServicesCTA";
 import SEOHead from "@/components/SEO/SEOHead";
-import { organizationSchema, webPageSchema, serviceSchema, faqSchema, breadcrumbSchema } from "@/data/structuredData";
+import { organizationSchema, webPageSchema, serviceSchema, faqPageSchema, breadcrumbSchema } from "@/data/structuredData";
+import { faqs as servicesFaqs } from "@/components/services/ServicesFAQ";
 
 export default function Services() {
   const structuredData = [
@@ -18,7 +19,7 @@ export default function Services() {
       "https://cynosurictechlabs.com/services"
     ),
     serviceSchema,
-    faqSchema,
+    faqPageSchema(servicesFaqs),
     breadcrumbSchema([
       { name: "Services", url: "https://cynosurictechlabs.com/services" },
     ]),
