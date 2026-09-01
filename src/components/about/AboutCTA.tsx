@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import { motion, useReducedMotion } from "framer-motion";
 
 export default function AboutCTA() {
