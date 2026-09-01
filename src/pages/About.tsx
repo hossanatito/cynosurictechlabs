@@ -6,7 +6,6 @@ import AboutValues from "@/components/about/AboutValues";
 import AboutTeam from "@/components/about/AboutTeam";
 import AboutCTA from "@/components/about/AboutCTA";
 import AboutMission from "@/components/about/AboutMission";
-import SEOHead from "@/components/SEO/SEOHead";
 import { organizationSchema, webPageSchema, breadcrumbSchema } from "@/data/structuredData";
 
 export default function About() {
@@ -24,12 +23,6 @@ export default function About() {
 
   return (
     <div className="min-h-dvh bg-background">
-      <SEOHead
-        title="About Us — Our Team & Story"
-        description="Meet the team behind 250+ delivered projects. Learn about our mission, values, and commitment to delivering future-ready digital solutions."
-        keywords="about cynosuric tech labs, web development team, software development company, tech consulting experts, digital transformation specialists"
-        structuredData={structuredData}
-      />
       <Navbar />
       <main>
         <AboutHero />

@@ -10,7 +10,6 @@ import PortfolioSection from "@/components/sections/PortfolioSection";
 import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
-import SEOHead from "@/components/SEO/SEOHead";
 import { organizationSchema, webPageSchema, faqPageSchema } from "@/data/structuredData";
 import { faqs } from "@/components/sections/FAQSection";
 
@@ -27,12 +26,6 @@ const Index = () => {
 
   return (
     <div className="min-h-dvh bg-background">
-      <SEOHead
-        title="Cynosuric Tech Labs | Future-Ready Web & Software Solutions"
-        description="We partner with founders and teams to ship web, product, and AI systems people actually use. 6+ years, 250+ projects delivered."
-        keywords="web development company, custom software development, AI integration services, React development agency"
-        structuredData={structuredData}
-      />
       <Navbar />
       <main>
         <HeroSection />
