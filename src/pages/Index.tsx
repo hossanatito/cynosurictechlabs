@@ -19,7 +19,7 @@ const Index = () => {
     webPageSchema(
       "Cynosuric Tech Labs | Future-Ready Web & Software Solutions",
       "Expert web development, custom software, and AI integration services. Transform your business with scalable, secure solutions.",
-      typeof window !== 'undefined' ? window.location.href : ""
+      "https://cynosurictechlabs.com"
     ),
     faqSchema,
   ];

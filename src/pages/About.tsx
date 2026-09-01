@@ -15,10 +15,10 @@ export default function About() {
     webPageSchema(
       "About Us — Our Team & Story",
       "Meet the team behind 250+ delivered projects. Learn about our mission, values, and commitment to delivering future-ready digital solutions.",
-      typeof window !== "undefined" ? window.location.href : ""
+      "https://cynosurictechlabs.com/about"
     ),
     breadcrumbSchema([
-      { name: "About", url: typeof window !== "undefined" ? `${window.location.origin}/about` : "/about" },
+      { name: "About", url: "https://cynosurictechlabs.com/about" },
     ]),
   ];
 

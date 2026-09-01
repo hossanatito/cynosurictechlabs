@@ -10,7 +10,7 @@ interface SEOHeadProps {
   structuredData?: object | object[];
 }
 
-const SITE_URL = "https://cynosurictechlabs.lovable.app";
+const SITE_URL = "https://cynosurictechlabs.com";
 
 export default function SEOHead({
   title,

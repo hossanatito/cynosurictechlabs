@@ -28,7 +28,7 @@ export default function PortfolioSection() {
             Selected work.
           </h2>
           <a
-            href="https://cynosurictechlabs.lovable.app"
+            href="https://cynosurictechlabs.com"
             className="hidden md:inline text-sm text-muted-foreground hover:text-foreground underline underline-offset-4 decoration-border whitespace-nowrap"
           >
             All projects →
