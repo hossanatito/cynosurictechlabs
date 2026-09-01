@@ -1,12 +1,14 @@
+const SITE_URL = "https://cynosurictechlabs.com";
+
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Cynosuric Tech Labs",
-  "url": typeof window !== 'undefined' ? window.location.origin : "https://cynosurictechlabs.com",
-  "logo": typeof window !== 'undefined' ? `${window.location.origin}/logo.png` : "",
+  "url": SITE_URL,
+  "logo": `${SITE_URL}/logo.png`,
   "description": "Future-ready web and software solutions with 6+ years of experience delivering 250+ successful projects worldwide",
   "email": "support@cynosurictechlabs.net",
-  "foundingDate": "2018",
+  "foundingDate": "2022",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Remote-First Company",
@@ -31,7 +33,7 @@ export const webPageSchema = (name: string, description: string, url: string) =>
   "isPartOf": {
     "@type": "WebSite",
     "name": "Cynosuric Tech Labs",
-    "url": typeof window !== 'undefined' ? window.location.origin : "https://cynosurictechlabs.com"
+    "url": SITE_URL
   }
 });
 

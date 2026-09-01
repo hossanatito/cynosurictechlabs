@@ -15,12 +15,12 @@ export default function Services() {
     webPageSchema(
       "Web & Software Development Services",
       "Comprehensive tech services: custom web development, mobile apps, AI integration, cloud solutions. Starter to Enterprise packages. Get a free consultation.",
-      typeof window !== "undefined" ? window.location.href : ""
+      undefined
     ),
     serviceSchema,
     faqSchema,
     breadcrumbSchema([
-      { name: "Services", url: typeof window !== "undefined" ? `${window.location.origin}/services` : "/services" },
+      { name: "Services", url: "https://cynosurictechlabs.com/services" },
     ]),
   ];
 
