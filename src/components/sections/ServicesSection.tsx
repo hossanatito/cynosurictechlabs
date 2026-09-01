@@ -5,24 +5,28 @@ const services = [
   {
     n: "01",
     title: "Web Development",
+    href: "/services",
     body: "Marketing sites, dashboards, and web apps built to load fast and last.",
     tags: ["React", "Next.js", "Tailwind"],
   },
   {
     n: "02",
     title: "Custom Software",
+    href: "/services",
     body: "Internal tools, APIs, and platforms shaped around how your team actually works.",
     tags: ["Node", "Python", "Postgres"],
   },
   {
     n: "03",
     title: "AI Integration",
+    href: "/services/ai-integration",
     body: "Practical AI features that ship: assistants, retrieval, workflows, and evals.",
     tags: ["OpenAI", "Gemini", "Zapier"],
   },
   {
     n: "04",
     title: "Product Design",
+    href: "/services",
     body: "Interfaces designed with restraint. Fewer decisions for users, faster paths to value.",
     tags: ["UX", "UI", "Systems"],
   },
@@ -54,7 +58,7 @@ export default function ServicesSection() {
               className="border-b border-border group"
             >
               <Link
-                to="/services"
+                to={s.href}
                 className="grid grid-cols-12 gap-6 py-8 md:py-10 items-start transition-colors hover:bg-secondary/40 -mx-4 px-4 rounded-lg"
               >
                 <div className="col-span-2 md:col-span-1 text-sm text-muted-foreground pt-2 font-mono">
