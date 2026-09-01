@@ -1,23 +1,28 @@
+# Fix Hero Rotating-Word Spacing
+
+## Problem
+The headline "We build [software] that earns its place." reserves the width of the longest rotating word ("automations") via an invisible sizer. When a shorter word like "software" or "websites" is active, a visible gap appears between the word and the following "that," breaking the sentence flow.
+
 ## Goal
-Redesign the "tools" logo strip so it reads as *tools we work with* (not partners/clients), and add the site logo to the footer. Footer already renders on all 4 pages — confirm it stays visually identical everywhere.
+Make the rotating word feel like a natural part of the sentence — no dead space, no awkward alignment, while preserving the smooth vertical word-swap animation.
 
-## 1. Reframe & redesign `TrustStrip.tsx`
-Rename intent from social-proof to capability. Rebuild as a minimal, purposeful section:
+## Proposed Solution
+Replace the fixed-width sizer with a smoothly animating inline container whose width adapts to each word. The surrounding text ("that") will follow the word naturally as the width transitions.
 
-- **Section eyebrow + headline**: small mono label `TOOLING` + one-line headline: *"Tools we build with."* + one-sentence sub: *"A pragmatic stack — picked per project, not per trend."* This removes any "trusted by / partnered with" reading.
-- **Expanded, curated tool set** (grayscale SVGs via `cdn.simpleicons.org/<slug>/9ca3af`), grouped visually in a single quiet row/grid: React, Next.js, TypeScript, Tailwind CSS, Node.js, Supabase, PostgreSQL, OpenAI, Vercel, Stripe, n8n, Zapier.
-- **Layout**: responsive grid (`grid-cols-3 sm:grid-cols-4 md:grid-cols-6`), generous vertical rhythm, hairline top/bottom borders, no cards. Logos at `h-6 md:h-7`, `opacity-60 hover:opacity-100`, `grayscale`, with `title`/`alt` for a11y. No labels under logos (per skill: logo-only rule).
-- **Motion**: subtle `whileInView` fade/stagger, respects reduced-motion.
-- **No AI tells**: no decorative dots, no em-dashes, no "Trusted by / Partners / Powered by" language, no version tags.
+### Implementation Details
+1. **Remove the invisible max-width sizer** from `src/components/sections/HeroSection.tsx`.
+2. **Wrap the rotating word** in a `motion.span` with `layout` enabled and an inline-block display so Framer Motion can interpolate its width.
+3. **Keep the `AnimatePresence` vertical slide** for the word swap, but add a width/opacity transition on the container so the trailing text glides with it.
+4. **Preserve baseline alignment** by keeping the same font metrics (`leading-[1.05]`, tracking, weight) on both the container and the animated word.
+5. **Add `overflow-hidden` / `clip-path` only on the vertical axis** so letters with descenders/ascenders are not clipped, while the width can still shrink and grow.
+6. **Verify responsive behavior**: ensure the animation and spacing work at `text-[10vw]` on mobile and `md:text-[5.25rem]`/`lg:text-[6rem]` on larger screens.
+7. **Accessibility check**: confirm the sentence remains readable for screen readers (the word should be announced as part of the heading, not duplicated).
 
-## 2. Add logo to `Footer.tsx`
-- Import `@/assets/logo.png` (same asset used in Navbar).
-- Replace the plain "Cynosuric Tech Labs" text lockup with logo (28px, rounded) + wordmark side-by-side, keeping current tagline below.
-- Keep everything else in the footer identical so it remains visually consistent across Home, About, Services, Contact (Footer is already shared — no per-page changes needed).
+## Files to Change
+- `src/components/sections/HeroSection.tsx`
 
-## 3. Verification
-- Visual check that footer renders identically on `/`, `/about`, `/services`, `/contact`.
-- Confirm logos load from Simple Icons CDN and section reads as tooling, not partnerships.
-
-## Out of scope
-No copy changes elsewhere, no nav/hero changes, no new dependencies.
+## Success Criteria
+- No visible gap after "software" or "websites" before "that."
+- Width transition feels smooth, not jarring.
+- Baseline of the rotating word still matches the surrounding headline text.
+- No console errors or layout shift on initial load.
