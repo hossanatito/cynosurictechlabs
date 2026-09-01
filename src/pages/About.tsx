@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import AboutHero from "@/components/about/AboutHero";
 import AboutStory from "@/components/about/AboutStory";
 import AboutValues from "@/components/about/AboutValues";
+import AboutTeam from "@/components/about/AboutTeam";
 import AboutCTA from "@/components/about/AboutCTA";
 import AboutMission from "@/components/about/AboutMission";
 import SEOHead from "@/components/SEO/SEOHead";
@@ -35,6 +36,7 @@ export default function About() {
         <AboutStory />
         <AboutMission />
         <AboutValues />
+        <AboutTeam />
         <AboutCTA />
       </main>
       <Footer />
