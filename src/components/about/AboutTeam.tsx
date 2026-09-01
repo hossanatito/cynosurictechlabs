@@ -6,14 +6,14 @@ const team = [
   {
     name: "Tito",
     role: "Founder",
-    image: titoAvatar.url,
+    image: titoAvatar,
     alt: "Portrait illustration of Tito, founder of Cynosuric Tech Labs",
     quote: "I turn 'that sounds impossible' into 'let's ship it Monday.'",
   },
   {
     name: "Mma",
     role: "Dev Team",
-    image: mmaAvatar.url,
+    image: mmaAvatar,
     alt: "Portrait illustration of Mma, developer at Cynosuric Tech Labs",
     quote: "I read the docs so your users never have to read an error message.",
   },
