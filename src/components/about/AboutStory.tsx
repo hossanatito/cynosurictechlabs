@@ -20,7 +20,7 @@ export default function AboutStory() {
           </motion.div>
           <motion.div {...fade(0.1)} className="md:col-span-8 space-y-6">
             <p className="text-lg md:text-xl text-foreground leading-relaxed max-w-[60ch]">
-              Founded in 2019, Cynosuric Tech Labs emerged from a simple idea: bridge the gap
+              Founded in 2022, Cynosuric Tech Labs emerged from a simple idea: bridge the gap
               between complex technology and elegant experience. We came together as engineers
               and designers who kept meeting teams stuck between technical requirements and
               products people would actually use.

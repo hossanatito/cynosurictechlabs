@@ -42,7 +42,7 @@ export default function HeroSection() {
           {...fade(0)}
           className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-6"
         >
-          Cynosuric Tech Labs / Est. 2019
+          Cynosuric Tech Labs / Est. 2022
         </motion.p>
 
         <motion.h1

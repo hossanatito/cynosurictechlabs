@@ -18,7 +18,7 @@ export default function AboutHero() {
           {...fade(0)}
           className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-6"
         >
-          About / Since 2019
+          About / Since 2022
         </motion.p>
         <motion.h1
           {...fade(0.08)}
