@@ -13,8 +13,8 @@ export default function About() {
   const structuredData = [
     organizationSchema,
     webPageSchema(
-      "About Us - Innovation & Excellence Since 2018",
-      "Meet the team behind 250+ successful projects. Learn about our mission, values, and commitment to delivering future-ready digital solutions.",
+      "About Us — Our Team & Story",
+      "Meet the team behind 250+ delivered projects. Learn about our mission, values, and commitment to delivering future-ready digital solutions.",
       typeof window !== "undefined" ? window.location.href : ""
     ),
     breadcrumbSchema([
@@ -25,8 +25,8 @@ export default function About() {
   return (
     <div className="min-h-dvh bg-background">
       <SEOHead
-        title="About Us - Innovation & Excellence Since 2018"
-        description="Meet the team behind 250+ successful projects. Learn about our mission, values, and commitment to delivering future-ready digital solutions."
+        title="About Us — Our Team & Story"
+        description="Meet the team behind 250+ delivered projects. Learn about our mission, values, and commitment to delivering future-ready digital solutions."
         keywords="about cynosuric tech labs, web development team, software development company, tech consulting experts, digital transformation specialists"
         structuredData={structuredData}
       />
