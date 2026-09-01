@@ -5,7 +5,7 @@ const featured = [
     title: "Stelar",
     context: "AI storytelling platform for illustrated children's books.",
     image: "https://picsum.photos/seed/stelar-editorial-mono/1200/900",
-    url: "https://stelar.appsdyno.com",
+    url: "https://usestelar.com/",
   },
   {
     title: "Sumo Check",
