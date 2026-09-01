@@ -24,10 +24,10 @@ export default function CTASection() {
           className="mt-12"
         >
           <a
-            href="mailto:hello@cynosurictechlabs.com"
+            href="mailto:support@cynosurictechlabs.net"
             className="inline-flex items-center gap-3 text-lg md:text-xl font-medium border-b-2 border-foreground pb-1 hover:opacity-70 transition-opacity"
           >
-            hello@cynosurictechlabs.com
+            support@cynosurictechlabs.net
             <span aria-hidden>→</span>
           </a>
           <p className="mt-6 text-sm text-muted-foreground">

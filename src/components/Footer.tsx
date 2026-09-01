@@ -38,8 +38,8 @@ export default function Footer() {
             <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-4">Contact</div>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="mailto:hello@cynosurictechlabs.com" className="hover:text-foreground text-muted-foreground">
-                  hello@cynosurictechlabs.com
+                <a href="mailto:support@cynosurictechlabs.net" className="hover:text-foreground text-muted-foreground">
+                  support@cynosurictechlabs.net
                 </a>
               </li>
             </ul>
