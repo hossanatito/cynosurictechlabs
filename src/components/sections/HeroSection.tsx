@@ -50,14 +50,12 @@ export default function HeroSection() {
           className="text-[10vw] leading-[1.05] tracking-[-0.035em] font-medium md:text-[5.25rem] lg:text-[6rem]"
         >
           We build<br />
-          <span
-            className="relative inline-grid align-baseline [&>*]:[grid-area:1/1] [&>*]:leading-[inherit] [&>*]:tracking-[inherit] [&>*]:font-[inherit]"
+          <motion.span
+            layout
+            className="relative inline-block align-baseline"
             style={{ clipPath: "inset(-0.15em 0 -0.15em 0)" }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Invisible sizer: reserves width of the widest word so layout never shifts */}
-            <span aria-hidden className="invisible whitespace-pre">
-              {ROTATING_WORDS.reduce((a, b) => (b.length > a.length ? b : a))}
-            </span>
             <AnimatePresence mode="wait" initial={false}>
               <motion.span
                 key={word}
@@ -65,12 +63,12 @@ export default function HeroSection() {
                 animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
                 exit={reduce ? { opacity: 0 } : { opacity: 0, y: "-0.5em" }}
                 transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                className="text-left whitespace-pre"
+                className="inline-block whitespace-nowrap"
               >
                 {word}
               </motion.span>
             </AnimatePresence>
-          </span>{" "}
+          </motion.span>{" "}
           that<br />
           <span className="italic font-normal pr-1">earns</span> its place.
         </motion.h1>
