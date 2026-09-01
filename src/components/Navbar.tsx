@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from '@/lib/router-compat';
 import { cn } from "@/lib/utils";
 import { Menu, X } from 'lucide-react';
 import logo from '@/assets/logo.png';

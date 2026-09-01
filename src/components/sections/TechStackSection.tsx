@@ -59,7 +59,7 @@ export default function TechStackSection() {
               className={`relative rounded-2xl border border-border p-6 ${categoryTint[i]} overflow-hidden`}
             >
               <div
-                className={`absolute top-0 left-6 w-12 h-[2px] ${categoryAccent[i].replace("text-", "bg-")}`}
+                className={`absolute top-0 left-6 w-12 h-[2px] ${(categoryAccent[i] ?? "").replace("text-", "bg-")}`}
                 aria-hidden="true"
               />
               <div className="flex items-baseline gap-3 mb-5">
