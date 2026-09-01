@@ -11,7 +11,7 @@ export default function Contact() {
     webPageSchema(
       "Contact Us - Get a Free Consultation",
       "Ready to transform your digital presence? Contact Cynosuric Tech Labs for a free consultation. Email: support@cynosurictechlabs.net",
-      undefined
+      "https://cynosurictechlabs.com/contact"
     ),
     breadcrumbSchema([
       { name: "Contact", url: "https://cynosurictechlabs.com/contact" },
