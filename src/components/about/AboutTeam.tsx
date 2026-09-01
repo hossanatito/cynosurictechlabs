@@ -24,9 +24,9 @@ export default function AboutTeam() {
   return (
     <section className="py-24 md:py-32 border-t border-border">
       <div className="mx-auto w-full max-w-5xl px-6 text-center">
-        <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-12">
+        <h2 className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-12">
           Meet the team
-        </p>
+        </h2>
         <div className="flex flex-col sm:flex-row justify-center items-start sm:items-stretch gap-12 md:gap-16">
           {team.map((member, i) => (
             <motion.div
