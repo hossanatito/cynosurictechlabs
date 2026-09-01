@@ -8,12 +8,14 @@ const team = [
     role: "Founder",
     image: titoAvatar.url,
     alt: "Portrait illustration of Tito, founder of Cynosuric Tech Labs",
+    quote: "I don't always test my code, but when I do, I do it in production.",
   },
   {
     name: "Mma",
     role: "Dev Team",
     image: mmaAvatar.url,
     alt: "Portrait illustration of Mma, developer at Cynosuric Tech Labs",
+    quote: "It works on my machine — and that's where the demo lives.",
   },
 ];
 
@@ -21,11 +23,11 @@ export default function AboutTeam() {
   const reduce = useReducedMotion();
   return (
     <section className="py-24 md:py-32 border-t border-border">
-      <div className="mx-auto w-full max-w-5xl px-6">
+      <div className="mx-auto w-full max-w-5xl px-6 text-center">
         <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-12">
           Meet the team
         </p>
-        <div className="grid sm:grid-cols-2 gap-12 md:gap-16 max-w-2xl">
+        <div className="flex flex-col sm:flex-row justify-center items-start sm:items-stretch gap-12 md:gap-16">
           {team.map((member, i) => (
             <motion.div
               key={member.name}
@@ -33,6 +35,7 @@ export default function AboutTeam() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-col items-center max-w-xs"
             >
               <div className="h-28 w-28 md:h-32 md:w-32 rounded-full overflow-hidden bg-muted mb-6">
                 <img
@@ -47,8 +50,11 @@ export default function AboutTeam() {
               <h3 className="text-xl md:text-2xl font-medium tracking-[-0.02em]">
                 {member.name}
               </h3>
-              <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground mt-2">
+              <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground mt-2 mb-5">
                 {member.role}
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed italic">
+                “{member.quote}”
               </p>
             </motion.div>
           ))}
