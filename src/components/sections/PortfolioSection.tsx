@@ -46,13 +46,13 @@ export default function PortfolioSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className={i === 0 ? "md:col-span-7 group block" : "md:col-span-5 md:mt-24 group block"}
+              className={i === 0 ? "md:col-span-6 group block" : "md:col-span-6 md:mt-24 group block"}
             >
               <div className="overflow-hidden rounded-xl bg-secondary">
                 <img
                   src={p.image}
                   alt={p.title}
-                  className={`w-full ${i === 0 ? "aspect-[4/3]" : "aspect-[3/4]"} object-cover grayscale group-hover:grayscale-0 transition-all duration-700`}
+                  className="w-full aspect-square object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                   loading="lazy"
                 />
               </div>
