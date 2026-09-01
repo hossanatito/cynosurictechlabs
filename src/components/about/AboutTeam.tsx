@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
-import titoAvatar from "@/assets/tito.png.asset.json";
-import mmaAvatar from "@/assets/mma.png.asset.json";
+import titoAvatar from "@/assets/tito.png";
+import mmaAvatar from "@/assets/mma.png";
 
 const team = [
   {
