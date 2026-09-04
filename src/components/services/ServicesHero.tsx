@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import HeroBackground from "@/components/ui/HeroBackground";
+import servicesHeroBg from "@/assets/services-hero-bg.png.asset.json";
 
 export default function ServicesHero() {
   const reduce = useReducedMotion();
@@ -12,6 +13,12 @@ export default function ServicesHero() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-white overflow-hidden">
       <HeroBackground violetAt="100% 20%" blueAt="0% 0%" />
+      <img
+        src={servicesHeroBg.url}
+        alt=""
+        aria-hidden
+        className="pointer-events-none select-none absolute z-0 right-0 bottom-0 w-[70%] max-w-[520px] opacity-25 md:opacity-70 md:w-[45%] lg:w-[42%] object-contain"
+      />
       <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
 
         <motion.p
