@@ -17,8 +17,8 @@ const featured = [
     url: "https://sumocheck.appsdyno.com/",
   },
   {
-    title: "Spring",
-    context: "Lightweight launch platform for product-led growth experiments.",
+    title: "Springwater Immigration",
+    context: "Client-facing immigration portal for case tracking and document submission.",
     image: springPreview.url,
     url: "https://spring.appsdyno.com/",
   },
