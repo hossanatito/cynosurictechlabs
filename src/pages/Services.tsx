@@ -14,7 +14,7 @@ export default function Services() {
     organizationSchema,
     webPageSchema(
       "Web & Software Development Services",
-      "Comprehensive tech services: custom web development, mobile apps, AI integration, cloud solutions. Starter to Enterprise packages. Get a free consultation.",
+      "Comprehensive tech services: custom web development, AI integration, cloud solutions. Starter to Enterprise packages. Get a free consultation.",
       "https://cynosurictechlabs.com/services"
     ),
     serviceSchema,
