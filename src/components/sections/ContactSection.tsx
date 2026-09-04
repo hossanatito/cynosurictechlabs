@@ -1,11 +1,24 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, MapPin, Clock } from "lucide-react";
+import contactCharacter from "@/assets/contact-hero-character.png.asset.json";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-12 md:py-20 lg:py-24">
-      <div className="container-custom">
+    <section id="contact" className="relative py-12 md:py-20 lg:py-24 overflow-hidden">
+      {/* Background character image */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.12] md:opacity-[0.18] lg:opacity-20"
+        style={{
+          backgroundImage: `url(${contactCharacter.url})`,
+          backgroundPosition: "right -5% bottom -10%",
+          backgroundSize: "auto 85%",
+          backgroundRepeat: "no-repeat",
+        }}
+        aria-hidden="true"
+      />
+      
+      <div className="container-custom relative z-10">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Contact Us</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
@@ -15,7 +28,7 @@ export default function ContactSection() {
         </div>
         
         <div className="max-w-2xl mx-auto">
-          <Card className="border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+          <Card className="border-border/50 bg-card/70 backdrop-blur-md hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
             <CardHeader className="text-center pb-4">
               <CardTitle className="text-xl md:text-2xl">Get in Touch</CardTitle>
               <CardDescription className="text-sm md:text-base">
@@ -70,3 +83,4 @@ export default function ContactSection() {
     </section>
   );
 }
+
