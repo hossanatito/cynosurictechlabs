@@ -13,7 +13,7 @@ const team = [
   },
   {
     name: "Mma",
-    role: "Dev Team",
+    role: "Senior Dev",
     image: mmaAvatar,
     alt: "Portrait illustration of Mma, developer at Cynosuric Tech Labs",
     quote: "I read the docs so your users never have to read an error message.",
