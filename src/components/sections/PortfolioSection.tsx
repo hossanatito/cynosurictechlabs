@@ -7,25 +7,25 @@ import bundlePreview from "@/assets/bundle-preview.png.asset.json";
 const featured = [
   {
     title: "Stelar",
-    context: "AI storytelling platform for illustrated children's books.",
+    meta: "AI Platform / 2024",
     image: stelarPreview,
     url: "https://usestelar.com/",
   },
   {
     title: "Sumo Check",
-    context: "Deal-tracking dashboard with real-time alerts for AppSumo.",
+    meta: "SaaS / 2024",
     image: sumocheckPreview,
     url: "https://sumocheck.appsdyno.com/",
   },
   {
     title: "Springwater Immigration",
-    context: "Client-facing immigration portal for case tracking and document submission.",
+    meta: "Legal Tech / 2024",
     image: springPreview.url,
     url: "https://spring.appsdyno.com/",
   },
   {
     title: "Bundle Deals Market",
-    context: "Online marketplace for discovering and buying SaaS bundle deals.",
+    meta: "E-Commerce / 2024",
     image: bundlePreview.url,
     url: "https://bundle.cynoapps.cloud/",
   },
@@ -35,46 +35,58 @@ export default function PortfolioSection() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="work" className="py-24 md:py-40">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="flex items-end justify-between mb-16 md:mb-24 gap-8">
-          <h2 className="text-4xl md:text-6xl tracking-[-0.03em] font-medium leading-[1] max-w-[16ch]">
-            Selected work.
-          </h2>
-          <a
-            href="https://cynosurictechlabs.com"
-            className="hidden md:inline text-sm text-muted-foreground hover:text-foreground underline underline-offset-4 decoration-border whitespace-nowrap"
-          >
-            All projects →
-          </a>
+    <section id="work" className="py-24 md:py-40 bg-background">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex items-end justify-between border-b border-border pb-8 mb-16 md:mb-24">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0047FF] mb-4">
+              Portfolio
+            </p>
+            <h2 className="text-4xl md:text-6xl tracking-[-0.03em] font-light leading-[1]">
+              Selected <span className="font-medium">Work</span>
+            </h2>
+          </div>
+          <span className="hidden md:block text-sm text-muted-foreground font-medium tabular-nums">
+            01 - 04
+          </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-16 md:gap-y-32">
           {featured.map((p, i) => (
             <motion.a
               key={p.title}
               href={p.url}
               target="_blank"
               rel="noreferrer"
-              initial={reduce ? false : { opacity: 0, y: 20 }}
+              initial={reduce ? false : { opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className={i === 0 ? "md:col-span-6 group block" : "md:col-span-6 md:mt-24 group block"}
+              className={i % 2 === 1 ? "md:mt-24 group block" : "group block"}
             >
-              <div className="overflow-hidden rounded-xl bg-secondary">
+              <div className="relative overflow-hidden rounded-xl bg-secondary mb-6">
                 <img
                   src={p.image}
                   alt={p.title}
-                  className="w-full aspect-video object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700"
+                  className="w-full aspect-video object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   loading="lazy"
                 />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
               </div>
-              <div className="mt-6 flex items-baseline justify-between gap-4">
-                <h3 className="text-xl md:text-2xl tracking-[-0.02em] font-medium">{p.title}</h3>
-                <span className="text-sm text-muted-foreground">View case →</span>
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">
+                    {p.meta}
+                  </p>
+                  <h3 className="text-xl md:text-2xl tracking-[-0.02em] font-medium text-foreground group-hover:text-[#0047FF] transition-colors duration-300">
+                    {p.title}
+                  </h3>
+                </div>
+                <span className="inline-flex items-center gap-2 text-foreground font-medium group/btn shrink-0">
+                  <span className="text-xs uppercase tracking-wider">View project</span>
+                  <span className="w-8 h-px bg-border group-hover/btn:bg-[#0047FF] group-hover/btn:w-10 transition-all duration-300" />
+                </span>
               </div>
-              <p className="mt-2 text-muted-foreground max-w-[42ch]">{p.context}</p>
             </motion.a>
           ))}
         </div>
