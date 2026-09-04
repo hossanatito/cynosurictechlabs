@@ -18,6 +18,13 @@ const team = [
     alt: "Portrait illustration of Mma, developer at Cynosuric Tech Labs",
     quote: "I read the docs so your users never have to read an error message.",
   },
+  {
+    name: "Cynosuric World",
+    role: "Remote Team",
+    image: cynosuricWorldAvatar.url,
+    alt: "Portrait illustration of the remote team at Cynosuric Tech Labs",
+    quote: "Wherever we are, we build like we're right next door.",
+  },
 ];
 
 export default function AboutTeam() {
