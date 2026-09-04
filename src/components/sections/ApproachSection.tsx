@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import HeroBackground from "@/components/ui/HeroBackground";
+import discoverIcon from "@/assets/discover-icon.png.asset.json";
 
 const steps = [
   {
