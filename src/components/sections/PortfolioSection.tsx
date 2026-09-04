@@ -85,6 +85,9 @@ export default function PortfolioSection() {
                   <h3 className="text-xl md:text-2xl tracking-[-0.02em] font-medium text-foreground group-hover:text-[#0047FF] transition-colors duration-300">
                     {p.title}
                   </h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-sm">
+                    {p.description}
+                  </p>
                 </div>
                 <span className="inline-flex items-center gap-2 text-foreground font-medium group/btn shrink-0">
                   <span className="text-xs uppercase tracking-wider">View project</span>
