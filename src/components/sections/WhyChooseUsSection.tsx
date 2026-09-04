@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
+import whyTeamsStayBg from "@/assets/why-teams-stay-bg.png.asset.json";
 
 const reasons = [
   {
