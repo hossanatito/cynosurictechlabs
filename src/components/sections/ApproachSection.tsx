@@ -7,16 +7,20 @@ const steps = [
     n: "01",
     title: "Discover",
     body: "We start with a short, sharp intake. Goals, constraints, and the shape of a good outcome.",
+    icon: discoverIcon.url,
+    iconAlt: "Discover — curious character inspecting a glowing orb",
   },
   {
     n: "02",
     title: "Design & Build",
     body: "Weekly demos, honest scope. You see the product take form, not slide decks about it.",
+    icon: null,
   },
   {
     n: "03",
     title: "Ship & Iterate",
     body: "We ship early, measure real usage, and refine. The launch is a checkpoint, not the finish line.",
+    icon: null,
   },
 ];
 
