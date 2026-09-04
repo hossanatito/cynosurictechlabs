@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import titoAvatar from "@/assets/tito.png";
 import mmaAvatar from "@/assets/mma.png";
+import cynosuricWorldAvatar from "@/assets/cynosuric-world-team.png.asset.json";
 
 const team = [
   {
