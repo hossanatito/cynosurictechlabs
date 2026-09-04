@@ -16,6 +16,12 @@ const featured = [
     image: sumocheckPreview,
     url: "https://sumocheck.appsdyno.com/",
   },
+  {
+    title: "Spring",
+    context: "Lightweight launch platform for product-led growth experiments.",
+    image: springPreview.url,
+    url: "https://spring.appsdyno.com/",
+  },
 ];
 
 export default function PortfolioSection() {
