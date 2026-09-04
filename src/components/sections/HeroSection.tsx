@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Link } from "@/lib/router-compat";
+import heroPeople from "@/assets/hero-people.png.asset.json";
 
 const ROTATING_WORDS = ["software", "websites", "automations"] as const;
 
@@ -35,6 +36,12 @@ export default function HeroSection() {
           `,
           backgroundSize: "48px 48px, 48px 48px, 100% 100%, 100% 100%",
         }}
+      />
+      <img
+        src={heroPeople.url}
+        alt=""
+        aria-hidden
+        className="pointer-events-none select-none absolute z-0 right-0 bottom-0 w-[70%] max-w-[560px] opacity-25 md:opacity-70 md:w-[45%] lg:w-[42%] object-contain"
       />
       <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
 
