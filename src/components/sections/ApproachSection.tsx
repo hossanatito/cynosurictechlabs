@@ -52,6 +52,22 @@ export default function ApproachSection() {
               transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="group relative pt-6"
             >
+              {/* Icon / placeholder */}
+              <div className="mb-6 h-24 w-24 md:h-28 md:w-28 flex items-center justify-center rounded-2xl bg-muted/50 overflow-hidden">
+                {s.icon ? (
+                  <img
+                    src={s.icon}
+                    alt={s.iconAlt ?? s.title}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <span className="text-xs font-mono text-muted-foreground tracking-wider">
+                    {s.n}
+                  </span>
+                )}
+              </div>
+
               {/* Hairline top divider — grows on hover for tactile feedback */}
               <span
                 aria-hidden
