@@ -3,6 +3,7 @@ import stelarPreview from "@/assets/stelar-preview.png";
 import sumocheckPreview from "@/assets/sumocheck-preview.png";
 import springPreview from "@/assets/spring-preview.png.asset.json";
 import bundlePreview from "@/assets/bundle-preview.png.asset.json";
+import portfolioBg from "@/assets/portfolio-bg.webp.asset.json";
 
 const featured = [
   {
