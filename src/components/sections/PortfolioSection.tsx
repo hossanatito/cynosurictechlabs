@@ -8,24 +8,28 @@ const featured = [
   {
     title: "Stelar",
     meta: "AI Platform / 2024",
+    description: "AI kids' storybook maker that turns imagination into illustrated tales.",
     image: stelarPreview,
     url: "https://usestelar.com/",
   },
   {
     title: "Sumo Check",
     meta: "SaaS / 2024",
+    description: "Expired deal checker that surfaces hidden savings on past purchases.",
     image: sumocheckPreview,
     url: "https://sumocheck.appsdyno.com/",
   },
   {
     title: "Springwater Immigration",
     meta: "Legal Tech / 2024",
+    description: "Client-facing immigration portal for case tracking and document submission.",
     image: springPreview.url,
     url: "https://spring.appsdyno.com/",
   },
   {
     title: "Bundle Deals Market",
     meta: "E-Commerce / 2024",
+    description: "Online marketplace for discovering and buying SaaS bundle deals.",
     image: bundlePreview.url,
     url: "https://bundle.cynoapps.cloud/",
   },
@@ -81,6 +85,9 @@ export default function PortfolioSection() {
                   <h3 className="text-xl md:text-2xl tracking-[-0.02em] font-medium text-foreground group-hover:text-[#0047FF] transition-colors duration-300">
                     {p.title}
                   </h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-sm">
+                    {p.description}
+                  </p>
                 </div>
                 <span className="inline-flex items-center gap-2 text-foreground font-medium group/btn shrink-0">
                   <span className="text-xs uppercase tracking-wider">View project</span>
