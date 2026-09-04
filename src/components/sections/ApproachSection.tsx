@@ -1,21 +1,34 @@
 import { motion, useReducedMotion } from "framer-motion";
 import HeroBackground from "@/components/ui/HeroBackground";
+import discoverIcon from "@/assets/discover-icon.png.asset.json";
 
-const steps = [
+type Step = {
+  n: string;
+  title: string;
+  body: string;
+  icon: string | null;
+  iconAlt?: string;
+};
+
+const steps: Step[] = [
   {
     n: "01",
     title: "Discover",
     body: "We start with a short, sharp intake. Goals, constraints, and the shape of a good outcome.",
+    icon: discoverIcon.url,
+    iconAlt: "Discover — curious character inspecting a glowing orb",
   },
   {
     n: "02",
     title: "Design & Build",
     body: "Weekly demos, honest scope. You see the product take form, not slide decks about it.",
+    icon: null,
   },
   {
     n: "03",
     title: "Ship & Iterate",
     body: "We ship early, measure real usage, and refine. The launch is a checkpoint, not the finish line.",
+    icon: null,
   },
 ];
 
@@ -47,6 +60,22 @@ export default function ApproachSection() {
               transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="group relative pt-6"
             >
+              {/* Icon / placeholder */}
+              <div className="mb-6 h-24 w-24 md:h-28 md:w-28 flex items-center justify-center rounded-2xl bg-muted/50 overflow-hidden">
+                {s.icon ? (
+                  <img
+                    src={s.icon}
+                    alt={s.iconAlt ?? s.title}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <span className="text-xs font-mono text-muted-foreground tracking-wider">
+                    {s.n}
+                  </span>
+                )}
+              </div>
+
               {/* Hairline top divider — grows on hover for tactile feedback */}
               <span
                 aria-hidden
