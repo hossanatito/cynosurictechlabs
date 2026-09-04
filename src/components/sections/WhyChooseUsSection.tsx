@@ -24,8 +24,15 @@ export default function WhyChooseUsSection() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="why-choose-us" className="py-24 md:py-40 bg-black text-white border-t border-white/10">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="why-choose-us" className="relative overflow-hidden py-24 md:py-40 bg-black text-white border-t border-white/10">
+      <img
+        src={whyTeamsStayBg.url}
+        alt=""
+        aria-hidden="true"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-auto opacity-20 pointer-events-none"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/60 to-black pointer-events-none" />
+      <div className="relative mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-12 gap-8 mb-16 md:mb-24">
           <h2 className="col-span-12 md:col-span-8 text-4xl md:text-6xl tracking-[-0.03em] font-medium leading-[1]">
             Why teams stay.
