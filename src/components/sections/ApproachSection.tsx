@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import HeroBackground from "@/components/ui/HeroBackground";
 import discoverIcon from "@/assets/discover-icon.png.asset.json";
+import designBuildIcon from "@/assets/design-build-icon.png.asset.json";
 
 type Step = {
   n: string;
@@ -22,7 +23,8 @@ const steps: Step[] = [
     n: "02",
     title: "Design & Build",
     body: "Weekly demos, honest scope. You see the product take form, not slide decks about it.",
-    icon: null,
+    icon: designBuildIcon.url,
+    iconAlt: "Design & Build — creative character with brush and speech bubble",
   },
   {
     n: "03",
