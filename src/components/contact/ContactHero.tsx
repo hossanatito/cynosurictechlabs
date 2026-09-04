@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import HeroBackground from "@/components/ui/HeroBackground";
+import contactCharacter from "@/assets/contact-hero-character.png.asset.json";
 
 export default function ContactHero() {
   const reduce = useReducedMotion();
@@ -12,6 +13,12 @@ export default function ContactHero() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-white overflow-hidden">
       <HeroBackground violetAt="50% 0%" blueAt="50% 100%" />
+      <img
+        src={contactCharacter.url}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute right-0 bottom-0 h-[60%] md:h-[85%] w-auto opacity-30 md:opacity-50"
+      />
       <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
 
         <motion.p
