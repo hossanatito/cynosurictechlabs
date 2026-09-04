@@ -31,7 +31,8 @@ const steps: Step[] = [
     n: "03",
     title: "Ship & Iterate",
     body: "We ship early, measure real usage, and refine. The launch is a checkpoint, not the finish line.",
-    icon: null,
+    icon: shipIterateIcon.url,
+    iconAlt: "Ship & Iterate — character holding a small product interface",
   },
 ];
 
