@@ -1,11 +1,18 @@
 import { motion, useReducedMotion } from "framer-motion";
+import contactCharacter from "@/assets/contact-hero-character.png.asset.json";
 
 export default function CTASection() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="py-32 md:py-48 border-t border-border">
-      <div className="mx-auto max-w-6xl px-6 text-center">
+    <section className="relative overflow-hidden py-32 md:py-48 border-t border-border">
+      <img
+        src={contactCharacter.url}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute right-0 bottom-0 h-[70%] md:h-[85%] w-auto opacity-25 md:opacity-40"
+      />
+      <div className="relative z-10 mx-auto max-w-6xl px-6 text-center">
         <motion.h2
           initial={reduce ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
