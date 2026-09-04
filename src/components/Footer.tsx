@@ -38,7 +38,7 @@ export default function Footer() {
             <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-4">Contact</div>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="mailto:support@cynosurictechlabs.net" className="hover:text-foreground text-muted-foreground">
+                <a href="mailto:support@cynosurictechlabs.net" className="hover:text-foreground text-muted-foreground break-all">
                   support@cynosurictechlabs.net
                 </a>
               </li>
