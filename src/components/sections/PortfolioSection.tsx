@@ -40,8 +40,17 @@ export default function PortfolioSection() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="work" className="py-24 md:py-40 bg-background">
-      <div className="mx-auto max-w-7xl px-6">
+    <section
+      id="work"
+      className="relative py-24 md:py-40 overflow-hidden"
+      style={{
+        backgroundImage: `url(${portfolioBg.url})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-[2px]" />
+      <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex items-end justify-between border-b border-border pb-8 mb-16 md:mb-24">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0047FF] mb-4">
