@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import stelarPreview from "@/assets/stelar-preview.png";
 import sumocheckPreview from "@/assets/sumocheck-preview.png";
+import springPreview from "@/assets/spring-preview.png.asset.json";
 
 const featured = [
   {
