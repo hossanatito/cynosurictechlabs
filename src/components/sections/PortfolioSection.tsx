@@ -8,24 +8,28 @@ const featured = [
   {
     title: "Stelar",
     meta: "AI Platform / 2024",
+    description: "AI kids' storybook maker that turns imagination into illustrated tales.",
     image: stelarPreview,
     url: "https://usestelar.com/",
   },
   {
     title: "Sumo Check",
     meta: "SaaS / 2024",
+    description: "Expired deal checker that surfaces hidden savings on past purchases.",
     image: sumocheckPreview,
     url: "https://sumocheck.appsdyno.com/",
   },
   {
     title: "Springwater Immigration",
     meta: "Legal Tech / 2024",
+    description: "Client-facing immigration portal for case tracking and document submission.",
     image: springPreview.url,
     url: "https://spring.appsdyno.com/",
   },
   {
     title: "Bundle Deals Market",
     meta: "E-Commerce / 2024",
+    description: "Online marketplace for discovering and buying SaaS bundle deals.",
     image: bundlePreview.url,
     url: "https://bundle.cynoapps.cloud/",
   },
