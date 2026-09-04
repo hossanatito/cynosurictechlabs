@@ -41,10 +41,10 @@ export default function TrustStrip() {
           {loop.map((t, i) => (
             <div key={`${t.slug}-${i}`} className="flex shrink-0 items-center justify-center">
               <img
-                src={`https://cdn.simpleicons.org/${t.slug}/9ca3af`}
+                src={`https://cdn.simpleicons.org/${t.slug}/${t.color.replace("#", "")}`}
                 alt={t.name}
                 title={t.name}
-                className="h-7 md:h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                className="h-7 md:h-8 w-auto opacity-85 hover:opacity-100 hover:scale-110 transition-all duration-300"
                 loading="lazy"
                 width={32}
                 height={32}
