@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import stelarPreview from "@/assets/stelar-preview.png";
 import sumocheckPreview from "@/assets/sumocheck-preview.png";
 import springPreview from "@/assets/spring-preview.png.asset.json";
+import bundlePreview from "@/assets/bundle-preview.png.asset.json";
 
 const featured = [
   {
@@ -21,6 +22,12 @@ const featured = [
     context: "Client-facing immigration portal for case tracking and document submission.",
     image: springPreview.url,
     url: "https://spring.appsdyno.com/",
+  },
+  {
+    title: "Bundle Deals Market",
+    context: "Online marketplace for discovering and buying SaaS bundle deals.",
+    image: bundlePreview.url,
+    url: "https://bundle.cynoapps.cloud/",
   },
 ];
 
