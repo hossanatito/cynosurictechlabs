@@ -15,12 +15,14 @@ const steps = [
     title: "Design & Build",
     body: "Weekly demos, honest scope. You see the product take form, not slide decks about it.",
     icon: null,
+    iconAlt: undefined,
   },
   {
     n: "03",
     title: "Ship & Iterate",
     body: "We ship early, measure real usage, and refine. The launch is a checkpoint, not the finish line.",
     icon: null,
+    iconAlt: undefined,
   },
 ];
 
