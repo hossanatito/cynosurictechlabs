@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import stelarPreview from "@/assets/stelar-preview.png";
 import sumocheckPreview from "@/assets/sumocheck-preview.png";
+import springPreview from "@/assets/spring-preview.png.asset.json";
 
 const featured = [
   {
@@ -14,6 +15,12 @@ const featured = [
     context: "Deal-tracking dashboard with real-time alerts for AppSumo.",
     image: sumocheckPreview,
     url: "https://sumocheck.appsdyno.com/",
+  },
+  {
+    title: "Spring",
+    context: "Lightweight launch platform for product-led growth experiments.",
+    image: springPreview.url,
+    url: "https://spring.appsdyno.com/",
   },
 ];
 
