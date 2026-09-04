@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import HeroBackground from "@/components/ui/HeroBackground";
+import heroPeople from "@/assets/hero-people.png.asset.json";
 
 export default function AboutHero() {
   const reduce = useReducedMotion();
