@@ -29,9 +29,9 @@ export default function WhyChooseUsSection() {
         src={whyTeamsStayBg.url}
         alt=""
         aria-hidden="true"
-        className="absolute left-1/2 bottom-0 -translate-x-1/2 w-full max-w-2xl h-auto opacity-25 pointer-events-none"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-auto opacity-30 pointer-events-none"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black/40 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/50 to-black pointer-events-none" />
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-12 gap-8 mb-16 md:mb-24">
           <h2 className="col-span-12 md:col-span-8 text-4xl md:text-6xl tracking-[-0.03em] font-medium leading-[1]">
