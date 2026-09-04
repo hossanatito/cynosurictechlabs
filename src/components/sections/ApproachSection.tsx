@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import HeroBackground from "@/components/ui/HeroBackground";
 import discoverIcon from "@/assets/discover-icon.png.asset.json";
 import designBuildIcon from "@/assets/design-build-icon.png.asset.json";
+import shipIterateIcon from "@/assets/ship-iterate-icon.png.asset.json";
 
 type Step = {
   n: string;
@@ -30,7 +31,8 @@ const steps: Step[] = [
     n: "03",
     title: "Ship & Iterate",
     body: "We ship early, measure real usage, and refine. The launch is a checkpoint, not the finish line.",
-    icon: null,
+    icon: shipIterateIcon.url,
+    iconAlt: "Ship & Iterate — character holding a small product interface",
   },
 ];
 
