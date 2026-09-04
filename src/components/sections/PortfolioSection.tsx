@@ -52,7 +52,7 @@ export default function PortfolioSection() {
                 <img
                   src={p.image}
                   alt={p.title}
-                  className="w-full aspect-square object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                  className="w-full aspect-video object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700"
                   loading="lazy"
                 />
               </div>
