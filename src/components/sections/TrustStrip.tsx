@@ -1,16 +1,16 @@
 const tools = [
-  { name: "React", slug: "react" },
-  { name: "Next.js", slug: "nextdotjs" },
-  { name: "TypeScript", slug: "typescript" },
-  { name: "Tailwind CSS", slug: "tailwindcss" },
-  { name: "Node.js", slug: "nodedotjs" },
-  { name: "Supabase", slug: "supabase" },
-  { name: "PostgreSQL", slug: "postgresql" },
-  { name: "OpenAI", slug: "openai" },
-  { name: "Vercel", slug: "vercel" },
-  { name: "Stripe", slug: "stripe" },
-  { name: "n8n", slug: "n8n" },
-  { name: "Zapier", slug: "zapier" },
+  { name: "React", slug: "react", color: "#61DAFB" },
+  { name: "Next.js", slug: "nextdotjs", color: "#000000" },
+  { name: "TypeScript", slug: "typescript", color: "#3178C6" },
+  { name: "Tailwind CSS", slug: "tailwindcss", color: "#06B6D4" },
+  { name: "Node.js", slug: "nodedotjs", color: "#5FA04E" },
+  { name: "Supabase", slug: "supabase", color: "#3FCF8E" },
+  { name: "PostgreSQL", slug: "postgresql", color: "#4169E1" },
+  { name: "OpenAI", slug: "openai", color: "#412991" },
+  { name: "Vercel", slug: "vercel", color: "#000000" },
+  { name: "Stripe", slug: "stripe", color: "#635BFF" },
+  { name: "n8n", slug: "n8n", color: "#FF6D5A" },
+  { name: "Zapier", slug: "zapier", color: "#FF4A00" },
 ];
 
 export default function TrustStrip() {
