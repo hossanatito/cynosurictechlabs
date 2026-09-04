@@ -39,18 +39,6 @@ const services = [
     ],
   },
   {
-    name: "Mobile Apps",
-    description:
-      "High-performance native and cross-platform apps for iOS and Android.",
-    capabilities: [
-      "iOS & Android native",
-      "React Native",
-      "Flutter",
-      "App Store optimization",
-      "Maintenance",
-    ],
-  },
-  {
     name: "E-Commerce",
     description:
       "Scalable storefronts with clean checkout, honest analytics, and real conversion focus.",

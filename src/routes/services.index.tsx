@@ -13,7 +13,7 @@ import { faqs as servicesFaqs } from "@/components/services/ServicesFAQ";
 
 const title = "Web & Software Development Services";
 const description =
-  "Comprehensive tech services: custom web development, mobile apps, AI integration, cloud solutions. Starter to Enterprise packages. Get a free consultation.";
+  "Comprehensive tech services: custom web development, AI integration, cloud solutions. Starter to Enterprise packages. Get a free consultation.";
 
 export const Route = createFileRoute("/services/")({
   head: () =>
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/services/")({
       title,
       description,
       keywords:
-        "web development services, custom software packages, AI integration services, enterprise solutions, mobile app development, cloud solutions, tech consulting",
+        "web development services, custom software packages, AI integration services, enterprise solutions, cloud solutions, tech consulting",
       path: "/services",
       structuredData: [
         organizationSchema,
