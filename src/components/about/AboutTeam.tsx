@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import titoAvatar from "@/assets/tito.png";
 import mmaAvatar from "@/assets/mma.png";
+import cynosuricWorldAvatar from "@/assets/cynosuric-world-team.png.asset.json";
 
 const team = [
   {
@@ -16,6 +17,13 @@ const team = [
     image: mmaAvatar,
     alt: "Portrait illustration of Mma, developer at Cynosuric Tech Labs",
     quote: "I read the docs so your users never have to read an error message.",
+  },
+  {
+    name: "Cynosuric World",
+    role: "Remote Team",
+    image: cynosuricWorldAvatar.url,
+    alt: "Portrait illustration of the remote team at Cynosuric Tech Labs",
+    quote: "Wherever we are, we build like we're right next door.",
   },
 ];
 
