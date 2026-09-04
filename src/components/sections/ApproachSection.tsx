@@ -23,7 +23,8 @@ const steps: Step[] = [
     n: "02",
     title: "Design & Build",
     body: "Weekly demos, honest scope. You see the product take form, not slide decks about it.",
-    icon: null,
+    icon: designBuildIcon.url,
+    iconAlt: "Design & Build — creative character with brush and speech bubble",
   },
   {
     n: "03",
